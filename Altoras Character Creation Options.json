@@ -1,0 +1,3625 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "AltorasCharacterCreationOptions",
+				"abbreviation": "ACCO",
+				"full": "Altoras Character Creation Options",
+				"version": "2.3",
+				"url": "Altoras",
+				"authors": [
+					"Riesun"
+				],
+				"convertedBy": [
+					"Riesun"
+				],
+				"color": "2291b5"
+			}
+		],
+		"dateAdded": 1740295823,
+		"dateLastModified": 1740295823,
+		"edition": "one"
+	},
+	"spell": [
+		{
+			"name": "Accompanying Note",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 45,
+			"level": 0,
+			"school": "V",
+			"foundryImg": "icons/magic/fire/dagger-rune-enchant-flame-strong-blue-yellow.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "A weapon with which you have proficiency and that is worth 1+ CP"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"With a flourish, you make one attack with the weapon used in the spell's casting. If the attack deals damage, the target also takes {@damage 1d4} Thunder damage.",
+				"Hit or miss, choose one ally within 30 feet of the target. That ally gains a +1 bonus on the first attack roll they make against the target until the start of your next turn."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The damage increases by {@dice 1d4} when you reach levels 5 ({@dice 2d4}), 11 ({@dice 3d4}), and 17 ({@dice 4d4}). "
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"thunder"
+			],
+			"spellAttack": [
+				"M"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"name": "Blanche's Reactive Warding",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 1,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when a creature other than yourself is hit by an attack or targeted by the Magic Missile spell"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You weave a ward of force to protect an ally within range. Until the start of your next turn, the target has a +3 bonus to its AC (including against the triggering attack) and takes no damage from the Magic Missile spell. This spell does not stack with the Shield spell."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Artificer",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"MAC"
+			]
+		},
+		{
+			"name": "Commemorate to Stone",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 45,
+			"level": 0,
+			"school": "T",
+			"foundryImg": "icons/magic/earth/projectile-moonrock-asteroid.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"s": true,
+				"m": {
+					"text": "a gemstone worth 1 GP",
+					"cost": 100
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					}
+				}
+			],
+			"entries": [
+				"When this spell is cast on the gemstone, it records whatever is spoken within the next 10 minutes in a 20-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} around the stone. The recording lasts until the duration of the spell has ended, the stone is destroyed, or the spell is cast again on the same stone. The recording can be played back at any point during the duration as an action, and ends early when you choose to (no action required). The play back can be done by anyone holding the stone."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Artificer",
+						"source": "PHB"
+					},
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Ranger",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Earthen Revitalization",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 45,
+			"level": 0,
+			"school": "A",
+			"foundryImg": "icons/magic/earth/explosion-lava-stone-green.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You touch the ground and channel magic through the earth. One creature that you can see within range expends a {@variantrule Hit Points|XPHB|Hit Point} Die, rolls it, and regains {@variantrule Hit Points|XPHB} equal to the value rolled plus your spellcasting ability modifier."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The number of Hit Point Dice expended increases by 1 at levels 5 (2), 11 (3), and 17 (4). "
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					},
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"HL"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"name": "Heighten Resilience",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 2,
+			"school": "A",
+			"foundryImg": "icons/magic/control/buff-strength-muscle-damage.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when you fail a saving throw"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"The spell sharpens your reflexes, bolsters your fortitude, and strengthens your resolve. Until the start of your next turn, you have {@variantrule Advantage|XPHB} on all saving throws (including against the triggering effect)."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"ADV"
+			]
+		},
+		{
+			"name": "Infernal Strike",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 1,
+			"school": "V",
+			"foundryImg": "icons/magic/unholy/projectile-spear-glow-pink.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a weapon with which you have proficiency and that is worth 1+ CP"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Empowered by infernal magic, you make one attack with the weapon used in the spell's casting. If the attack deals damage, the target also takes {@damage 2d8} Necrotic damage."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d8} for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"necrotic"
+			],
+			"spellAttack": [
+				"M"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"name": "Rebuke the Living",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 0,
+			"school": "A",
+			"foundryImg": "icons/magic/light/projectile-beam-yellow.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"A bead of white energy streaks toward a creature within range. Make a ranged spell attack. On a hit, the target takes {@damage 1d8} Radiant damage. If the target is not missing any of its hit points, it instead takes {@damage 1d12} Radiant damage."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The damage increases by one die when you reach levels 5 ({@dice 2d8} or {@dice 2d12}), 11 ({@dice 3d8} or {@dice 3d12}), and 17 ({@dice 4d8} or {@dice 4d12})."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"radiant"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"name": "Scattershot",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 0,
+			"school": "V",
+			"foundryImg": "icons/magic/water/projectiles-ice-faceted-shard-salvo-gray.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "cone",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a small shard of glass or gemstone"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You produce a shard of glass or gemstone and shatter it. Each creature in a 10-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} originating from you must make a Dexterity saving throw or take {@damage 1d6} Piercing damage."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The damage increases by {@dice 1d6} at levels 5 ({@dice 2d6}), 11 ({@dice 3d6}), and 17 ({@dice 4d6})."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Artificer",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"piercing"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"areaTags": [
+				"N"
+			]
+		},
+		{
+			"name": "Snow Flurry Shot",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 46,
+			"level": 1,
+			"school": "V",
+			"foundryImg": "icons/magic/water/projectiles-ice-explosion.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"As you hit the target, the projectile detonates in a shower of fireflies and powdered snow. The target and each creature within 5 feet of the target takes an extra {@damage 1d4} Cold damage. Until the spell ends, each creature sheds {@variantrule Bright Light|XPHB} in a 5-foot radius, attack rolls against it have {@variantrule Advantage|XPHB}, and it can't benefit from the {@condition Invisible|XPHB} condition."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d4} for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Ranger",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"spellAttack": [
+				"O"
+			],
+			"miscTags": [
+				"AAD",
+				"ADV",
+				"LGT",
+				"UBA"
+			]
+		},
+		{
+			"name": "Squemlish's Friend Zone",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 45,
+			"level": 3,
+			"school": "A",
+			"foundryImg": "icons/magic/nature/plant-sprout-snow-green.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1,
+						"upTo": true
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"A 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} of grass and flowers begins to grow on a point on the ground you can see within range. Creatures of your choice within that area when it appears regain {@variantrule Hit Points|XPHB} equal to {@dice 2d6} + your spellcasting ability modifier.",
+				"For the duration, when a creature of your choice starts its turn in the area, it regains {@variantrule Hit Points|XPHB} equal to {@dice 2d6} + your spellcasting ability modifier. If a creature has already been healed by this spell, it instead gains {@variantrule Temporary Hit Points|XPHB} equal to {@dice 2d6} + your spellcasting ability modifier. These {@variantrule Temporary Hit Points|XPHB} disappear when the spell ends."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The healing increases by {@dice 2d6} for each spell slot level above 3."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Ranger",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"HL",
+				"THP"
+			],
+			"areaTags": [
+				"S"
+			]
+		},
+		{
+			"name": "Zahlia's Collapsing Star",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 45,
+			"level": 5,
+			"school": "V",
+			"foundryImg": "icons/magic/light/explosion-beam-impact-silhouette.webp",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a grain of sand and a small piece of coal"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 5,
+						"upTo": true
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"Choose a point you can see within range. A rapidly expanding star appears in a 5-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point.",
+				"Each creature in that area must make a Strength saving throw. On a failed save, the creature takes {@dice 1d8} Radiant, {@dice 1d8} Cold, and {@damage 1d8} Fire damage, or half as much on a success. A creature also makes that save if it enters the area or ends its turn there. A creature makes that save only once per turn.",
+				"At the start of each of your turns, the radius of the star expands by 5 feet. When the spell ends, the star explodes in a 20-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere}, plus another 5 feet radius for every round you maintain {@status Concentration|XPHB}. Each creature in that area must make a Dexterity saving throw. On a failed save, the creature takes {@dice 1d8} Radiant, {@dice 1d8} Cold, and {@damage 1d8} Fire damage, plus another {@dice 1d8} of each damage type for every round you maintain {@status Concentration|XPHB}."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d8} for each spell slot level above 5."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold",
+				"fire",
+				"radiant"
+			],
+			"savingThrow": [
+				"strength"
+			],
+			"areaTags": [
+				"S"
+			]
+		}
+	],
+	"monster": [
+		{
+			"name": "Contact",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 37,
+			"size": [
+				"M",
+				"S"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"special": "4 + four times your level (the contact has a number of Hit Dice [d6s] equal to your level)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 12,
+			"int": 10,
+			"wis": 13,
+			"cha": 12,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"languages": [
+				"Common and one other of your choice"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Safe in the Crowd",
+					"entries": [
+						"The contact has {@variantrule Resistance|XPHB} to the damage from attacks, spells, or other damaging effects that target multiple creatures."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Strike (Melee)",
+					"entries": [
+						"{@atk mw} {@hit 2 + PB} to hit, reach 5 ft. {@h}5 ({@damage 1d6 + 2}) Piercing damage."
+					]
+				},
+				{
+					"name": "Strike (Ranged)",
+					"entries": [
+						"{@atk rw} {@hit 2 + PB} to hit, range 20/60 ft. {@h}5 ({@damage 1d6 + 2}) Piercing damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Body Block",
+					"entries": [
+						"{actTrigger} You take damage while your contact is within 15 feet of you. {actResponse} You have {@variantrule Resistance|XPHB} to all the damage from that instance and the contact takes the same amount of damage in turn."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			]
+		},
+		{
+			"name": "Crooked Squire",
+			"shortName": "Squire",
+			"group": [
+				"Squire"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 24,
+			"size": [
+				"M",
+				"S"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "13 + your Strength or Dexterity modifier (your choice) "
+				}
+			],
+			"hp": {
+				"special": "5 + five times your Fighter level (the squire has a number of Hit Dice [d8s] equal to your Fighter level)"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 9,
+			"dex": 17,
+			"con": 12,
+			"int": 12,
+			"wis": 14,
+			"cha": 15,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Training",
+					"entries": [
+						"Add your {@variantrule Proficiency|XPHB|Proficiency Bonus} to any ability check or saving throw the squire makes."
+					]
+				},
+				{
+					"name": "Danger Sense",
+					"entries": [
+						"You and the squire cannot be {@status surprised|XPHB}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Strike (Melee)",
+					"entries": [
+						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft. {@h}{@damage 1d6 + 3 + PB} Piercing damage."
+					]
+				},
+				{
+					"name": "Strike (Ranged)",
+					"entries": [
+						"{@atk rw} {@hit 3 + PB} to hit, range 80 ft. {@h}{@damage 1d4 + 3 + PB} Piercing damage."
+					]
+				},
+				{
+					"name": "Dirty Fighter",
+					"entries": [
+						"The squire imposes {@variantrule Disadvantage|XPHB} on the next attack roll of one creature within 30 feet of itself."
+					]
+				},
+				{
+					"name": "Expose Weakness",
+					"entries": [
+						"{actSave con} One creature within 15 feet of the squire. {actSaveFail} The target is marked for 1 minute. The next time you or an ally hits the marked target, it has Vulnerability to all Bludgeoning, Piercing, or Slashing damage dealt by that attack, and the mark ends."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Hideaway",
+					"entries": [
+						"{actTrigger} A creature ends its turn within 5 feet of you, the squire, or an ally within 30 feet of the squire. {actResponse} That creature can immediately take a {@variantrule Reaction|XPHB} to move up to their {@variantrule Speed|XPHB} without provoking Opportunity Attacks and use the Hide action."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution"
+			]
+		},
+		{
+			"name": "Divine Squire",
+			"shortName": "Squire",
+			"group": [
+				"Squire"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 24,
+			"size": [
+				"M",
+				"S"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "12 + your Strength or Dexterity modifier (your choice) "
+				}
+			],
+			"hp": {
+				"special": "5 + five times your Fighter level (the squire has a number of HIt Dice [d8s] equal to your Fighter level)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 12,
+			"con": 14,
+			"int": 15,
+			"wis": 17,
+			"cha": 9,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"languages": [
+				"Common"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The squire's spellcasting ability is Wisdom (spell save DC equals 11 + PB). The squire knows the following spells:"
+					],
+					"will": [
+						"{@spell guidance|XPHB}",
+						"{@spell resistance|XPHB}",
+						"{@spell thaumaturgy|XPHB}"
+					],
+					"daily": {
+						"3": [
+							"{@spell bane|XPHB}",
+							"{@spell bless|XPHB}",
+							"{@spell cure wounds|XPHB}",
+							"{@spell sanctuary|XPHB}",
+							"{@spell shield of faith|XPHB}"
+						]
+					},
+					"ability": "wis"
+				}
+			],
+			"trait": [
+				{
+					"name": "Training",
+					"entries": [
+						"Add your {@variantrule Proficiency|XPHB|Proficiency Bonus} to any ability check or saving throw the squire makes."
+					]
+				},
+				{
+					"name": "Calming Presence",
+					"entries": [
+						"All allies within 5 feet of the squire have Advantage on saving throws to end or avoid the {@condition Charmed|XPHB} or {@condition Frightened|XPHB} condition."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk rs} {@hit 3 + PB} to hit, range 60 ft. {@h}{@damage 1d6 + 3 + PB} Radiant damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Piety",
+					"entries": [
+						"{actTrigger} An allied creature within 30 feet of the squire is hit by an attack. {actResponse} The squire summons a divine ward to protect the ally. Roll a {@dice d6}, and subtract the number rolled from the attacker's attack roll."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"RA"
+			]
+		},
+		{
+			"name": "Protector Squire",
+			"shortName": "Squire",
+			"group": [
+				"Squire"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 23,
+			"size": [
+				"M",
+				"S"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "14 + your Strength or Dexterity modifier (your choice) "
+				}
+			],
+			"hp": {
+				"special": "6 + six times your Fighter level (the squire has a number of Hit Dice [d10s] equal to your Fighter level)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 17,
+			"dex": 12,
+			"con": 15,
+			"int": 9,
+			"wis": 14,
+			"cha": 12,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Training",
+					"entries": [
+						"Add your Proficiency Bonus to any ability check or saving throw the squire makes."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft., one target. {@h}{@damage 1d8 + 3 + PB} Bludgeoning, Piercing, or Slashing damage (your choice when you summon the squire)."
+					]
+				},
+				{
+					"name": "Defensive Wall",
+					"entries": [
+						"The squire holds their shield firm, granting {@variantrule Cover|XPHB|Half Cover} to all allied creatures within 5 feet of the squire until the start of its next turn."
+					]
+				},
+				{
+					"name": "Distraction",
+					"entries": [
+						"Opportunity Attacks made against the squire or allies within 15 feet of the squire are made at {@variantrule Disadvantage|XPHB} until the start of your next turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Supporting Blow",
+					"entries": [
+						"{actTrigger} An allied creature within 15 feet of the squire takes damage. {actResponse} The squire immediately moves 15 feet and makes a single Strike attack against the attacker."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MA"
+			]
+		},
+		{
+			"name": "Plantlife Protector",
+			"shortName": "Protector",
+			"group": [
+				"Protector"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 16,
+			"size": [
+				"M"
+			],
+			"type": "plant",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"special": "13 + your Wisdom modifier"
+				}
+			],
+			"hp": {
+				"special": "6 + six times your Druid level (the Protector has a number of Hit Dice [d10s] equal to your Druid level)"
+			},
+			"speed": {
+				"walk": 25
+			},
+			"str": 14,
+			"dex": 12,
+			"con": 17,
+			"int": 4,
+			"wis": 13,
+			"cha": 6,
+			"senses": [
+				"tremorsense 10 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"bludgeoning",
+				"piercing",
+				"poison"
+			],
+			"vulnerable": [
+				"fire"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned",
+				"prone"
+			],
+			"languages": [
+				"Understands the languages you know but can't speak"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Foliage",
+					"entries": [
+						"Allied creatures within 5 feet of the Protector have {@variantrule Cover|XPHB|Half Cover}."
+					]
+				},
+				{
+					"name": "Nature's Bond",
+					"entries": [
+						"While the Protector is within 60 feet of you, you can cast cantrips as though you were in the Protector’s space, but you must use your own senses."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d4 + 2 + PB} Bludgeoning damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Steadfast Protector",
+					"entries": [
+						"{actTrigger} An attack hits another creature within 10 feet of the Protector. {actResponse} The attack hits the Protector instead."
+					]
+				}
+			],
+			"senseTags": [
+				"T"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"miscTags": [
+				"MA"
+			]
+		},
+		{
+			"name": "Sturdy Protector",
+			"shortName": "Protector",
+			"group": [
+				"Protector"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 16,
+			"size": [
+				"M",
+				"L"
+			],
+			"type": "plant",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "15 + your Wisdom modifier"
+				}
+			],
+			"hp": {
+				"special": "7 + seven times your Druid level (the Protector has a number of Hit Dice [d12s] equal to your Druid level)"
+			},
+			"speed": {
+				"walk": 25
+			},
+			"str": 17,
+			"dex": 13,
+			"con": 20,
+			"int": 4,
+			"wis": 16,
+			"cha": 6,
+			"senses": [
+				"tremorsense 10 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"bludgeoning",
+				"piercing",
+				"poison"
+			],
+			"vulnerable": [
+				"fire"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned",
+				"prone"
+			],
+			"languages": [
+				"Understands the languages you know",
+				"but can't speak"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Foliage",
+					"entries": [
+						"Allied creatures within 5 feet of the Protector have {@variantrule Cover|XPHB|Half Cover}."
+					]
+				},
+				{
+					"name": "Nature's Bond",
+					"entries": [
+						"While the Protector is within 60 feet of you, you can cast spells up to level 3 as though you were in the Protector’s space, but you must use your own senses."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d6 + 3 + PB} Bludgeoning damage."
+					]
+				},
+				{
+					"name": "Uprooted {@recharge 5}",
+					"entries": [
+						"{@actSave dex} DC equals your spell save DC, each creature in a 15-foot radius {@variantrule Emenation [Area of Effect]|XPHB|Emenation}. {actSaveFail} 18 ({@damage 4d8}) Bludgeoning damage and the target is {@condition Prone|XPHB}. {actSaveSuccess} Half damage and not {@condition Prone|XPHB}. {actSaveSuccessOrFail} The area is considered {@variantrule Difficult Terrain|XPHB} for enemy creatures for 1 minute."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Steadfast Protector",
+					"entries": [
+						"{actTrigger} An attack hits another creature within 10 feet of the Protector. {actResponse} The attack hits the Protector instead, and it has {@variantrule Resistance|XPHB} to the damage."
+					]
+				}
+			],
+			"senseTags": [
+				"T"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"AOE",
+				"MA"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			]
+		}
+	],
+	"feat": [
+		{
+			"name": "Friends in Low Places",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 37,
+			"category": "O",
+			"foundryImg": "icons/environment/people/group.webp",
+			"entries": [
+				"You gain three close contacts which you can call upon to aid you on your adventures. These contacts are Humanoids that use the Contact stat block shown below. You determine their appearance. Over the course of an hour, which can take place during a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, you can summon one of these contacts to your side. Your contact acts independently of you, but it obeys your commands.",
+				{
+					"type": "entries",
+					"name": "Combat",
+					"entries": [
+						"The contact acts during your turn. It can move and use its reaction on its own, but the only action it takes is the {@action Dodge|XPHB} action unless you take a {@variantrule Bonus Action|XPHB} to command it to take an action in its stat block or another action. If you are {@condition Incapacitated|XPHB}, the contact acts on its own and isn't limited to the {@action Dodge|XPHB} action."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Disappearance of your Contact",
+					"entries": [
+						"A contact dies if it drops to 0 {@variantrule Hit Points|XPHB}, or is dismissed when you die. You can replace a dead contact over the course of 24 hours and by spending 100 GP."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "One Contact Only",
+					"entries": [
+						"You can't have more than one contact active at a time. If you summon another contact while one is active, the previous one is dismissed."
+					]
+				}
+			]
+		},
+		{
+			"name": "Noble Bearing",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 37,
+			"category": "O",
+			"foundryImg": "icons/magic/control/control-influence-crown-gold.webp",
+			"entries": [
+				"You are a member of the upper class, and it shows. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Mark of Nobility",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} of Wisdom ({@skill Insight|XPHB}) and Charisma ({@skill Persuasion|XPHB}) checks when interacting with members of the upper class."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Noble Presence",
+					"entries": [
+						"You can use your {@variantrule Bonus Action|XPHB} to snap an ally back into focus. Choose one ally that can hear you within 120 feet of you that is {@condition Charmed|XPHB} or {@condition Frightened|XPHB}. That condition ends on the ally and they gain {@variantrule Temporary Hit Points|XPHB} equal to two times your {@variantrule Proficiency|XPHB|Proficiency Bonus}.",
+						"Once you use this ability, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Protector",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 37,
+			"category": "O",
+			"foundryImg": "icons/skills/melee/shield-block-bash-blue.webp",
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Interception",
+					"entries": [
+						"When an ally you can see within 30 feet of you would be hit by an attack and take damage, you can immediately take a {@variantrule Reaction|XPHB} to intercept the attack. You move to an unoccupied space within 5 feet of that ally, and all effects of the attack are moved onto you. This movement doesn't provoke Opportunity Attacks.",
+						"If you are dropped to 0 {@variantrule Hit Points|XPHB} after using this feature, you have {@variantrule Advantage|XPHB} on Death Saving Throws until you are {@variantrule Stable|XPHB}, or die."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Righteous Protector",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on Charisma ({@skill Persuasion|XPHB}) checks to convince people to let you help them."
+					]
+				}
+			]
+		},
+		{
+			"name": "Acid Glands",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 37,
+			"category": "G",
+			"foundryImg": "icons/magic/acid/dissolve-arm-flesh.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"con": 1
+				}
+			],
+			"entries": [
+				"Through some means you have developed glands that allow you to spit acid, gaining the following benefits.",
+				{
+					"type": "entries",
+					"name": "Acid Resistance",
+					"entries": [
+						"You gain {@variantrule Resistance|XPHB} to Acid damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spit",
+					"entries": [
+						"You have acid glands which count as a simple ranged weapon you are proficient with, and can be used when making Unarmed Strikes. Your acid spit has a range of 30 / 90 and {@itemProperty F|XPHB|Finesse}, and deals {@dice 1d6} {@item Acid|XPHB} damage on a hit."
+					]
+				}
+			]
+		},
+		{
+			"name": "Amphibious",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/creatures/amphibians/frog-water-teal.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Swim Speed",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.movement.swim",
+							"mode": 5,
+							"value": "@attributes.movement.walk"
+						}
+					]
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Amphibious",
+					"entries": [
+						"You can breathe both air and water."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Swim Speed",
+					"entries": [
+						"You gain a {@variantrule Swim Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Artist's Creative Conjuring",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/skills/trades/academics-merchant-scribe.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Artist",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									"fabricate|xphb"
+								]
+							}
+						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0",
+								"count": 2
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"A connection with The Artist enhances your tricky mind to find clever new spins on old techniques. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Two Cantrips",
+					"entries": [
+						"You learn two cantrips of your choice from any spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feat's spells (choose when you select this feat)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fabricate",
+					"entries": [
+						"You learn the {@spell Fabricate|XPHB} spell, and can cast it without expending a spell slot. When you cast it in this way, it has a casting time of an {@variantrule Action|XPHB} and a duration of 10 minutes. After casting it in this way, you can't do so again until you finish a {@variantrule Long Rest|XPHB}. You can also cast this spell with any spell slots you have of the appropriate level, but with the normal casting time and duration."
+					]
+				}
+			]
+		},
+		{
+			"name": "Blood-Touched",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/skills/wounds/blood-cells-vessel-red.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"enhance ability|xphb",
+									{
+										"choose": "level=1|school=V;T"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"Your exposure to House Varley’s blood magic has changed you, granting you the following benefits:",
+				{
+					"type": "entries",
+					"name": "Blood Magic",
+					"entries": [
+						"Choose one level 1 spell from the {@filter Evocation or Transmutation|spells|level=1|school=V;T} school of magic. You always have that spell and the {@spell Enhance Ability|XPHB} spell prepared. You can cast each of these spells without expending a spell slot. Once you cast either spell in this way, you can't cast that spell in this way again until you finish a {@variantrule Long Rest|XPHB}. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
+					]
+				}
+			]
+		},
+		{
+			"name": "Companion Trainer",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/environment/people/cavalry.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Companion Training",
+					"entries": [
+						"Choose one creature you have indefinitely summoned by a class feature, Feat, or the {@spell Find Familiar|XPHB} or {@spell Find Steed|XPHB} spells. That creature gains one of the following Feats of your choice: {@feat Athlete|XPHB}, {@feat Charger|XPHB}, {@feat Heavy Armor Master|XPHB}, {@feat Medium Armor Master|XPHB}, {@feat Martial Adept|XPHB}, or {@feat Speedy|XPHB}.",
+						"These benefits persist even after the creature is dismissed, resummoned, or changes form."
+					]
+				}
+			]
+		},
+		{
+			"name": "Familiar Trainer",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/creatures/mammals/spirit-deer-herd-blue.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Familiar Training",
+					"entries": [
+						"Choose one creature you have summoned using the {@spell Find Familiar|XPHB} spell. Its {@variantrule Proficiency|XPHB|Proficiency Bonus} increases by 1, to a maximum of 6.",
+						"In addition, it gains one of the following Feats of your choice: Blood-Touched, {@feat Fey-Touched|XPHB}, {@feat Grappler|XPHB}, {@feat Lucky|XPHB}, {@feat Mage Slayer|XPHB}, {@feat Magic Initiate|XPHB}, {@feat Martial Adept|XPHB}, {@feat Savage Attacker|XPHB}, {@feat Shadow-Touched|XPHB}, {@feat Skilled|XPHB}, {@feat Skulker|XPHB}, {@feat Tavern Brawler|XPHB}, {@feat Telekinetic|XPHB}, {@feat Telepathic|XPHB}, or {@feat Tough|XPHB}. If the Feat doesn't already provide an ability score increase, you can increase one of your familiar's ability scores by 1, to a maximum of 20.",
+						"These benefits persist even after the familiar is dismissed, resummoned, or changes form."
+					]
+				}
+			]
+		},
+		{
+			"name": "Lovers' Duality",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 38,
+			"category": "G",
+			"foundryImg": "icons/magic/life/heart-pink.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Lovers",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"foundrySystem": {
+				"uses": {
+					"max": "@prof",
+					"per": "lr",
+					"value": 1
+				},
+				"activities": [
+					{
+						"type": "utility",
+						"activation": {
+							"cost": 1,
+							"type": "bonus"
+						},
+						"duration.value": 1,
+						"duration.units": "minute",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					}
+				]
+			},
+			"entries": [
+				"A connection with the Lovers gifts you a dual nature. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Gemini",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you create a perfect copy of yourself in an unoccupied space you can see within 15 feet of yourself. This feature lasts for 1 minute, but ends early if you dismiss it (no action required) or become {@condition Incapacitated|XPHB}. When this feature ends, you decide which version is the real you.",
+						"While this copy persists, you are considered to be occupying both spaces at once. Both versions share all game statistics and any effects that are applied to them. It is impossible to discern which is the real you.",
+						"You can use this ability a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. While your Gemini is active, the following rules apply:"
+					]
+				},
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Actions",
+							"entries": [
+								"Actions you take that target others can originate from either version of you, you choose when you take that action."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Movement",
+							"entries": [
+								"When moving, only one version of you moves, but you can divide your movement between your two versions in any way you like."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Shared Suffering",
+							"entries": [
+								"When only one version of you takes damage from any given source, you have {@variantrule Resistance|XPHB} to that damage. If both versions are subjected to an area effect, such as from the {@spell Fireball|XPHB} spell, you make one saving throw and take the effects as normal."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Paragon's Ward",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 39,
+			"category": "G",
+			"foundryImg": "icons/magic/defensive/shield-barrier-blades-teal.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Paragon",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"foundrySystem": {
+				"uses": {
+					"max": "1",
+					"per": "sr",
+					"value": 1
+				},
+				"activities": [
+					{
+						"type": "utility",
+						"activation": {
+							"cost": 1,
+							"type": "bonus"
+						},
+						"duration.value": 10,
+						"duration.units": "minute",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					},
+					{
+						"type": "damage",
+						"activation.type": "bonus",
+						"range.value": 30,
+						"range.units": "ft",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "3 + @prof",
+								"types": [
+									"temphp"
+								]
+							}
+						]
+					}
+				]
+			},
+			"entries": [
+				"A connection with The Paragon has gifted you with power to protect your body and convictions. You gain the following benefits. ",
+				{
+					"type": "entries",
+					"name": "Paragon's Ward",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you wreath yourself in the energies of the Paragon for 10 minutes. This effect ends early if you dismiss it (no action required) or become {@condition Incapacitated|XPHB}. When you activate this feature and as a {@variantrule Bonus Action|XPHB} on subsequent turns, you can grant yourself or a creature you can see within 30 feet of you {@variantrule Temporary Hit Points|XPHB} equal to 3 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}. While a creature has these {@variantrule Temporary Hit Points|XPHB}, it has {@variantrule Advantage|XPHB} on saving throws to end or avoid the {@condition Charmed|XPHB} or {@condition Frightened|XPHB} condition, and against spells from the Illusion or Enchantment schools. Any {@variantrule Temporary Hit Points|XPHB} remaining at the end of the duration are lost.",
+						"Once you use this ability, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}"
+					]
+				}
+			]
+		},
+		{
+			"name": "Poisonous",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 39,
+			"category": "G",
+			"foundryImg": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"con": 1
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Poison Resistance",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "poison"
+						}
+					]
+				}
+			],
+			"foundrySystem": {
+				"activities": [
+					{
+						"type": "save",
+						"activation.type": "action",
+						"activation.value": 1,
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "cone",
+						"save.ability": [
+							"con"
+						],
+						"save.dc.calculation": "con",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "(1+floor((@details.level/6)))d12",
+								"types": [
+									"poison"
+								]
+							}
+						]
+					}
+				]
+			},
+			"entries": [
+				"You have built a tolerance to poison and weaponized it for your own usage, giving you the following benefits.",
+				{
+					"type": "entries",
+					"name": "Poison Resistance",
+					"entries": [
+						"You gain resistance to Poison damage and have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Poisoned|XPHB} condition."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Poison Breath",
+					"entries": [
+						"As an action, you can exhale a 30-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} of poisonous gas. All creatures in that area must make a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the creature takes {@damage 1d12} Poison damage, or half as much on a successful one.",
+						"This damage increases by {@dice 1d12} at levels 5 ({@dice 2d12}), 11 ({@dice 3d12}), and 17 ({@dice 4d12})."
+					]
+				}
+			]
+		},
+		{
+			"name": "Primal Mutation",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 39,
+			"category": "G",
+			"foundryImg": "icons/creatures/claws/claw-talons-glowing-orange.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"entries": [
+				"Through a natural or alchemical process you have developed a sharp natural weapon, ensuring you are never unarmed, giving you the following benefits.",
+				{
+					"type": "entries",
+					"name": "Natural Weapon",
+					"entries": [
+						"You grow claws (Slashing), fangs (Piercing), horns (Piercing), or hooves (Bludgeoning). This new growth counts as a simple melee weapon you are proficient with, and can be used when making Unarmed Strikes. The natural weapon has {@itemProperty F|XPHB|Finesse}, and deals {@damage 1d6} damage of the type in parentheses on a hit."
+					]
+				}
+			]
+		},
+		{
+			"name": "Savant's Inquiry",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 39,
+			"category": "G",
+			"foundryImg": "icons/skills/trades/academics-book-study-runes.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Savant",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"foundrySystem": {
+				"uses": {
+					"max": "@prof",
+					"per": "lr",
+					"value": 1
+				},
+				"activities": [
+					{
+						"type": "utility",
+						"activation": {
+							"cost": 1,
+							"type": "bonus"
+						},
+						"duration.value": 1,
+						"duration.units": "minute",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					},
+					{
+						"type": "damage",
+						"activation.type": "special",
+						"damage.parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"psychic"
+								]
+							}
+						]
+					},
+					{
+						"type": "save",
+						"activation.type": "special",
+						"save.ability": [
+							"wis"
+						],
+						"save.dc.calculation": "str"
+					}
+				]
+			},
+			"entries": [
+				"A connection with The Savant allows you to know your enemy with each strike you take. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Savant's Inquiry",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you wreath yourself in the energies of the Savant for 1 minute. This effect ends early if you dismiss it (no action required) or become {@condition Incapacitated|XPHB}. For the duration, when you hit a creature with an attack roll and deal damage to it, you also deal {@damage 1d8} Psychic damage and pull knowledge about that creature. Choose one of the following statistics from below, and the DM reveals that information about the creature to you:",
+						{
+							"type": "list",
+							"items": [
+								"Current Hit Points",
+								"Armor Class",
+								"Any Resistances",
+								"Any Immunities",
+								"Any Vulnerabilities"
+							]
+						},
+						"On a critical hit, the target must make a Wisdom saving throw with a DC equal to 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + the ability score modifier used for the attack roll. On a failure, the DM reveals the entire stat block to you as the Savant's guidance leads to critical, comprehensive information related to your quarry. On a success, you choose two pieces of information from the list above to be revealed by the DM. You can deal this damage and gain this information only once per turn.",
+						"You can use this ability a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Shepherd's Embrace",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 40,
+			"category": "G",
+			"foundryImg": "icons/magic/nature/plant-sproud-hands-dirt-green.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Shepherd",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"foundrySystem": {
+				"uses": {
+					"max": "@prof",
+					"per": "lr",
+					"value": 1
+				},
+				"activities": [
+					{
+						"type": "utility",
+						"activation": {
+							"cost": 1,
+							"type": "bonus"
+						},
+						"duration.value": 1,
+						"duration.units": "minute",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					},
+					{
+						"type": "damage",
+						"activation.type": "bonus",
+						"range.value": 30,
+						"range.units": "ft",
+						"damage.parts": [
+							{
+								"number": 2,
+								"denomination": 6,
+								"bonus": "@abilities.con.mod",
+								"types": [
+									"hp"
+								]
+							}
+						]
+					}
+				]
+			},
+			"entries": [
+				"A connection with The Shepherd allows you to lend aid to your allies. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Shepherd's Embrace",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you wreath yourself in the energies of the Shepherd for 1 minute. This effect ends early if you dismiss it (no action required) or become {@condition Incapacitated|XPHB}. When you activate this ability and as a {@variantrule Bonus Action|XPHB} on subsequent turns, you can target a creature you can see within 30 feet of you. The creature restores {@variantrule Hit Points|XPHB} equal to {@dice 2d6} + your Constitution modifier or ends one condition on itself from {@condition Poisoned|XPHB}, {@condition Stunned|XPHB}, {@condition Blinded|XPHB}, or {@condition Deafened|XPHB}.",
+						"This ability can only be called forth during combat. You can use this ability a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Tool Expert",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 40,
+			"category": "G",
+			"foundryImg": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"toolProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"expertise": [
+				{
+					"anyProficientTool": 1
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Tool Proficiency",
+					"entries": [
+						"You gain proficiency in one tool of your choice."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Expertise",
+					"entries": [
+						"Choose one tool which you have proficiency in but lack {@variantrule Expertise|XPHB}. You gain {@variantrule Expertise|XPHB} in that tool."
+					]
+				}
+			]
+		},
+		{
+			"name": "Warden's Bond",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 40,
+			"category": "G",
+			"foundryImg": "icons/skills/social/diplomacy-unity-alliance.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Warden",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									"rary's telepathic bond|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"A connection with The Warden has granted you the pragmatism to make difficult but necessary choices. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Warden's Bond",
+					"entries": [
+						"You always have the {@spell Rary's Telepathic Bond|XPHB} spell prepared. You can cast this spell without expending a spell slot, and when you do, the magic of the Warden deepens the bond. When one of the creatures bonded with the spell takes damage, you can take a {@variantrule Reaction|XPHB} to give the creature {@variantrule Resistance|XPHB} to that damage, and you receive the same amount of damage.",
+						"Once you cast this spell in this way, you can't cast it in this way again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. You can also cast this spell with any spell slots you have of the appropriate level.",
+						"Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this Feat)."
+					]
+				}
+			]
+		},
+		{
+			"name": "Wings Unfurled",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 40,
+			"category": "G",
+			"foundryImg": "icons/creatures/abilities/wing-batlike-purple-blue.webp",
+			"prerequisite": [
+				{
+					"level": 8
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Fly Speed",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.movement.fly",
+							"mode": 5,
+							"value": "@attributes.movement.walk"
+						}
+					]
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Fly Speed",
+					"entries": [
+						"You gain a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Wolf's Challenge",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 40,
+			"category": "G",
+			"foundryImg": "icons/creatures/abilities/wolf-howl-moon-purple.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"otherSummary": {
+						"entry": "follower of the Wolf",
+						"entrySummary": "Special"
+					}
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex"
+						]
+					}
+				}
+			],
+			"foundrySystem": {
+				"uses": {
+					"max": "@prof",
+					"per": "lr",
+					"value": 1
+				},
+				"activities": [
+					{
+						"type": "utility",
+						"activation": {
+							"cost": 1,
+							"type": "bonus"
+						},
+						"duration.value": 1,
+						"duration.units": "minute",
+						"range.value": 30,
+						"range.units": "ft",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					}
+				]
+			},
+			"entries": [
+				"A connection with the Wolf has gifted you with power to press your foes, granting you the following benefits.",
+				{
+					"type": "entries",
+					"name": "Wolf's Challenge",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you can mark one creature you can see within 30 feet of you and immediately move up to your {@variantrule Speed|XPHB} towards it. This movement doesn't provoke opportunity attacks.",
+						"While marked, the creature has {@variantrule Disadvantage|XPHB} on attack rolls targeting any creature other than you. Additionally, you ignore {@variantrule Difficult Terrain|XPHB} and can take the {@action Dash|XPHB} action as a {@variantrule Bonus Action|XPHB} so long as you are moving towards the marked creature.",
+						"This mark lasts for 1 minute, and ends early if you use this ability to mark a different creature, if you end your turn more than 60 feet away from the marked creature, or when you or the marked creature becomes {@condition Incapacitated|XPHB}.",
+						"You can use this feature a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			]
+		}
+	],
+	"race": [
+		{
+			"name": "Burrowfolk",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 2,
+			"edition": "one",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"size": [
+				"S"
+			],
+			"speed": {
+				"walk": 30,
+				"climb": true,
+				"swim": true
+			},
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Small (about 2-4 feet tall)"
+				]
+			},
+			"skillToolLanguageProficiencies": [
+				{
+					"choose": [
+						{
+							"from": [
+								"acrobatics",
+								"medicine",
+								"nature",
+								"stealth",
+								"survival",
+								"anyTool"
+							],
+							"count": 1
+						}
+					]
+				}
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Craftiness",
+					"entries": [
+						"You have proficiency in one tool of your choice or one skill of your choice from {@skill Acrobatics|XPHB}, {@skill Medicine|XPHB}, {@skill Nature|XPHB}, {@skill Stealth|XPHB} or {@skill Survival|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Keen Senses",
+					"entries": [
+						"You have proficiency in the {@skill Perception|XPHB} skill. You also have {@variantrule Advantage|XPHB} on Wisdom ({@skill Perception|XPHB}) checks that rely on sound or smell."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Scamper",
+					"entries": [
+						"You have a {@variantrule Climb Speed|XPHB} and {@variantrule Swim Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Tight Squeeze",
+					"entries": [
+						"You ignore {@variantrule Difficult Terrain|XPHB} when squeezing through spaces one size smaller than yourself."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Burrow Lineage",
+					"entries": [
+						"You are part of a lineage that grants you unique abilities. Choose one of the following lineage options.",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Caster",
+									"entries": [
+										"You know the {@spell Druidcraft|XPHB} cantrip. You also always have the {@spell Jump|XPHB} spell prepared, and can cast it without expending a spell slot. You can cast it in this way once, and regain the ability to do so again when you finish a {@variantrule Long Rest|XPHB}. You can also cast this spell with any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for spells granted by this Lineage (choose when you select this Lineage)."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Defender",
+									"entries": [
+										"When you are hit by an attack, you can take a {@variantrule Reaction|XPHB} to enter a defensive stance. Until the start of your next turn, all Bludgeoning, Piercing, and Slashing damage you take is reduced by a number equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}  (including from the triggering attack). You can use this ability a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Gnasher",
+									"entries": [
+										"Your teeth are simple melee weapons which you are proficient with and can be used to make Unarmed Strikes. They have {@itemProperty F|XPHB|Finesse} and deal {@damage 1d4} Piercing damage on a hit. This damage is doubled against objects and structures."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Squirmer",
+									"entries": [
+										"Opportunity Attacks have {@variantrule Disadvantage|XPHB} against you."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"To the people at large, the Burrowfolk have the most difficulty with life in Altoras. Forced to choose between living in the underground city of New Burrow ruled by the mob or on the Kaiju-infested jungles of Muhana above, they are often drawn to seedy tactics and underhanded methods just to get by. Their cunning, curiosity, and strong survival instincts make them perfect for the job.",
+					"Though this is the unfortunate situation for most Burrowfolk, they are no more naturally violent or larcenous than others. But old stereotypes linger, especially with the affluent of New Burrow actively putting their interests above all else.",
+					"Burrowfolk are short humanoids that closely resemble members of the rodent family. They mature quickly, often reaching adulthood by age 12, but still live about as long as Humans."
+				]
+			},
+			"_versions": [
+				{
+					"name": "Burrowfolk; Caster",
+					"source": "AltorasCharacterCreationOptions",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "Burrow Lineage",
+							"items": {
+								"name": "Burrow Lineage (Caster)",
+								"type": "entries",
+								"entries": [
+									"You know the {@spell Druidcraft|XPHB} cantrip. You also always have the {@spell Jump|XPHB} spell prepared, and can cast it without expending a spell slot. You can cast it in this way once, and regain the ability to do so again when you finish a {@variantrule Long Rest|XPHB}. You can also cast this spell with any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for spells granted by this Lineage (choose when you select this Lineage)."
+								]
+							}
+						}
+					},
+					"additionalSpells": [
+						{
+							"innate": {
+								"1": {
+									"daily": {
+										"1": [
+											"jump|xphb"
+										]
+									}
+								}
+							},
+							"known": {
+								"1": [
+									"druidcraft|xphb"
+								]
+							},
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Burrowfolk; Defender",
+					"source": "AltorasCharacterCreationOptions",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "Burrow Lineage",
+							"items": {
+								"name": "Burrow Lineage (Defender)",
+								"type": "entries",
+								"entries": [
+									"When you are hit by an attack, you can take a {@variantrule Reaction|XPHB} to enter a defensive stance. Until the start of your next turn, all Bludgeoning, Piercing, and Slashing damage you take is reduced by a number equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}  (including from the triggering attack). You can use this ability a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Burrowfolk; Gnasher",
+					"source": "AltorasCharacterCreationOptions",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "Burrow Lineage",
+							"items": {
+								"name": "Burrow Lineage (Gnasher)",
+								"type": "entries",
+								"entries": [
+									"Your teeth are simple melee weapons which you are proficient with and can be used to make Unarmed Strikes. They have {@itemProperty F|XPHB|Finesse} and deal {@damage 1d4} Piercing damage on a hit. This damage is doubled against objects and structures."
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Burrowfolk; Squirmer",
+					"source": "AltorasCharacterCreationOptions",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "Burrow Lineage",
+							"items": {
+								"name": "Burrow Lineage (Squirmer)",
+								"type": "entries",
+								"entries": [
+									"Opportunity Attacks have {@variantrule Disadvantage|XPHB} against you."
+								]
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Kor'Rokka",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 3,
+			"edition": "one",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"size": [
+				"M"
+			],
+			"darkvision": 60,
+			"speed": {
+				"walk": 30,
+				"swim": true
+			},
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 6-8 feet tall)"
+				]
+			},
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Amphibious",
+					"entries": [
+						"You can breathe both air and water. You also have a {@variantrule Swim Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You have {@sense Darkvision|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Limited Regeneration",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you can expend one of your {@variantrule Hit Point Dice|XPHB}, roll the die, and regain a number of {@variantrule Hit Points|XPHB} equal to the roll. You can't use this ability if you have taken fire or acid damage since the end of your last turn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Powerful Build",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on any saving throw you make to end the {@condition Grappled|XPHB} condition. You also count as one size larger when determining your carrying capacity."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Quills",
+					"entries": [
+						"You have quills adorning your body that count as a simple ranged weapon you are proficient with. They have a short range of 30 feet, a long range of 90 feet, and {@itemProperty F|XPHB|Finesse}. On a hit, the quills deal {@damage 1d6} Piercing damage.",
+						"When you hit a creature with your quills and deal damage to it, you can also deal {@damage 2d6} Poison damage to that target. You can deal this damage a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"The Kor'Rokka of the Koh'Harrun League have resided on the Harra Archipelago for hundreds of years. While the League is a collection of island nations that are populated mostly by Humans, Tritons, and Sea Elves, the Kor'Rokka have integrated into the League and can be found throughout the different cities that dot the islands.",
+					"Kor'Rokka have impressive regenerative powers, capable of preventing their bodies from aging. It's because of this that scholars believe the Kor'Rokka are related to trolls, but question whether this ancestry occurs naturally. While they may be physically intimidating, the Kor'Rokka are a generally reserved people, with a culture that values inner peace and careful consideration of one's actions.",
+					"Kor'Rokka are reminiscent of trolls in their towering, slender builds and prominent underbite, but that's mostly where the comparison ends. They are an amphibious species complete with webbed fingers and toes, colorful patterning, and sharp quills adorning various parts of their body. When a Kor' Rokka has come of age they choose a name they feel represents them, this name is often a deed, a natural force or entity that they want to embody, or a virtue. This name is private and only given to those closest to them."
+				]
+			}
+		},
+		{
+			"name": "Gnoll",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 4,
+			"edition": "one",
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"subtype": "gnoll",
+					"custom": "Fiend and Humanoid"
+				}
+			},
+			"size": [
+				"M"
+			],
+			"darkvision": 60,
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 5-7 feet tall)"
+				]
+			},
+			"additionalSpells": [
+				{
+					"known": {
+						"1": [
+							"vicious mockery|xphb"
+						]
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "A Good Heckling",
+					"entries": [
+						"You know the {@spell Vicious Mockery|XPHB} cantrip. Intelligence, Wisdom, or Charisma is your spellcasting ability (choose when you select this species)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bite",
+					"entries": [
+						"Your sharp teeth are simple melee weapons which you are proficient with and can be used to make Unarmed Strikes. They have {@itemProperty F|XPHB|Finesse} and deal {@damage 1d6} Piercing damage on a hit.",
+						"You have {@variantrule Advantage|XPHB} on attack rolls you make with your Bite against {@variantrule Bloodied|XPHB} creatures."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Blood Hunter",
+					"entries": [
+						"You always know the location of any {@variantrule Bloodied|XPHB} creature within 120 feet of you, even behind total cover. While you have this knowledge, the target cannot benefit from the {@condition Invisible|XPHB} condition against you."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You have {@sense Darkvision|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Rampage",
+					"entries": [
+						"When you reduce an enemy to 0 {@variantrule Hit Points|XPHB}, you can immediately take a {@variantrule Reaction|XPHB} to move up to half your speed and make a weapon attack. You can also take this {@variantrule Reaction|XPHB} if someone else within 15 feet of you reduces an enemy to 0 {@variantrule Hit Points|XPHB}.",
+						"You can use this trait a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"The Gnolls of Altoras are hyena-like humanoids known for their savage martial prowess and distinctive cackle. Commonly found in the forests and plains of Cennverai, these people roam the land in clans, the Matriarch being both the most powerful warrior and the wisest leader. These clans are mostly self-sustaining through living off the land or raiding nearby trade caravans.",
+					"Their clan activities often lead to them avoiding civilization and being rejected in kind, but beyond the spurn for battle and the menacing laugh are a people capable of the strongest kinship. Those that leave their clans are almost never seen in solitary; Gnolls are powerful and staunch allies, always willing to put their life on the line for their chosen family."
+				]
+			}
+		},
+		{
+			"name": "Grung",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 5,
+			"edition": "one",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"size": [
+				"S"
+			],
+			"speed": {
+				"walk": 30,
+				"climb": true
+			},
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Small (about 2-4 feet tall)"
+				]
+			},
+			"resist": [
+				"poison"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Amphibious",
+					"entries": [
+						"You can breathe both air and water.<br> You also have a {@variantrule Climb Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Poison Resilience",
+					"entries": [
+						"You have {@variantrule Resistance|XPHB} to Poison damage. You also have {@variantrule Advantage|XPHB} on saving throws you make to end or avoid the {@condition Poisoned|XPHB} condition."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Poisonous Skin",
+					"entries": [
+						"Any creature that grapples you or otherwise comes into direct contact with your skin must succeed on a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or become {@condition Poisoned|XPHB} for 1 minute. A {@condition Poisoned|XPHB} creature no longer in direct contact with you can repeat the saving throw at the end of each of its turns, ending the condition on itself on a success.",
+						"You can also apply this poison to any weapon as part of an attack with that weapon. On hit, the target takes an additional {@damage 1d12} poison damage and must make a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the target is {@condition Poisoned|XPHB} for 1 minute. They can remake the save at the end of each of their turns, ending the condition on itself on a success. Once you use your poison in this way, you can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Standing Leap",
+					"entries": [
+						"Your {@variantrule Long Jump|XPHB} is up to 30 feet and your {@variantrule High Jump|XPHB} is up to 15 feet, with or without a running start."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"The Grung are brightly coloured frog-like humanoids that were originally subjects of the Yuan-ti, at the bottom of the social ladder. They are skilled hunters and assassins, using ambush tactics and their natural poisons to subdue enemies. The tough pads on their fingers and toes allow them to cling to nearly any surface, and stalk the jungle canopies away from danger and on the prowl.",
+					"Using their unique skill sets, they were eventually able to rebel against the Yuan-ti and create their own foothold in the jungles of Muhana and Jagara, forming tribes and their own caste system based on skin color."
+				]
+			}
+		},
+		{
+			"name": "Phytonid",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 6,
+			"edition": "one",
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"custom": "Humanoid and Plant"
+				}
+			},
+			"size": [
+				"M",
+				"S"
+			],
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 4-6 feet tall) or Small (about 3-4 feet tall), chosen when you gain this lineage"
+				]
+			},
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"entangle|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"spike growth|xphb"
+								]
+							}
+						}
+					},
+					"known": {
+						"1": [
+							"thorn whip|xphb"
+						]
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"nature": true,
+					"animal handling": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Ancestral Legacy",
+					"entries": [
+						"If you replace a species with this lineage, you can keep any Climb, Fly, or Swim Speeds you gained from it.",
+						"If you don't keep any of those elements or you choose this lineage at character creation, you gain proficiency in {@skill Nature|XPHB} and {@skill Animal Handling|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Phytosis",
+					"entries": [
+						"You have been changed by nature magic, a fact represented by the following benefits:",
+						{
+							"type": "list",
+							"items": [
+								"You have an ageless body after reaching maturity. You stop aging physically and cannot die of old age unless aged by magic.",
+								"You do not need to eat, though you can still sustain yourself off of food if you so choose.",
+								"You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Phytokinesis",
+					"entries": [
+						"You know the {@spell Thorn Whip|XPHB} cantrip. When you reach character level 3, you learn the {@spell Entangle|XPHB} spell and at character level 5, you learn the {@spell Spike Growth|XPHB} spell. You always have these spells prepared. You can cast them once without a spell slot, and you regain the ability to cast them in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast these spells using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Sun's Bounty",
+					"entries": [
+						"As a Magic action, you can grant yourself a shield of {@variantrule Temporary Hit Points|XPHB} equal to two times your {@variantrule Proficiency|XPHB|Proficiency Bonus}. When a hostile creature within 10 feet of you reduces those {@variantrule Temporary Hit Points|XPHB} to 0, it becomes under the effects of the {@spell Faerie Fire|XPHB} spell until the end of your next turn.",
+						"You can use this trait a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses after finishing a {@variantrule Long Rest|XPHB}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Requiem",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 7,
+			"edition": "one",
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"subtype": "requiem",
+					"custom": "Celestial and Humanoid"
+				}
+			},
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 5-7 feet tall)"
+				]
+			},
+			"resist": [
+				"thunder"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Discordant Melody",
+					"entries": [
+						"When you hit a target with an attack and deal damage to it, you can also deal {@damage 1d8} Thunder damage to that target. You can use this trait a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Elating Melody",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, a creature of your choice within 60 feet of you gains {@variantrule Temporary Hit Points|XPHB} equal to {@dice 1d8} + your {@variantrule Proficiency|XPHB|Proficiency Bonus}. You can use this {@variantrule Bonus Action|XPHB} a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Forged from Divinity",
+					"entries": [
+						"Your {@variantrule Hit Points|XPHB|Hit Point} maximum increases by 1, and it increases by 1 again whenever you gain a level."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Keen Senses",
+					"entries": [
+						"You have proficiency in the {@skill Perception|XPHB} skill. You also have {@variantrule Advantage|XPHB} on Wisdom ({@skill Perception|XPHB}) checks that rely on sound."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Sound Hardened",
+					"entries": [
+						"You have {@variantrule Resistance|XPHB} to Thunder damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Religious Performer",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on Charisma ({@skill Performance|XPHB}) checks that rely on singing, and when you {@action Utilize|XPHB} a {@item Musical Instrument|XPHB}."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"The Requiem are a displaced group of divine humanoids, survivors from a universe before this one that was completely unmade. The Requiem are innately tied to the Song of Creation, so while all felt the despair of the end of the Universe from facing their mortality, The Requiem also felt it innately, deeply connected to the very thing being unraveled. When their world was destroyed a small population fled aboard the Mythallar, a magic stasis pod that could sustain them outside of the Universe for millennia. Now, having woken from the Mythallar in a brand new world that's reminiscent of their lost one, they are trying to make Altoras a new home for the future generations born here connected to this reality.",
+					"Created by a long-dead god that preceded The Seven in the image of his lost daughter, most Requiem are born female-presenting with tall and slender features reminiscent of Elves. They mature at the same rate as Humans, but live slightly longer - up to 150 years - thanks to the divine resilience granted by their creator."
+				]
+			}
+		},
+		{
+			"name": "Satyr",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 8,
+			"edition": "one",
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"subtype": "satyr",
+					"custom": "Fey and Humanoid"
+				}
+			},
+			"size": [
+				"M",
+				"S"
+			],
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 4-6 feet tall) or Small (about 3-4 feet tall), chosen when you select this species"
+				]
+			},
+			"darkvision": 60,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"performance",
+							"persuasion"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Bounding Leaps",
+					"entries": [
+						"Your {@variantrule Long Jump|XPHB} distance is doubled, and you don't provoke Opportunity Attacks when jumping out of reach of a creature."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You have {@sense Darkvision|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Ancestry",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Charmed|XPHB} condition."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Guile",
+					"entries": [
+						"You have proficiency in the {@skill Performance|XPHB} or {@skill Persuasion|XPHB} skill."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ram",
+					"entries": [
+						"You have horns that count as a simple melee weapon you are proficient with and can be used to make Unarmed Strikes. Your horns have {@itemProperty F|XPHB|Finesse}, and deal {@damage 1d6} Bludgeoning damage on a hit."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Seasonal Shift",
+					"entries": [
+						"Each court has extra magic they bring to the Satyr as well as cosmetic changes. The physical changes can be dramatic or subtle and are tied to the season the court represents. Your chosen season grants you special abilities, as seen below. As a {@variantrule Bonus Action|XPHB}, you can shift between the court you draw your power from.",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Autumn Augury",
+									"entries": [
+										"As a {@variantrule Bonus Action|XPHB}, you can call on the changing seasons to guide your senses. Until the end of your next turn, you can see {@condition Invisible|XPHB} creatures and objects and creatures in the Ethereal Plane. Once you use this ability, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Spring Palms",
+									"entries": [
+										"Your words and songs carry healing magic with them. As an {@variantrule Action|XPHB}, you can make a Charisma ({@skill Performance|XPHB} or {@skill Persuasion|XPHB}) check. One creature of your choice within 60 feet of you that can see or hear you regains {@variantrule Hit Points|XPHB} equal to the check total. Once you use this ability, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Summersault",
+									"entries": [
+										"The summer breeze flows through your every move. When you fall, you reduce the damage you take by an amount equal to five times your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Winter Wallop",
+									"entries": [
+										"If you have moved at least 20 feet before hitting a target with your Ram, you can also deal a number of d6s equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus} in Cold damage to that target. Once you use this ability, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"Originating in the Feywild - a realm of pure emotion - satyrs thrive on the energy of merriment. They resemble elves but have goatlike legs, cloven hooves, and ram or goat horns. The magic of the fey realm has given them an innate ability to perform, to delight, and to resist magical intrusion. While they're usually found in the Feywild, satyrs do wander to other planes of existence, most often to the Material Plane. There they seek to bring a bit of their home plane's splendor to other worlds."
+				]
+			}
+		},
+		{
+			"name": "Tak'Garun Bugbear",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 9,
+			"edition": "one",
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"subtype": "goblinoid",
+					"custom": "Fey and Humanoid"
+				}
+			},
+			"size": [
+				"M",
+				"S"
+			],
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 4-7 feet tall) or Small (about 3-4 feet tall), chosen when you select this species"
+				]
+			},
+			"darkvision": 60,
+			"skillProficiencies": [
+				{
+					"stealth": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"calm emotions|xphb",
+									"sanctuary|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You have {@sense Darkvision|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Ancestry",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Charmed|XPHB} condition."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Opportunistic Hunter",
+					"entries": [
+						"Once per turn when you have {@variantrule Advantage|XPHB} on an attack roll, you deal an additional {@damage 1d6} damage on hit."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Long-Limbed",
+					"entries": [
+						"When you make a melee attack roll on your turn, your Reach is increased by 5 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Hidden Harrier",
+					"entries": [
+						"You have proficiency in the {@skill Stealth|XPHB} skill."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Springborn",
+					"entries": [
+						"When you reach character level 3, you always have the {@spell Sanctuary|XPHB} and {@spell Calm Emotions|XPHB} spells prepared. You can cast each of these once without a spell slot, and you regain the ability to cast them in this way when you finish a {@variantrule Long Rest|XPHB}. You can also cast these spells using any spell slots you have of the appropriate level.",
+						"Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when cast with this trait (choose the ability when you select this species)."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"Neither bugs nor bears, bugbears are the hulking cousins of goblins and hobgoblins. They are long of limb and covered in coarse hair, with wedge-shaped ears and pointed teeth.",
+					"Despite their formidable build, bugbears - known as Tak'Garun in their homeland of Arovatan - are a serene and disciplined people, grounded in the relentless pursuit of personal and communal excellence. Central to Tak'Garun philosophy is a steadfast commitment to tranquility and unwavering focus."
+				]
+			}
+		},
+		{
+			"name": "Yuan-ti Pureblood",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 10,
+			"foundrySystem": {
+				"type": {
+					"value": "custom",
+					"subtype": "yuan-ti",
+					"custom": "Humanoid and Monstrosity"
+				}
+			},
+			"edition": "one",
+			"size": [
+				"M",
+				"S"
+			],
+			"speed": 30,
+			"sizeEntry": {
+				"type": "item",
+				"name": "Size:",
+				"entries": [
+					"Medium (about 4-7 feet tall) or Small (about 3-4 feet tall), chosen when you select this species"
+				]
+			},
+			"darkvision": 60,
+			"additionalSpells": [
+				{
+					"known": {
+						"1": [
+							"lightning lure|tce",
+							"shocking grasp|xphb"
+						]
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"resist": [
+				"poison",
+				"lightning"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You have {@sense Darkvision|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Poison Resilience",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Poisoned|XPHB} condition on yourself. You also have {@variantrule Resistance|XPHB} to Poison damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Storm Born",
+					"entries": [
+						"You have {@variantrule Resistance|XPHB} to Lightning damage. You also know the {@spell Lightning Lure|TCE} and {@spell Shocking Grasp|XPHB} cantrips. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Magic Resistance",
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on Intelligence, Wisdom, and Charisma saving throws."
+					]
+				}
+			],
+			"fluff": {
+				"entries": [
+					"Alongside the Lizardfolk, The Yuan-ti of Altoras have dominated the jungles of Muhana and Jagara for untold centuries. Their folklore tells of them being blessed by The Storm Serpent: An ancient leviathan that roams the skies, heard only in the thunder of the storms above.",
+					"The appearance of Yuan-ti varies greatly from nearly human-like to nearly snake-like, but all have some serpentine features. Scale colors are usually simple greens and browns, but more elaborate swirls, stripes, or diamond patterns are possible, even in blues and reds.",
+					"In Yuan-ti society, the more serpentine features you possess, the higher your social status. This caste system divided the Yuan-ti into three notable subsections: Purebloods, who appeared mostly human, with minor reptilian features such as slit eyes, a forked tongue, or patches of scales on their skin. Halfbloods, also called Malisons, were humanoid in shape but had a wide variety of noticeable serpentine features, such as a snakelike tail in place of legs, a complete covering of scales, a hood like a cobra, a snake's head, or snakes in place of arms. At the top are Abominations, who are almost completely serpentine with only a few human features, such as arms or a humanoid head."
+				]
+			}
+		}
+	],
+	"foundryRaceFeature": [
+		{
+			"name": "Elating Melody",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Requiem",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/magic/control/debuff-energy-hold-levitate-yellow.webp",
+			"system": {
+				"activities": [
+					{
+						"type": "heal",
+						"activation.type": "bonus",
+						"range.value": "60",
+						"range.units": "ft",
+						"healing": {
+							"number": 1,
+							"denomination": 8,
+							"bonus": "@prof",
+							"types": [
+								"temphp"
+							]
+						},
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": "1"
+								}
+							]
+						}
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "Forged from Divinity",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Requiem",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/magic/life/heart-hand-gold-green-light.webp",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.hp.bonuses.level",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "Quills",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Kor'Rokka",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/magic/acid/projectile-needles-salvo-green.webp",
+			"system": {
+				"activities": [
+					{
+						"type": "attack",
+						"range.value": "90",
+						"range.units": "ft",
+						"damage.parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@prof",
+								"types": [
+									"piercing"
+								]
+							}
+						]
+					},
+					{
+						"type": "damage",
+						"activation.type": "special",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": 1
+								}
+							]
+						},
+						"damage.parts": [
+							{
+								"number": 2,
+								"denomination": 6,
+								"types": [
+									"poison"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "Seasonal Shift",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Satyr",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/creatures/abilities/wolf-heads-swirl-purple.webp",
+			"system": {
+				"activities": [
+					{
+						"type": "utility",
+						"name": "Change Seasons",
+						"activation.type": "bonus"
+					},
+					{
+						"type": "utility",
+						"name": "Autumnal Augury",
+						"activation.type": "bonus",
+						"consumption": {
+							"targets": [
+								{
+									"type": "activityUses",
+									"value": "1",
+									"scaling": {}
+								}
+							]
+						},
+						"duration": {
+							"units": "round",
+							"concentration": false,
+							"override": false,
+							"value": "1"
+						},
+						"uses": {
+							"spent": 0,
+							"recovery": [
+								{
+									"period": "sr",
+									"type": "recoverAll"
+								}
+							],
+							"max": "1"
+						}
+					},
+					{
+						"type": "utility",
+						"name": "Spring Palms",
+						"activation.type": "action",
+						"consumption": {
+							"targets": [
+								{
+									"type": "activityUses",
+									"value": "1"
+								}
+							]
+						},
+						"range": {
+							"value": "60",
+							"units": "ft"
+						},
+						"uses": {
+							"spent": 0,
+							"recovery": [
+								{
+									"period": "sr",
+									"type": "recoverAll"
+								}
+							],
+							"max": "1"
+						}
+					},
+					{
+						"type": "damage",
+						"name": "Winter Wallop",
+						"activation.type": "special",
+						"consumption": {
+							"targets": [
+								{
+									"type": "activityUses",
+									"value": "1",
+									"scaling": {}
+								}
+							]
+						},
+						"uses": {
+							"spent": 0,
+							"recovery": [
+								{
+									"period": "sr",
+									"type": "recoverAll"
+								}
+							],
+							"max": "1"
+						},
+						"damage.parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(@prof)d6"
+								},
+								"number": null,
+								"denomination": 0,
+								"types": [
+									"cold"
+								]
+							}
+						]
+					}					
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "Bite",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Gnoll",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+			"system": {
+				"activities": [
+					{
+						"type": "attack",
+						"damage.parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@prof",
+								"types": [
+									"piercing"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "Rampage",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Gnoll",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+			"system": {
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "reaction",
+						"consumption": {
+							"targets": [
+								{
+									"type": "itemUses",
+									"value": 1
+								}
+							]
+						}
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "Burrow Lineage (Gnasher)",
+			"source": "AltorasCharacterCreationOptions",
+			"raceName": "Burrowfolk",
+			"raceSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"activities": [
+					{
+						"type": "attack",
+						"damage.parts": [
+							{
+								"number": 1,
+								"denomination": 4,
+								"bonus": "@prof",
+								"types": [
+									"piercing"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
+		}
+	]
+}
