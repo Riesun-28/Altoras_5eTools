@@ -8,7 +8,13 @@
 				"version": "2.3",
 				"url": "Altoras",
 				"authors": [
-					"Riesun"
+					"dillyhue",
+					"Riesun_",
+					"infiniteimoc",
+					"Frogue",
+					"doublebeef",
+					"NAKKs",
+					"DM-Jay"
 				],
 				"convertedBy": [
 					"Riesun"
@@ -24,10 +30,9 @@
 		{
 			"name": "Accompanying Note",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 45,
+			"page": 63,
 			"level": 0,
 			"school": "V",
-			"foundryImg": "icons/magic/fire/dagger-rune-enchant-flame-strong-blue-yellow.webp",
 			"time": [
 				{
 					"number": 1,
@@ -47,11 +52,7 @@
 			},
 			"duration": [
 				{
-					"type": "timed",
-					"duration": {
-						"type": "round",
-						"amount": 1
-					}
+					"type": "instant"
 				}
 			],
 			"entries": [
@@ -63,7 +64,7 @@
 					"type": "entries",
 					"name": "Cantrip Upgrade",
 					"entries": [
-						"The damage increases by {@dice 1d4} when you reach levels 5 ({@dice 2d4}), 11 ({@dice 3d4}), and 17 ({@dice 4d4}). "
+						"The damage increases by +1 when you reach levels 5 (+2), 11 (+3), and 17 (+4). "
 					]
 				}
 			],
@@ -83,12 +84,13 @@
 			],
 			"areaTags": [
 				"ST"
-			]
+			],
+			"foundryImg": "icons/magic/fire/dagger-rune-enchant-flame-strong-blue-yellow.webp"
 		},
 		{
 			"name": "Blanche's Reactive Warding",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 46,
+			"page": 63,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -143,10 +145,9 @@
 		{
 			"name": "Commemorate to Stone",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 45,
+			"page": 63,
 			"level": 0,
 			"school": "T",
-			"foundryImg": "icons/magic/earth/projectile-moonrock-asteroid.webp",
 			"time": [
 				{
 					"number": 1,
@@ -209,15 +210,15 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"foundryImg": "icons/magic/earth/projectile-moonrock-asteroid.webp"
 		},
 		{
 			"name": "Earthen Revitalization",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 45,
+			"page": 63,
 			"level": 0,
 			"school": "A",
-			"foundryImg": "icons/magic/earth/explosion-lava-stone-green.webp",
 			"time": [
 				{
 					"number": 1,
@@ -280,15 +281,15 @@
 			],
 			"areaTags": [
 				"ST"
-			]
+			],
+			"foundryImg": "icons/magic/earth/explosion-lava-stone-green.webp"
 		},
 		{
 			"name": "Heighten Resilience",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 46,
+			"page": 64,
 			"level": 2,
 			"school": "A",
-			"foundryImg": "icons/magic/control/buff-strength-muscle-damage.webp",
 			"time": [
 				{
 					"number": 1,
@@ -336,15 +337,15 @@
 			},
 			"miscTags": [
 				"ADV"
-			]
+			],
+			"foundryImg": "icons/magic/control/buff-strength-muscle-damage.webp"
 		},
 		{
 			"name": "Infernal Strike",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 46,
+			"page": 64,
 			"level": 1,
 			"school": "V",
-			"foundryImg": "icons/magic/unholy/projectile-spear-glow-pink.webp",
 			"time": [
 				{
 					"number": 1,
@@ -406,15 +407,15 @@
 			],
 			"areaTags": [
 				"ST"
-			]
+			],
+			"foundryImg": "icons/magic/unholy/projectile-spear-glow-pink.webp"
 		},
 		{
 			"name": "Rebuke the Living",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 46,
+			"page": 64,
 			"level": 0,
-			"school": "A",
-			"foundryImg": "icons/magic/light/projectile-beam-yellow.webp",
+			"school": "V",
 			"time": [
 				{
 					"number": 1,
@@ -465,15 +466,15 @@
 			],
 			"areaTags": [
 				"ST"
-			]
+			],
+			"foundryImg": "icons/magic/light/projectile-beam-yellow.webp"
 		},
 		{
 			"name": "Scattershot",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 46,
+			"page": 64,
 			"level": 0,
 			"school": "V",
-			"foundryImg": "icons/magic/water/projectiles-ice-faceted-shard-salvo-gray.webp",
 			"time": [
 				{
 					"number": 1,
@@ -544,7 +545,8 @@
 			],
 			"areaTags": [
 				"N"
-			]
+			],
+			"foundryImg": "icons/magic/water/projectiles-ice-faceted-shard-salvo-gray.webp"
 		},
 		{
 			"name": "Snow Flurry Shot",
@@ -552,7 +554,6 @@
 			"page": 46,
 			"level": 1,
 			"school": "V",
-			"foundryImg": "icons/magic/water/projectiles-ice-explosion.webp",
 			"time": [
 				{
 					"number": 1,
@@ -604,15 +605,15 @@
 				"ADV",
 				"LGT",
 				"UBA"
-			]
+			],
+			"foundryImg": "icons/magic/water/projectiles-ice-explosion.webp"
 		},
 		{
 			"name": "Squemlish's Friend Zone",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 45,
+			"page": 64,
 			"level": 3,
 			"school": "A",
-			"foundryImg": "icons/magic/nature/plant-sprout-snow-green.webp",
 			"time": [
 				{
 					"number": 1,
@@ -672,15 +673,69 @@
 			],
 			"areaTags": [
 				"S"
-			]
+			],
+			"foundryImg": "icons/magic/nature/plant-sprout-snow-green.webp"
+		},
+		{
+			"name": "Style Shift",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 65,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "day",
+						"amount": 7
+					}
+				}
+			],
+			"entries": [
+				"You run your hands through a willing creature’s hair and change its color, shape, form, and length, up to 1 foot longer or shorter. If you cast the spell multiple times, you can have up to three creatures styled at a time, and you can dismiss its effects as an action."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			}
 		},
 		{
 			"name": "Zahlia's Collapsing Star",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 45,
+			"page": 65,
 			"level": 5,
 			"school": "V",
-			"foundryImg": "icons/magic/light/explosion-beam-impact-silhouette.webp",
 			"time": [
 				{
 					"number": 1,
@@ -750,14 +805,130 @@
 			],
 			"areaTags": [
 				"S"
-			]
+			],
+			"foundryImg": "icons/magic/light/explosion-beam-impact-silhouette.webp"
 		}
 	],
 	"monster": [
 		{
-			"name": "Contact",
+			"name": "Consort",
+			"shortName": true,
 			"source": "AltorasCharacterCreationOptions",
-			"page": 37,
+			"page": 48,
+			"size": [
+				"T"
+			],
+			"type": {
+				"type": {
+					"choose": [
+						"celestial",
+						"fey",
+						"fiend"
+					]
+				}
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "14 + PB"
+				}
+			],
+			"hp": {
+				"special": "4 + four times your Warlock level (The consort has a number of Hit Dice [d6s] equal to your Warlock level)"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 5,
+			"dex": 18,
+			"con": 10,
+			"int": 10,
+			"wis": 12,
+			"cha": 9,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"immune": [
+				{
+					"special": "The one listed in the Consort Details table"
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common and the one listed in the Consort Details table"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Evasion",
+					"entries": [
+						"When the consort is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails."
+					]
+				},
+				{
+					"name": "Flyby",
+					"entries": [
+						"The consort doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The consort has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Soul Link",
+					"entries": [
+						"The consort has all the Eldritch Invocations you have, excluding any Pact Boons. If an invocation has limited uses, those uses are shared between you and the consort. The consort’s spellcasting ability is Intelligence or Wisdom (choose when you choose this subclass)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Prick",
+					"entries": [
+						"{@atk mw} {@hit 4 + PB} to hit, reach 5 ft. {@h}{@damage 1 + PB} Piercing damage plus {@damage 1d6} damage of the same type as its listed immunity."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"familiar": true,
+			"traitTags": [
+				"Flyby",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
+			"name": "Contact",
+			"shortName": true,
+			"source": "AltorasCharacterCreationOptions",
+			"page": 55,
 			"size": [
 				"M",
 				"S"
@@ -801,13 +972,13 @@
 				{
 					"name": "Strike (Melee)",
 					"entries": [
-						"{@atk mw} {@hit 2 + PB} to hit, reach 5 ft. {@h}5 ({@damage 1d6 + 2}) Piercing damage."
+						"{@atk mw} {@hit 2 + PB} to hit, reach 5 ft. {@h}5 ({@damage 1d6 + 2}) Bludgeoning, Piercing, or Slashing damage."
 					]
 				},
 				{
 					"name": "Strike (Ranged)",
 					"entries": [
-						"{@atk rw} {@hit 2 + PB} to hit, range 20/60 ft. {@h}5 ({@damage 1d6 + 2}) Piercing damage."
+						"{@atk rw} {@hit 2 + PB} to hit, range 20/60 ft. {@h}5 ({@damage 1d6 + 2}) Bludgeoning, Piercing, or Slashing damage."
 					]
 				}
 			],
@@ -815,18 +986,18 @@
 				{
 					"name": "Body Block",
 					"entries": [
-						"{actTrigger} You take damage while your contact is within 15 feet of you. {actResponse} You have {@variantrule Resistance|XPHB} to all the damage from that instance and the contact takes the same amount of damage in turn."
+						"{@actTrigger} You take damage while your contact is within 15 feet of you. {@actResponse} You have {@variantrule Resistance|XPHB} to all the damage from that instance and the contact takes the same amount of damage in turn."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
 				"C"
-			],
-			"damageTags": [
-				"P"
 			],
 			"miscTags": [
 				"MW",
@@ -840,7 +1011,7 @@
 				"Squire"
 			],
 			"source": "AltorasCharacterCreationOptions",
-			"page": 24,
+			"page": 35,
 			"size": [
 				"M",
 				"S"
@@ -893,13 +1064,13 @@
 				{
 					"name": "Strike (Melee)",
 					"entries": [
-						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft. {@h}{@damage 1d6 + 3 + PB} Piercing damage."
+						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft. {@h}{@damage 1d6 + 3 + your Strength or Dexterity modifier} Piercing damage."
 					]
 				},
 				{
 					"name": "Strike (Ranged)",
 					"entries": [
-						"{@atk rw} {@hit 3 + PB} to hit, range 80 ft. {@h}{@damage 1d4 + 3 + PB} Piercing damage."
+						"{@atk rw} {@hit 3 + PB} to hit, range 80 ft. {@h}{@damage 1d4 + 3 + your Strength or Dexterity modifier} Piercing damage."
 					]
 				},
 				{
@@ -911,7 +1082,7 @@
 				{
 					"name": "Expose Weakness",
 					"entries": [
-						"{actSave con} One creature within 15 feet of the squire. {actSaveFail} The target is marked for 1 minute. The next time you or an ally hits the marked target, it has Vulnerability to all Bludgeoning, Piercing, or Slashing damage dealt by that attack, and the mark ends."
+						"{@actSave con} One creature within 15 feet of the squire. {@actSaveFail} The target is marked for 1 minute. The next time you or an ally hits the marked target, it has Vulnerability to all Bludgeoning, Piercing, or Slashing damage dealt by that attack, and the mark ends."
 					]
 				}
 			],
@@ -919,7 +1090,7 @@
 				{
 					"name": "Hideaway",
 					"entries": [
-						"{actTrigger} A creature ends its turn within 5 feet of you, the squire, or an ally within 30 feet of the squire. {actResponse} That creature can immediately take a {@variantrule Reaction|XPHB} to move up to their {@variantrule Speed|XPHB} without provoking Opportunity Attacks and use the Hide action."
+						"{@actTrigger} A creature ends its turn within 5 feet of you, the squire, or an ally within 30 feet of the squire. {@actResponse} That creature can immediately take a {@variantrule Reaction|XPHB} to move up to their {@variantrule Speed|XPHB} without provoking Opportunity Attacks and use the Hide action."
 					]
 				}
 			],
@@ -936,6 +1107,9 @@
 				"MW",
 				"RW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"savingThrowForcedSpell": [
 				"constitution"
 			]
@@ -947,7 +1121,7 @@
 				"Squire"
 			],
 			"source": "AltorasCharacterCreationOptions",
-			"page": 24,
+			"page": 36,
 			"size": [
 				"M",
 				"S"
@@ -1023,7 +1197,7 @@
 				{
 					"name": "Strike",
 					"entries": [
-						"{@atk rs} {@hit 3 + PB} to hit, range 60 ft. {@h}{@damage 1d6 + 3 + PB} Radiant damage."
+						"{@atk rs} {@hit 3 + PB} to hit, range 60 ft. {@h}{@damage 1d6 + 3 + your Strength or Dexterity modifier} Radiant damage."
 					]
 				}
 			],
@@ -1031,7 +1205,7 @@
 				{
 					"name": "Piety",
 					"entries": [
-						"{actTrigger} An allied creature within 30 feet of the squire is hit by an attack. {actResponse} The squire summons a divine ward to protect the ally. Roll a {@dice d6}, and subtract the number rolled from the attacker's attack roll."
+						"{@actTrigger} An allied creature within 30 feet of the squire is hit by an attack. {@actResponse} The squire summons a divine ward to protect the ally. Roll a {@dice d6}, and subtract the number rolled from the attacker's attack roll."
 					]
 				}
 			],
@@ -1049,103 +1223,20 @@
 			],
 			"miscTags": [
 				"RA"
-			]
-		},
-		{
-			"name": "Protector Squire",
-			"shortName": "Squire",
-			"group": [
-				"Squire"
 			],
-			"source": "AltorasCharacterCreationOptions",
-			"page": 23,
-			"size": [
-				"M",
-				"S"
-			],
-			"type": "humanoid",
-			"alignment": [
-				"A"
-			],
-			"ac": [
-				{
-					"special": "14 + your Strength or Dexterity modifier (your choice) "
-				}
-			],
-			"hp": {
-				"special": "6 + six times your Fighter level (the squire has a number of Hit Dice [d10s] equal to your Fighter level)"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 17,
-			"dex": 12,
-			"con": 15,
-			"int": 9,
-			"wis": 14,
-			"cha": 12,
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 12,
-			"languages": [
-				"Common"
-			],
-			"pbNote": "equals your Proficiency Bonus",
-			"trait": [
-				{
-					"name": "Training",
-					"entries": [
-						"Add your Proficiency Bonus to any ability check or saving throw the squire makes."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Strike",
-					"entries": [
-						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft., one target. {@h}{@damage 1d8 + 3 + PB} Bludgeoning, Piercing, or Slashing damage (your choice when you summon the squire)."
-					]
-				},
-				{
-					"name": "Defensive Wall",
-					"entries": [
-						"The squire holds their shield firm, granting {@variantrule Cover|XPHB|Half Cover} to all allied creatures within 5 feet of the squire until the start of its next turn."
-					]
-				},
-				{
-					"name": "Distraction",
-					"entries": [
-						"Opportunity Attacks made against the squire or allies within 15 feet of the squire are made at {@variantrule Disadvantage|XPHB} until the start of your next turn."
-					]
-				}
-			],
-			"reaction": [
-				{
-					"name": "Supporting Blow",
-					"entries": [
-						"{actTrigger} An allied creature within 15 feet of the squire takes damage. {actResponse} The squire immediately moves 15 feet and makes a single Strike attack against the attacker."
-					]
-				}
-			],
-			"senseTags": [
-				"D"
-			],
-			"languageTags": [
-				"C"
-			],
-			"miscTags": [
-				"MA"
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
 			]
 		},
 		{
 			"name": "Plantlife Protector",
-			"shortName": "Protector",
+			"shortName": true,
 			"group": [
 				"Protector"
 			],
 			"source": "AltorasCharacterCreationOptions",
-			"page": 16,
+			"page": 29,
 			"size": [
 				"M"
 			],
@@ -1210,7 +1301,7 @@
 				{
 					"name": "Slam",
 					"entries": [
-						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d4 + 2 + PB} Bludgeoning damage."
+						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d4 + 2 + your Wisdom modifier} Bludgeoning damage."
 					]
 				}
 			],
@@ -1218,7 +1309,7 @@
 				{
 					"name": "Steadfast Protector",
 					"entries": [
-						"{actTrigger} An attack hits another creature within 10 feet of the Protector. {actResponse} The attack hits the Protector instead."
+						"{@actTrigger} An attack hits another creature within 10 feet of the Protector. {@actResponse} The attack hits the Protector instead."
 					]
 				}
 			],
@@ -1228,18 +1319,108 @@
 			"languageTags": [
 				"CS"
 			],
+			"damageTags": [
+				"B"
+			],
 			"miscTags": [
 				"MA"
 			]
 		},
 		{
+			"name": "Protector Squire",
+			"shortName": "Squire",
+			"group": [
+				"Squire"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"page": 36,
+			"size": [
+				"M",
+				"S"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "14 + your Strength or Dexterity modifier (your choice) "
+				}
+			],
+			"hp": {
+				"special": "6 + six times your Fighter level (the squire has a number of Hit Dice [d10s] equal to your Fighter level)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 17,
+			"dex": 12,
+			"con": 15,
+			"int": 9,
+			"wis": 14,
+			"cha": 12,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Training",
+					"entries": [
+						"Add your Proficiency Bonus to any ability check or saving throw the squire makes."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft., one target. {@h}{@damage 1d8 + 3 + your Strength or Dexterity modifier} Bludgeoning, Piercing, or Slashing damage (your choice when you summon the squire)."
+					]
+				},
+				{
+					"name": "Defensive Wall",
+					"entries": [
+						"The squire holds their shield firm, granting {@variantrule Cover|XPHB|Half Cover} to all allied creatures within 5 feet of the squire until the start of its next turn."
+					]
+				},
+				{
+					"name": "Distraction",
+					"entries": [
+						"Opportunity Attacks made against the squire or allies within 15 feet of the squire are made at {@variantrule Disadvantage|XPHB} until the start of your next turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Supporting Blow",
+					"entries": [
+						"{@actTrigger} An allied creature within 15 feet of the squire takes damage. {@actResponse} The squire immediately moves 15 feet and makes a single Strike attack against the attacker."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
 			"name": "Sturdy Protector",
-			"shortName": "Protector",
+			"shortName": true,
 			"group": [
 				"Protector"
 			],
 			"source": "AltorasCharacterCreationOptions",
-			"page": 16,
+			"page": 29,
 			"size": [
 				"M",
 				"L"
@@ -1306,13 +1487,13 @@
 				{
 					"name": "Slam",
 					"entries": [
-						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d6 + 3 + PB} Bludgeoning damage."
+						"{@atkr m} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d6 + 3 + your Wisdom modifier} Bludgeoning damage."
 					]
 				},
 				{
 					"name": "Uprooted {@recharge 5}",
 					"entries": [
-						"{@actSave dex} DC equals your spell save DC, each creature in a 15-foot radius {@variantrule Emenation [Area of Effect]|XPHB|Emenation}. {actSaveFail} 18 ({@damage 4d8}) Bludgeoning damage and the target is {@condition Prone|XPHB}. {actSaveSuccess} Half damage and not {@condition Prone|XPHB}. {actSaveSuccessOrFail} The area is considered {@variantrule Difficult Terrain|XPHB} for enemy creatures for 1 minute."
+						"{@actSave dex} DC equals your spell save DC, each creature in a 15-foot radius {@variantrule Emenation [Area of Effect]|XPHB|Emenation}. {@actSaveFail} 18 ({@damage 4d8}) Bludgeoning damage and the target is {@condition Prone|XPHB}. {@actSaveSuccess} Half damage and not {@condition Prone|XPHB}. {@actSaveSuccessOrFail} The area is considered {@variantrule Difficult Terrain|XPHB} for enemy creatures for 1 minute."
 					]
 				}
 			],
@@ -1320,7 +1501,7 @@
 				{
 					"name": "Steadfast Protector",
 					"entries": [
-						"{actTrigger} An attack hits another creature within 10 feet of the Protector. {actResponse} The attack hits the Protector instead, and it has {@variantrule Resistance|XPHB} to the damage."
+						"{@actTrigger} An attack hits another creature within 10 feet of the Protector. {@actResponse} The attack hits the Protector instead, and it has {@variantrule Resistance|XPHB} to the damage."
 					]
 				}
 			],
@@ -1340,6 +1521,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"savingThrowForcedSpell": [
 				"dexterity"
 			]
@@ -1349,7 +1533,7 @@
 		{
 			"name": "Friends in Low Places",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 37,
+			"page": 55,
 			"category": "O",
 			"foundryImg": "icons/environment/people/group.webp",
 			"entries": [
@@ -1380,7 +1564,7 @@
 		{
 			"name": "Noble Bearing",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 37,
+			"page": 55,
 			"category": "O",
 			"foundryImg": "icons/magic/control/control-influence-crown-gold.webp",
 			"entries": [
@@ -1405,7 +1589,7 @@
 		{
 			"name": "Protector",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 37,
+			"page": 55,
 			"category": "O",
 			"foundryImg": "icons/skills/melee/shield-block-bash-blue.webp",
 			"entries": [
@@ -1430,7 +1614,7 @@
 		{
 			"name": "Acid Glands",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 37,
+			"page": 55,
 			"category": "G",
 			"foundryImg": "icons/magic/acid/dissolve-arm-flesh.webp",
 			"prerequisite": [
@@ -1464,7 +1648,7 @@
 		{
 			"name": "Amphibious",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/creatures/amphibians/frog-water-teal.webp",
 			"prerequisite": [
@@ -1517,7 +1701,7 @@
 		{
 			"name": "Artist's Creative Conjuring",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/skills/trades/academics-merchant-scribe.webp",
 			"prerequisite": [
@@ -1589,7 +1773,7 @@
 		{
 			"name": "Blood-Touched",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/skills/wounds/blood-cells-vessel-red.webp",
 			"prerequisite": [
@@ -1639,7 +1823,7 @@
 		{
 			"name": "Companion Trainer",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/environment/people/cavalry.webp",
 			"prerequisite": [
@@ -1676,7 +1860,7 @@
 		{
 			"name": "Familiar Trainer",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/creatures/mammals/spirit-deer-herd-blue.webp",
 			"prerequisite": [
@@ -1714,7 +1898,7 @@
 		{
 			"name": "Lovers' Duality",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 38,
+			"page": 56,
 			"category": "G",
 			"foundryImg": "icons/magic/life/heart-pink.webp",
 			"prerequisite": [
@@ -1809,7 +1993,7 @@
 		{
 			"name": "Paragon's Ward",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 39,
+			"page": 57,
 			"category": "G",
 			"foundryImg": "icons/magic/defensive/shield-barrier-blades-teal.webp",
 			"prerequisite": [
@@ -1891,7 +2075,7 @@
 		{
 			"name": "Poisonous",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 39,
+			"page": 57,
 			"category": "G",
 			"foundryImg": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
 			"prerequisite": [
@@ -1964,12 +2148,18 @@
 		{
 			"name": "Primal Mutation",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 39,
+			"page": 57,
 			"category": "G",
 			"foundryImg": "icons/creatures/claws/claw-talons-glowing-orange.webp",
 			"prerequisite": [
 				{
-					"level": 4
+					"level": 4,
+					"ability": [
+						{
+							"str": 13,
+							"dex": 13
+						}
+					]
 				}
 			],
 			"ability": [
@@ -1997,7 +2187,7 @@
 		{
 			"name": "Savant's Inquiry",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 39,
+			"page": 57,
 			"category": "G",
 			"foundryImg": "icons/skills/trades/academics-book-study-runes.webp",
 			"prerequisite": [
@@ -2096,7 +2286,7 @@
 		{
 			"name": "Shepherd's Embrace",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 40,
+			"page": 58,
 			"category": "G",
 			"foundryImg": "icons/magic/nature/plant-sproud-hands-dirt-green.webp",
 			"prerequisite": [
@@ -2179,7 +2369,7 @@
 		{
 			"name": "Tool Expert",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 40,
+			"page": 58,
 			"category": "G",
 			"foundryImg": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
 			"prerequisite": [
@@ -2232,7 +2422,7 @@
 		{
 			"name": "Warden's Bond",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 40,
+			"page": 58,
 			"category": "G",
 			"foundryImg": "icons/skills/social/diplomacy-unity-alliance.webp",
 			"prerequisite": [
@@ -2292,9 +2482,88 @@
 			]
 		},
 		{
+			"name": "Whip Master",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 58,
+			"category": "G",
+			"foundryImg": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+			"prerequisite": [
+				{
+					"level": 4,
+					"ability": [
+						{
+							"str": 13,
+							"dex": 13
+						}
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex"
+						]
+					}
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Ability Score Increase",
+					"entries": [
+						"Increase your Strength or Dexterity score by 1, to a maximum of 20."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Crack",
+					"entries": [
+						"When you hit a target with a whip as part of the {@action Attack|XPHB} action on your turn, you can cause the weapon to deal extra damage to the target. This damage equals your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Whip Mastery",
+					"entries": [
+						"Once per turn when you hit a creature no more than one sizer larger than you with a whip, you can force it to make a Strength or Dexterity saving throw (DC 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + the ability score modifier used to make the attack) or suffer one of the following effects:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "entries",
+									"name": "Disarm",
+									"entries": [
+										"The creature drops one item it is holding, which falls harmlessly to the ground in its space."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Grapple",
+									"entries": [
+										"The creature has the {@condition Grappled|XPHB} condition. While the creature is {@condition grappled} by your whip, you can't use it to make attacks at other targets until the grapple ends."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Trip",
+									"entries": [
+										"The creature falls {@condition Prone|XPHB}."
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Wings Unfurled",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 40,
+			"page": 58,
 			"category": "G",
 			"foundryImg": "icons/creatures/abilities/wing-batlike-purple-blue.webp",
 			"prerequisite": [
@@ -2320,7 +2589,7 @@
 					"changes": [
 						{
 							"key": "system.attributes.movement.fly",
-							"mode": 5,
+							"mode": "override",
 							"value": "@attributes.movement.walk"
 						}
 					]
@@ -2340,7 +2609,7 @@
 		{
 			"name": "Wolf's Challenge",
 			"source": "AltorasCharacterCreationOptions",
-			"page": 40,
+			"page": 58,
 			"category": "G",
 			"foundryImg": "icons/creatures/abilities/wolf-howl-moon-purple.webp",
 			"prerequisite": [
@@ -3543,7 +3812,7 @@
 								]
 							}
 						]
-					}					
+					}
 				]
 			},
 			"migrationVersion": 3
