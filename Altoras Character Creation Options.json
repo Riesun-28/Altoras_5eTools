@@ -1459,6 +1459,56 @@
 			}
 		}
 	],
+	"foundrySubclassFeature": [
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entryData": {
+				"additionalSpells": [
+					{
+						"known": {
+							"3": [
+								"charm person|xphb"
+							],
+							"6": [
+								"incite greed|ai"
+							]
+						}
+					}
+				]
+			},
+			"level": 3,
+			"name": "Bewitching Raiments",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entryData": {
+				"skillToolLanguageProficiencies": [
+					{
+						"choose": [
+							{
+								"from": [
+									"anySkill",
+									"anyTool",
+									"anyLanguage"
+								],
+								"count": 2
+							}
+						]
+					}
+				]
+			},
+			"level": 3,
+			"name": "Tips and Tricks",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		}
+	],
 	"monster": [
 		{
 			"ac": [
@@ -2633,9 +2683,9 @@
 				},
 				{
 					"entries": [
-						"You always know the location of any {@variantrule Bloodied|XPHB} creature within 120 feet of you, even behind total cover. While you have this knowledge, the target cannot benefit from the {@condition Invisible|XPHB} condition against you."
+						"As an action, you can increase your {@variantrule Speed|XPHB} by 60 feet until the end of your current turn."
 					],
-					"name": "Blood Hunter",
+					"name": "Sudden Rush",
 					"type": "entries"
 				},
 				{
@@ -2704,8 +2754,8 @@
 				},
 				{
 					"entries": [
-						"Any creature that grapples you or otherwise comes into direct contact with your skin must succeed on a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or become {@condition Poisoned|XPHB} for 1 minute. A {@condition Poisoned|XPHB} creature no longer in direct contact with you can repeat the saving throw at the end of each of its turns, ending the condition on itself on a success.",
-						"You can also apply this poison to any weapon as part of an attack with that weapon. On hit, the target takes an additional {@damage 1d12} poison damage and must make a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the target is {@condition Poisoned|XPHB} for 1 minute. They can remake the save at the end of each of their turns, ending the condition on itself on a success. Once you use your poison in this way, you can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+						"Any creature that grapples you or otherwise comes into direct contact with your skin must succeed on a Constitution saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or become {@condition Poisoned|XPHB} for 1 minute. A {@condition Poisoned|XPHB} creature no longer in direct contact with you can repeat the saving throw at the end of each of its turns, ending the condition on itself on a success.",
+						"You can also apply this poison to any weapon as part of an attack with that weapon. On hit, the target takes an additional {@damage 1d12} poison damage and must make a Constitution saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the target is {@condition Poisoned|XPHB} for 1 minute. They can remake the save at the end of each of their turns, ending the condition on itself on a success. Once you use your poison in this way, you can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
 					],
 					"name": "Poisonous Skin",
 					"type": "entries"
@@ -2764,7 +2814,7 @@
 				},
 				{
 					"entries": [
-						"As an action, you begin to sing a luring song. Choose a number of creatures up to or equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus} within 60 feet of you that can hear you. Those creatures must succeed on a Wisdom saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or be {@condition Charmed|XPHB} by you until the end of your next turn. While {@condition Charmed|XPHB}, if the target is more than 5 feet from you, the target must move on its turn towards you by the most direct route, trying to get within 5 feet of you. It doesn't avoid {@action Opportunity Attack|XPHB|Opportunity Attacks}; however, before moving into damaging terrain (such as lava or a pit) and whenever it takes damage, the target repeats the save, ending the effect on a success.",
+						"As an action, you begin to sing a luring song. Choose a number of creatures up to or equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus} within 60 feet of you that can hear you. Those creatures must succeed on a Wisdom saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or be {@condition Charmed|XPHB} by you until the end of your next turn. While {@condition Charmed|XPHB}, if the target is more than 5 feet from you, the target must move on its turn towards you by the most direct route, trying to get within 5 feet of you. It doesn't avoid {@action Opportunity Attack|XPHB|Opportunity Attacks}; however, before moving into damaging terrain (such as lava or a pit) and whenever it takes damage, the target repeats the save, ending the effect on a success.",
 						"On subsequent turns, you can use a {@variantrule Bonus Action|XPHB} to extend the duration of your song to the end of your next turn, up to a maximum of 1 minute. Your song ends early if you choose to end it (no action required), become {@condition Incapacitated|XPHB}, or die.",
 						"After this trait is used, it must be recharged. At the start of your turn, roll {@dice 1d6}. On a roll of 5+, this trait is recharged."
 					],
@@ -2858,7 +2908,7 @@
 				},
 				{
 					"entries": [
-						"As an action, you can force one creature you can see and that can see you within 30 feet to make a Wisdom saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier). Constructs and Undead succeed automatically. On a failed save, The target has the {@condition Unconscious|XPHB} condition for 10 minutes or until it takes damage or a creature within 5 feet of it takes an action to wake it. On a success, the target is immune to your Sleep Gaze for 24 hours.",
+						"As an action, you can force one creature you can see and that can see you within 30 feet to make a Wisdom saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). Constructs and Undead succeed automatically. On a failed save, The target has the {@condition Unconscious|XPHB} condition for 10 minutes or until it takes damage or a creature within 5 feet of it takes an action to wake it. On a success, the target is immune to your Sleep Gaze for 24 hours.",
 						"After this trait is used, it must be recharged. At the start of your turn, roll {@dice 1d6}. On a roll of 5+, this trait is recharged."
 					],
 					"name": "Sleep Gaze",
@@ -3321,7 +3371,7 @@
 				},
 				{
 					"entries": [
-						"As a Magic action, you can fire a jolt of lightning. Make a ranged spell attack at a target you can see within 60 feet of you. Constitution is your spellcasting ability for this attack. On a hit, the target takes {@damage 1d8} + your Constitution modifier in Lightning damage. If the target is a creature and you score a critical hit or exceed the target's AC by 5 or more, the creature can't take {@action Opportunity Attack|XPHB|Opportunity Attacks} until the start of its next turn.",
+						"As a Magic action, you can fire a jolt of lightning. Make a ranged spell attack at a target you can see within 60 feet of you. Constitution, Intelligence, Wisdom, or Charisma is your spellcasting ability for this attack (you choose when you select this species). On a hit, the target takes {@damage 1d8} + the ability score modifer used in the attack in Lightning damage. If the target is a creature and you score a critical hit or exceed the target's AC by 5 or more, the creature can't take {@action Opportunity Attack|XPHB|Opportunity Attacks} until the start of its next turn.",
 						"This damage increases by {@dice 1d8} at character levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
 					],
 					"name": "Lightning Jolt",
@@ -3409,7 +3459,7 @@
 						"entries": {
 							"items": {
 								"entries": [
-									"You have tendrils which are simple melee weapons that you are proficient with and can be used to make Unarmed Strikes. They have {@itemProperty F|XPHB|Finesse} and deal {@damage 1d6} Bludgeoning damage on a hit. Once per turn when you hit a creature with your tendrils, you can force it to make a Constitution saving throw (DC = 8 + {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or be {@condition Poisoned|XPHB} until the end of its next turn."
+									"You have tendrils which are simple melee weapons that you are proficient with and can be used to make Unarmed Strikes. They have {@itemProperty F|XPHB|Finesse} and deal {@damage 1d6} Bludgeoning damage on a hit. Once per turn when you hit a creature with your tendrils, you can force it to make a Constitution saving throw (DC 10 + {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Poisoned|XPHB} until the end of its next turn."
 								],
 								"name": "Mutation (Stinging Tendrils)",
 								"type": "entries"
@@ -3601,7 +3651,7 @@
 				"As a lamia, you have these special traits.",
 				{
 					"entries": [
-						"When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with a corrupting touch, forcing one creature within 5 feet of you to make a Wisdom saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier). On a failed save, the creature takes {@damage 1d8} Psychic damage. If it fails by 5 or more, it is also {@condition Charmed|XPHB} until the end of your next turn.",
+						"When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with a corrupting touch, forcing one creature within 5 feet of you to make a Wisdom saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the creature takes {@damage 1d8} Psychic damage. If it fails by 5 or more, it is also {@condition Charmed|XPHB} until the end of your next turn.",
 						"This damage increases by {@dice 1d8} when you reach character levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
 					],
 					"name": "Corrupting Touch",
@@ -3740,7 +3790,7 @@
 				},
 				{
 					"entries": [
-						"As a Magic action, each creature in a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} must succeed on a Constitution saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or be {@condition Restrained|XPHB}. The target remakes this save at the end of each of its turns, ending the effect on a success, or becoming {@condition Petrified|XPHB} instead of {@condition Restrained|XPHB} on a second failed save.",
+						"As a Magic action, each creature in a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} must succeed on a Constitution saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Restrained|XPHB}. The target remakes this save at the end of each of its turns, ending the effect on a success, or becoming {@condition Petrified|XPHB} instead of {@condition Restrained|XPHB} on a second failed save.",
 						"After this trait is used, it must be recharged. At the start of your turn, roll {@dice 1d6}. On a roll of 5+, this trait is recharged."
 					],
 					"name": "Petrifying Gaze",
@@ -3748,7 +3798,7 @@
 				},
 				{
 					"entries": [
-						"When you take the {@action Attack|XPHB} action on your turn, you can replace any attack with a poison ray. This ray is a ranged spell attack with a range of 120 feet, and deals Poison damage equal to {@dice 1d10} + your Constitution modifier on a hit. Constitution is your spellcasting ability modifier for your ray."
+						"When you take the {@action Attack|XPHB} action on your turn, you can replace any attack with a poison ray. This ray is a ranged spell attack with a range of 120 feet. Your spellcasting ability for the ray is Constitution, Intelligence, Wisdom, or Charisma (you choose when you select this species). On a hit, it deals Poison damage equal to {@dice 1d10} + the ability score modifier used for the attack."
 					],
 					"name": "Poison Ray",
 					"type": "entries"
@@ -3825,7 +3875,7 @@
 				},
 				{
 					"entries": [
-						"As a {@variantrule Bonus Action|XPHB}, you can force a shark within 120 feet of yourself to make a Wisdom saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or be {@condition Charmed|XPHB} by you. While {@condition Charmed|XPHB} in this way, you have complete control over it, and can give it commands on your turn as a free action using a special telepathy. This control lasts until the shark is more than 120 feet away from you, or you become {@condition Incapacitated|XPHB} or die."
+						"As a {@variantrule Bonus Action|XPHB}, you can force a shark within 120 feet of yourself to make a Wisdom saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Charmed|XPHB} by you. While {@condition Charmed|XPHB} in this way, you have complete control over it, and can give it commands on your turn as a free action using a special telepathy. This control lasts until the shark is more than 120 feet away from you, or you become {@condition Incapacitated|XPHB} or die."
 					],
 					"name": "Shark Telepathy",
 					"type": "entries"
@@ -3833,10 +3883,8 @@
 			],
 			"fluff": {
 				"entries": [
-					"When the magic that once transformed the yuan-ti mutated, the medusa were born. Unlike their yuan-ti cousins, however, medusae see their powers as a curse.",
-					"Though many still live in yuan-ti enclaves, the divide between the two peoples has grown steadily over time. Medusae don't fit in the traditional caste system, and their clear disdain for their \"gifts\" further expands the rift.",
-					"It's not uncommon for medusae to pursue solitary paths, spending time away to control their petrifying powers or carve their own path. Some have even founded monastic traditions deep in the jungles, using meditation and the monastic lifestyle to find inner peace and camaraderie.",
-					"Typical medusae have scaly skin of earthy colours, ranging from light browns to deep blacks. Their infamous petrifying gaze is noted in the intense red glow of their eyes and, instead of hair, their heads are covered in a mass of living venomous serpents."
+					"In the waters between Unvollar and the Planes of Ruin reside the kingdoms of the sahuagin. These monstrous aquatic humanoids are known as 'sea devils' to the coastal communities, a reputation they've earned being some of the most fearsome raiders in the sea. Each sahuagin kingdom is ruled by a Baron -- a mutated sahuagin with four arms -- and are constantly in conflict with all manner of sea-faring folk: triton, sea elves, kor'rokka, any vessels that cross their territory, and especially other sahuagin kingdoms. Sahuagin often attack alongside sharks, which they can telepathically command.",
+					"Though a rare sight, some sahuagin have grown tired of unending competition and leave their kingdoms to put their strength elsewhere. These few can be found aiding merchant vessels in maneuvering dangerous waters, as marines and boarders on pirate ships, or as adventurers gaining a new reputation of their own."
 				]
 			},
 			"foundrySystem": {
@@ -3897,12 +3945,12 @@
 			],
 			"entries": [
 				"With a flourish, you make one attack with the weapon used in the spell's casting. If the attack deals damage, the target also takes {@damage 1d4} Thunder damage.",
-				"Hit or miss, choose one ally within 30 feet of the target. That ally gains a +1 bonus on the first attack roll they make against the target until the start of your next turn."
+				"Hit or miss, you choose one ally within 30 feet of the target. That ally gains a +2 bonus on the first attack roll they make against the same target. This bonus lasts until the start of your next turn."
 			],
 			"entriesHigherLevel": [
 				{
 					"entries": [
-						"The damage increases by +1 when you reach levels 5 (+2), 11 (+3), and 17 (+4). "
+						"The damage increases by {@dice 1d4} and the bonus to your ally's attack roll increases by +1 when you reach levels 5 ({@dice 2d4} and +3), 11 ({@dice 3d4} and +4), and 17 ({@dice 4d4} and +5). "
 					],
 					"name": "Cantrip Upgrade",
 					"type": "entries"
@@ -3931,19 +3979,93 @@
 			]
 		},
 		{
+			"areaTags": [
+				"ST"
+			],
 			"classes": {
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"s": true,
+				"v": true
+			},
+			"duration": [
+				{
+					"duration": {
+						"amount": 8,
+						"type": "hour"
+					},
+					"type": "timed"
+				}
+			],
+			"entries": [
+				"You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse at the DM’s discretion. Some examples are:",
+				"- While cursed, the target loses one Resistance or Immunity.",
+				"- While cursed, the target loses proficiency in one skill or saving throw.",
+				"- While cursed, the target has Disadvantage on all {@dice D20} Tests.",
+				"- While cursed, the target loses the ability to cast spells or use a certain action"
+			],
+			"entriesHigherLevel": [
+				{
+					"entries": [
+						"If cast at Level 7 or 8, the duration extends to 24 hours. If cast at Level 9, the curse is permanent until dispelled."
+					],
+					"name": "Using a Higher-Level Spell Slot",
+					"type": "entries"
+				}
+			],
+			"level": 6,
+			"name": "Bestow Greater Curse",
+			"page": 63,
+			"range": {
+				"distance": {
+					"type": "touch"
+				},
+				"type": "point"
+			},
+			"savingThrow": [
+				"wisdom"
+			],
+			"school": "N",
+			"source": "AltorasCharacterCreationOptions",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		},
+		{
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
 					},
 					{
 						"name": "Artificer",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -3967,7 +4089,7 @@
 				"MAC"
 			],
 			"name": "Blanche's Reactive Warding",
-			"page": 63,
+			"page": 64,
 			"range": {
 				"distance": {
 					"amount": 30,
@@ -3990,31 +4112,31 @@
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Bard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Artificer",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Druid",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Ranger",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4040,7 +4162,7 @@
 			"foundryImg": "icons/magic/earth/projectile-moonrock-asteroid.webp",
 			"level": 0,
 			"name": "Commemorate to Stone",
-			"page": 63,
+			"page": 64,
 			"range": {
 				"distance": {
 					"type": "touch"
@@ -4064,23 +4186,102 @@
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
-						"name": "Bard",
-						"source": "PHB"
+						"name": "Artificer",
+						"source": "TCE"
 					},
 					{
 						"name": "Cleric",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Druid",
-						"source": "PHB"
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"s": true,
+				"v": true
+			},
+			"damageInflict": [
+				"fire"
+			],
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Make a ranged spell attack at a target within range. On a hit, the target takes {@damage 1d8} Fire damage and begins Burning.",
+				"Alternatively, if there is a Burning creature or object within range, you can cause the fire to jump to a new target. Make a ranged spell attack at a target within 30 feet of the Burning creature or object. On a hit, the target takes {@damage 1d8} Fire damage and begins Burning."
+			],
+			"entriesHigherLevel": [
+				{
+					"entries": [
+						"The damage increases by {@dice 1d8} at levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
+					],
+					"name": "Cantrip Upgrade",
+					"type": "entries"
+				}
+			],
+			"level": 0,
+			"name": "Controlled Blaze",
+			"page": 64,
+			"range": {
+				"distance": {
+					"amount": 60,
+					"type": "feet"
+				},
+				"type": "point"
+			},
+			"school": "V",
+			"source": "AltorasCharacterCreationOptions",
+			"spellAttack": [
+				"R"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		},
+		{
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4110,7 +4311,7 @@
 				"HL"
 			],
 			"name": "Earthen Revitalization",
-			"page": 63,
+			"page": 64,
 			"range": {
 				"distance": {
 					"amount": 30,
@@ -4132,19 +4333,19 @@
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Bard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4185,25 +4386,96 @@
 		},
 		{
 			"areaTags": [
+				"MT",
+				"N"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"m": "a melee weapon with which you have proficiency",
+				"s": true
+			},
+			"damageInflict": [
+				"necrotic"
+			],
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You imbue your blade with necrotic power and slash forward, projecting a wave of energy in a 15-foot Cone. Each creature in that area must make a Wisdom saving throw. On failed save, the creature takes {@damage 3d6} Necrotic damage and subtracts {@dice 1d4} from attacks rolls and saving throws until the end of your next turn. On a success, the creature takes half damage and suffers no other effects."
+			],
+			"entriesHigherLevel": [
+				{
+					"entries": [
+						"The damage increases by {@dice 1d6} for each spell slot level above 2."
+					],
+					"name": "Using a Higher-Level Spell Slot",
+					"type": "entries"
+				}
+			],
+			"level": 2,
+			"name": "Hex Wave",
+			"page": 64,
+			"range": {
+				"distance": {
+					"amount": 15,
+					"type": "feet"
+				},
+				"type": "cone"
+			},
+			"savingThrow": [
+				"wisdom"
+			],
+			"school": "N",
+			"source": "AltorasCharacterCreationOptions",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		},
+		{
+			"areaTags": [
 				"ST"
 			],
 			"classes": {
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Bard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4234,7 +4506,7 @@
 			"foundryImg": "icons/magic/unholy/projectile-spear-glow-pink.webp",
 			"level": 1,
 			"name": "Infernal Strike",
-			"page": 64,
+			"page": 65,
 			"range": {
 				"distance": {
 					"type": "self"
@@ -4260,8 +4532,93 @@
 			"classes": {
 				"fromClassList": [
 					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
 						"name": "Cleric",
-						"source": "PHB"
+						"source": "XPHB"
+					},
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"m": {
+					"consume": true,
+					"cost": 500000,
+					"text": "a talisman worth 5,000+ GP, which the spell consumes"
+				},
+				"s": true,
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"With the wave of a hand and a simple command, you force a target creature within range to make a Constitution saving throw. On a failed save, the target's soul is corrupted, giving them the {@condition Incapacitated|XPHB} condition and reducing their Strength, Dexterity, and Constitution scores to 5. On a successful save, the target suffers no ill effects, and the spell ends.",
+				"At the start of your next turn, the target must then make a Charisma saving throw. On a failed save, the creatures soul is obliterated and it dies. This soul obliteration bypasses any other effect that would negate instant kills, and the creature cannot be revived by any means other than the Wish spell. On a successful save, the spell ends."
+			],
+			"level": 9,
+			"name": "Obliterate",
+			"page": 65,
+			"range": {
+				"distance": {
+					"amount": 60,
+					"type": "feet"
+				},
+				"type": "point"
+			},
+			"savingThrow": [
+				"constitution",
+				"charisma"
+			],
+			"school": "N",
+			"source": "AltorasCharacterCreationOptions",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		},
+		{
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4270,7 +4627,8 @@
 				"v": true
 			},
 			"damageInflict": [
-				"radiant"
+				"piercing",
+				"psychic"
 			],
 			"duration": [
 				{
@@ -4278,21 +4636,20 @@
 				}
 			],
 			"entries": [
-				"A bead of white energy streaks toward a creature within range. Make a ranged spell attack. On a hit, the target takes {@damage 1d8} Radiant damage. If the target is not missing any of its hit points, it instead takes {@damage 1d12} Radiant damage."
+				"You conjure a harpoon of psionic energy and hurl it at a target within range. Make a ranged spell attack at the target. On a hit, the target takes {@damage 1d4} Piercing damage and {@damage 1d4} Psychic damage."
 			],
 			"entriesHigherLevel": [
 				{
 					"entries": [
-						"The damage increases by one die when you reach levels 5 ({@dice 2d8} or {@dice 2d12}), 11 ({@dice 3d8} or {@dice 3d12}), and 17 ({@dice 4d8} or {@dice 4d12})."
+						"The damage increases by {@dice 1d4} for both damage types at levels 5 ({@dice 2d4} and {@dice 2d4}), 11 ({@dice 3d4} and {@dice 3d4}), and 17 ({@dice 4d4} and {@dice 4d4})."
 					],
 					"name": "Cantrip Upgrade",
 					"type": "entries"
 				}
 			],
-			"foundryImg": "icons/magic/light/projectile-beam-yellow.webp",
 			"level": 0,
-			"name": "Rebuke the Living",
-			"page": 64,
+			"name": "Psionic Harpoon",
+			"page": 65,
 			"range": {
 				"distance": {
 					"amount": 60,
@@ -4319,28 +4676,28 @@
 			"classes": {
 				"fromClassList": [
 					{
-						"name": "Wizard",
-						"source": "PHB"
-					},
-					{
 						"name": "Artificer",
-						"source": "PHB"
+						"source": "TCE"
 					},
 					{
 						"name": "Bard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Druid",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4371,7 +4728,7 @@
 			"foundryImg": "icons/magic/water/projectiles-ice-faceted-shard-salvo-gray.webp",
 			"level": 0,
 			"name": "Scattershot",
-			"page": 64,
+			"page": 65,
 			"range": {
 				"distance": {
 					"amount": 10,
@@ -4392,11 +4749,85 @@
 			]
 		},
 		{
+			"areaTags": [
+				"N"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"s": true,
+				"v": true
+			},
+			"conditionInflict": [
+				"frightened"
+			],
+			"damageInflict": [
+				"necrotic",
+				"thunder"
+			],
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You channel your anger and release a scornful wail in a 30-foot Cone. Each creature in that area must succeed on a Constitution saving throw or take {@damage 3d6} Necrotic damage plus {@damage 3d6} Thunder damage and gain the {@condition Frightened|XPHB} condition until the start of your next turn. On a success, the creature takes half damage and is not {@condition Frightened|XPHB}."
+			],
+			"entriesHigherLevel": [
+				{
+					"entries": [
+						"The Necrotic or Thunder damage (your choice) increases by {@dice 1d6} for each spell slot level above 3."
+					],
+					"name": "Using a Higher-Level Spell Slot",
+					"type": "entries"
+				}
+			],
+			"level": 3,
+			"name": "Scornful Scream",
+			"page": 65,
+			"range": {
+				"distance": {
+					"amount": 30,
+					"type": "feet"
+				},
+				"type": "cone"
+			},
+			"savingThrow": [
+				"constitution"
+			],
+			"school": "V",
+			"source": "AltorasCharacterCreationOptions",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		},
+		{
 			"classes": {
 				"fromClassList": [
 					{
 						"name": "Ranger",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4432,7 +4863,7 @@
 				"UBA"
 			],
 			"name": "Snow Flurry Shot",
-			"page": 46,
+			"page": 65,
 			"range": {
 				"distance": {
 					"type": "self"
@@ -4459,11 +4890,11 @@
 				"fromClassList": [
 					{
 						"name": "Druid",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
 						"name": "Ranger",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -4502,7 +4933,7 @@
 				"THP"
 			],
 			"name": "Squemlish's Friend Zone",
-			"page": 64,
+			"page": 66,
 			"range": {
 				"distance": {
 					"amount": 30,
@@ -4557,7 +4988,7 @@
 			],
 			"level": 0,
 			"name": "Style Shift",
-			"page": 65,
+			"page": 66,
 			"range": {
 				"distance": {
 					"type": "touch"
@@ -4575,81 +5006,1296 @@
 		},
 		{
 			"areaTags": [
-				"S"
+				"ST"
 			],
 			"classes": {
 				"fromClassList": [
 					{
 						"name": "Wizard",
-						"source": "PHB"
+						"source": "XPHB"
 					},
 					{
-						"name": "Sorcerer",
-						"source": "PHB"
+						"name": "Cleric",
+						"source": "XPHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
 			"components": {
-				"m": "a grain of sand and a small piece of coal",
 				"s": true,
 				"v": true
 			},
 			"damageInflict": [
-				"cold",
-				"fire",
-				"radiant"
+				"necrotic"
 			],
 			"duration": [
 				{
-					"concentration": true,
-					"duration": {
-						"amount": 5,
-						"type": "round",
-						"upTo": true
-					},
-					"type": "timed"
+					"type": "instant"
 				}
 			],
 			"entries": [
-				"Choose a point you can see within range. A rapidly expanding star appears in a 5-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point.",
-				"Each creature in that area must make a Strength saving throw. On a failed save, the creature takes {@dice 1d8} Radiant, {@dice 1d8} Cold, and {@damage 1d8} Fire damage, or half as much on a success. A creature also makes that save if it enters the area or ends its turn there. A creature makes that save only once per turn.",
-				"At the start of each of your turns, the radius of the star expands by 5 feet. When the spell ends, the star explodes in a 20-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere}, plus another 5 feet radius for every round you maintain {@status Concentration|XPHB}. Each creature in that area must make a Dexterity saving throw. On a failed save, the creature takes {@dice 1d8} Radiant, {@dice 1d8} Cold, and {@damage 1d8} Fire damage, plus another {@dice 1d8} of each damage type for every round you maintain {@status Concentration|XPHB}."
+				"You fire a bolt of withering energy at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} Necrotic damage and subtracts {@dice 1d4} from the next attack roll it makes before the end of your next turn."
 			],
 			"entriesHigherLevel": [
 				{
 					"entries": [
-						"The damage increases by {@dice 1d8} for each spell slot level above 5."
+						"The damage increases by {@dice 1d8} at levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
 					],
-					"name": "Using a Higher-Level Spell Slot",
+					"name": "Cantrip Upgrade",
 					"type": "entries"
 				}
 			],
-			"foundryImg": "icons/magic/light/explosion-beam-impact-silhouette.webp",
-			"level": 5,
-			"name": "Zahlia's Collapsing Star",
-			"page": 65,
+			"level": 0,
+			"name": "Withering Bolt",
+			"page": 66,
 			"range": {
 				"distance": {
-					"amount": 120,
+					"amount": 90,
 					"type": "feet"
 				},
 				"type": "point"
 			},
-			"savingThrow": [
-				"strength"
-			],
-			"school": "V",
+			"school": "N",
 			"source": "AltorasCharacterCreationOptions",
+			"spellAttack": [
+				"R"
+			],
 			"time": [
 				{
 					"number": 1,
 					"unit": "action"
 				}
 			]
+		},
+		{
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"m": "a ranged weapon with which you have proficiency and that is worth 1+ CP",
+				"s": true
+			},
+			"damageInflict": [
+				"necrotic"
+			],
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Channeling the energies of death in the projectile, you make one ranged attack with the weapon used in the spell's casting. If the attack deals damage, it deals an extra {@damage 2d6} Necrotic damage and destabilizes the targets life force. Until the end of your next turn, whenever you or an ally hits the target with a weapon attack, they regain {@dice 1d4} Hit Points."
+			],
+			"entriesHigherLevel": [
+				{
+					"entries": [
+						"The damage increases by {@dice 1d6} and the healing increases by {@dice 1d4} for each spell slot level above 2."
+					],
+					"name": "Using a Higher-Level Spell Slot",
+					"type": "entries"
+				}
+			],
+			"level": 2,
+			"miscTags": [
+				"HL"
+			],
+			"name": "Wraith Strike",
+			"page": 66,
+			"range": {
+				"distance": {
+					"type": "self"
+				},
+				"type": "point"
+			},
+			"school": "N",
+			"source": "AltorasCharacterCreationOptions",
+			"spellAttack": [
+				"R"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"name": "College of the Arcane Tailor",
+			"shortName": "Arcane Tailor",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"College of the Arcane Tailor|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
+				"A Tailored Experience|Bard||Arcane Tailor|AltorasCharacterCreationOptions|6",
+				"It's All in the Stitching|Bard||Arcane Tailor|AltorasCharacterCreationOptions|14"
+			]
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"name": "College of the Dragon Song",
+			"shortName": "Dragon Song",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"College of the Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
+				"Draconic Mantle|Bard||Dragon Song|AltorasCharacterCreationOptions|6",
+				"Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|14"
+			]
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"name": "Path of the Bone Carver",
+			"shortName": "Bone Carver",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Path of the Bone Carver|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+				"Digging Deeper|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
+				"Channeled Fury|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
+				"It's In Your Bones|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14"
+			]
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"name": "Dedication Domain",
+			"shortName": "Dedication",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Dedication Domain|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+				"Practiced Proficiency|Cleric||Dedication|AltorasCharacterCreationOptions|6",
+				"Focused Dedication|Cleric||Dedication|AltorasCharacterCreationOptions|17"
+			],
+			"subclassSpells": [
+				"bless",
+				"borrowed knowledge",
+				"enhance ability",
+				"gift of alacrity",
+				"crusader's mantle",
+				"motivational speech",
+				"aura of life",
+				"freedom of movement",
+				"greater restoration",
+				"skill empowerment"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"bless|XPHB",
+							"borrowed knowledge|SCC",
+							"enhance ability|XPHB",
+							"gift of alacrity|EGW"
+						],
+						"5": [
+							"crusader's mantle|XPHB",
+							"motivational speech|AI"
+						],
+						"7": [
+							"aura of life|XPHB",
+							"freedom of movement|XPHB"
+						],
+						"9": [
+							"greater restoration|XPHB",
+							"skill empowerment|XGE"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"name": "Venom Domain",
+			"shortName": "Venom",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Venom Domain|Cleric||Venom|AltorasCharacterCreationOptions|3",
+				"Divination Master|Cleric||Venom|AltorasCharacterCreationOptions|6",
+				"Fated Delirium|Cleric||Venom|AltorasCharacterCreationOptions|6",
+				"Precognitive Trance|Cleric||Venom|AltorasCharacterCreationOptions|17"
+			],
+			"subclassSpells": [
+				"augury",
+				"comprehend languages",
+				"see invisibilty",
+				"ray of sickness",
+				"stinking cloud",
+				"tongues",
+				"arcane eye",
+				"blight",
+				"cloudkill",
+				"contagion"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"augury|XPHB",
+							"comprehend languages|XPHB",
+							"poison spray|XPHB",
+							"see invisibility|XPHB",
+							"ray of sickness|XPHB"
+						],
+						"5": [
+							"stinking cloud|XPHB",
+							"tongues|XPHB"
+						],
+						"7": [
+							"arcane eye|XPHB",
+							"blight|XPHB"
+						],
+						"9": [
+							"cloudkill|XPHB",
+							"contagion|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"name": "Circle of the False Moon",
+			"shortName": "False Moon",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Circle of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
+				"Searing Radiance|Druid||False Moon|AltorasCharacterCreationOptions|6",
+				"Blistering Moonlight|Druid||False Moon|AltorasCharacterCreationOptions|10",
+				"Borrowed Aptitude|Druid||False Moon|AltorasCharacterCreationOptions|14"
+			],
+			"subclassSpells": [
+				"mirror image",
+				"sacred flame",
+				"silent image",
+				"hypnotic pattern",
+				"greater invisibility",
+				"dream"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"mirror image|XPHB",
+							"sacred flame|XPHB",
+							"silent image|XPHB"
+						],
+						"5": [
+							"hypnotic pattern|XPHB"
+						],
+						"7": [
+							"greater invisibility|XPHB"
+						],
+						"9": [
+							"dream|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"name": "Circle of the Grove",
+			"shortName": "Grove",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Circle of the Grove|Druid||Grove|AltorasCharacterCreationOptions|3",
+				"Connected Roots|Druid||Grove|AltorasCharacterCreationOptions|6",
+				"Sturdy Bark|Druid||Grove|AltorasCharacterCreationOptions|10",
+				"The Grove's Champion|Druid||Grove|AltorasCharacterCreationOptions|14"
+			],
+			"subclassSpells": [
+				"create or destroy water",
+				"locate animals or plants",
+				"thorn whip",
+				"plant growth",
+				"guardian of nature",
+				"commune with nature"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"create or destroy water|XPHB",
+							"locate animals or plants|XPHB",
+							"thorn whip|XPHB"
+						],
+						"5": [
+							"plant growth|XPHB"
+						],
+						"7": [
+							"guardian of nature|XPHB"
+						],
+						"9": [
+							"commune with nature|XPHB"
+						]
+					}
+				}
+			]
+		}
+	],
+	"subclassFeature": [
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"The natural world is full of beautiful plant species, but unfortunately some of the most beautiful growths are also those that are the most at risk. The Druids of the Grove are connected to the will of The Shepherd and they use their connections to the wild to empower it to protect itself and others. The Grove allows druids to animate plantlife and spread their life-giving magics to nearby plants and animals. Druids of The Grove don’t tend to gather with others of their kind, as The Grove connects them all, and they will protect it until the very end.",
+				{
+					"subclassFeature": "Circle of the Grove Spells|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Plant Whisperer|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Summon Protector|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Circle of the Grove",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you reach a Druid level specified in the Circle of the Grove Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"type": "table",
+					"caption": "Circle of the Grove Spells",
+					"colLabels": [
+						"Druid Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Create or Destroy Water|XPHB}, {@spell Locate Animals or Plants|XPHB}, {@spell Thorn Whip|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Plant Growth|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Guardian of Nature|XGE}"
+						],
+						[
+							"9",
+							"{@spell Commune with Nature|XPHB}"
+						]
+					]
+				}
+			],
+			"level": 3,
+			"name": "Circle of the Grove Spells",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"You learn to speak, read, and write Sylvan.",
+				"In addition, while you are in physical contact with a plant, you imbue it with limited sentience and animation, giving you the ability to communicate with them, and you can use any of the {@action Influence|XPHB} action's skill options with them."
+			],
+			"languageProficiencies": [
+				{
+					"sylvan": true
+				}
+			],
+			"level": 3,
+			"name": "Plant Whisperer",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"As an {@variantrule Action|XPHB}, you can expend a use of your Wild Shape to summon a Plantlife Protector made of living or dead flora.",
+				"The Protector appears in an unoccupied space of your choice that you can see within 30 feet of you. The Protector is friendly to you and your companions and obeys your commands. See this creature's game statistics in the Plantlife Protector stat block below. You determine the Protector's appearance.",
+				"In combat, the Protector shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the {@action Dodge|XPHB} action, unless you take a {@variantrule Bonus Action|XPHB} on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition Incapacitated|XPHB}, the Protector can take any action of its choice, not just {@action Dodge|XPHB}.",
+				"The Protector manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the Protector again, or until you die."
+			],
+			"level": 3,
+			"name": "Summon Protector",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you or your Protector's {@variantrule Hit Points|XPHB} are restored by a spell, you can choose another creature within 15 feet of you or your Protector. That creature also regains {@variantrule Hit Points|XPHB} equal to two times your Wisdom modifier."
+			],
+			"level": 6,
+			"name": "Connected Roots",
+			"page": 29,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"Learning to harness the natural defenses of the Protector, you gain {@variantrule Resistance|XPHB} to Poison damage, and you have {@variantrule Immunity|XPHB} to the {@condition Poisoned|XPHB} condition.",
+				"In addition, when you restore {@variantrule Hit Points|XPHB} to a creature with a spell, that creature also gains {@variantrule Temporary Hit Points|XPHB} equal to two times your Wisdom modifier."
+			],
+			"level": 10,
+			"name": "Sturdy Bark",
+			"page": 29,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you summon your Plantlife Protector, you can instead use the Sturdy Protector stat block, seen below.",
+				"In addition, when you summon your Protector, you can choose its size to be Large or Medium."
+			],
+			"level": 14,
+			"name": "The Grove's Champion",
+			"page": 29,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"Some sacred places in the natural world are best protected not by force but by deception. The Circle of the False Moon uses the illusory aspect of the moon to deceive and disorient hapless travelers and raiders alike. If their illusions are unable to dissuade interlopers, they can devastate their foes by channeling the moon's stolen radiance.",
+				{
+					"subclassFeature": "Circle of the False Moon Spells|Druid||False Moon|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Veil of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Circle of the False Moon",
+			"page": 27,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you reach a Druid level specified in the Circle of the False Moon Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"type": "table",
+					"caption": "Circle of the False Moon Spells",
+					"colLabels": [
+						"Druid Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Mirror Image|XPHB}, {@spell Sacred Flame|XPHB}, {@spell Silent Image|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Hypnotic Pattern|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Greater Invisibility|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Dream|XPHB}"
+						]
+					]
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Circle of the False Moon Spells",
+			"page": 27,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can expend a use of your Wild Shape to wreath yourself in a Veil of the reflected moon for 10 minutes. It ends early if you dismiss it (no action required), manifest it again, or have the {@condition Incapacitated|XPHB} condition.",
+				"When you manifest your Veil and as a {@variantrule Bonus Action|XPHB} on your subsequent turns, you can summon an illusory copy of yourself in an unoccupied space you can see within 30 feet of yourself. The copy is animated and mimics your expressions and gestures. The copy has an AC of 10, 1 {@variantrule Hit Points|XPHB|Hit Point}, and {@variantrule Immunity|XPHB} to Poison and Psychic damage. If a creature takes the {@action Study|XPHB} action to examine the copy, it can determine that it is an illusion with a successful Intelligence ({@skill Investigation|XPHB}) check against your spell save DC. If a creature discerns any copy for what it is, it identifies which is the real you until the end of your Veil.",
+				"While a copy persists, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Distract",
+					"entries": [
+						"When both you and a copy are within 5 feet of a creature that can see the copy, you have {@variantrule Advantage|XPHB} on attack rolls against that creature."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Move",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you can move any number of copies up to 30 feet to an unoccupied space you can see within 120 feet of yourself."
+					]
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Veil of the False Moon",
+			"page": 27,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"Once per turn when you deal Radiant damage, you add your Wisdom modifier to the damage roll.",
+				"In addition, you gain the following additional benefits while in your Veil of the False Moon.",
+				{
+					"type": "entries",
+					"name": "Cast Spells",
+					"entries": [
+						"You can cast spells as though you were in a copy's space, but you must use your own senses."
+					]
+				}
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Searing Radiance",
+			"page": 27,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"Your Veil has grown ever stronger. You gain the following benefits while in your Veil of the False Moon.",
+				{
+					"type": "entries",
+					"name": "Blind",
+					"entries": [
+						"When you or an ally within 60 feet of you is targeted with an attack, you can take a {@variantrule Reaction|XPHB} to force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attacker is {@condition Blinded|XPHB} until the start of your next turn."
+					]
+				}
+			],
+			"header": 2,
+			"level": 10,
+			"name": "Blistering Moonlight",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"While your Veil of the False Moon is active, you can maintain {@status Concentration|XPHB} on two spells at once so long as one of them is from the Illusion school of magic."
+			],
+			"header": 2,
+			"level": 14,
+			"name": "Borrowed Aptitude",
+			"page": 28,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"Many seers, shamans, and oracles throughout history have conjured guidance, prophecy, and the divine through the bottom of a vial. In this way, poison and fate intertwine. Clerics of the Venom Domain utilize both to enhance themselves and destroy their enemies. As the harnessers of this divine affliction, they are agents of change and destiny, ones that are feared and desperately sought after in the same hushed breath.",
+				{
+					"subclassFeature": "Venom Domain Spells|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Ordained Affliction|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Poisoner's Expertise|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Venom Domain",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"When you reach a Cleric level specified in the Venom Domain Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"type": "table",
+					"caption": "Venom Domain Spells",
+					"colLabels": [
+						"Cleric Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Augury|XPHB}, {@spell Comprehend Languages|XPHB}, {@spell See Invisibility|XPHB}, {@spell Ray of Sickness|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Stinking Cloud|XPHB}, {@spell Tongues|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Arcane Eye|XPHB}, {@spell Blight|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Cloudkill|XPHB}, {@spell Contagion|XPHB}"
+						]
+					]
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Venom Domain Spells",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"As a Magic {@variantrule Action|XPHB}, you can present your holy symbol and expend a use of your Channel Divinity to force one creature you can see within 60 feet of you to make a Constitution saving throw. On a failed save, the target is {@condition Poisoned|XPHB} for 8 hours. This divinely instilled poisoning ignores {@variantrule Immunity|XPHB} to the {@condition Poisoned|XPHB} condition."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Ordained Affliction",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in the {@skill Medicine|XPHB} skill and with the {@item Poisoner's Kit|XPHB}. You also learn the {@spell Poison Spray|XPHB} cantrip."
+			],
+			"skillProficiencies": [
+				{
+					"medicine": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"poisoner's kit": true
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Poisoner's Expertise",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"Through the venom, your mind is opened to all possibilities. All Cleric spells of the Divination school have the {@variantrule Ritual|XPHB} tag for you."
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Divination Master",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"Your faith in your deity empowers the toxins you unleash. Whenever you deal Poison damage, you ignore {@variantrule Resistance|XPHB} to Poison damage, and {@variantrule Immunity|XPHB} to Poison damage is treated as {@variantrule Resistance|XPHB}."
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Fated Delirium",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can enter a precognitive trance where the divine toxins flow freely through your blood for 1 minute. This trance ends early if you dismiss it (no action required), or become {@condition Incapacitated|XPHB}. For the duration, you cannot be {@status surprised|XPHB}, your {@variantrule D20 Test|XPHB|D20 Tests} have {@variantrule Advantage|XPHB}, and attack rolls made against you have {@variantrule Disadvantage|XPHB}.",
+				"Once you use this feature, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. When your trance ends, you become {@condition Poisoned|XPHB} until you use this feature again."
+			],
+			"header": 2,
+			"level": 17,
+			"name": "Precognitive Trance",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"There are many ways to connect to the divine. Some do it through time honored and eclectic rituals, others, by the strength of their sword arm. Clerics of the Dedication domain do it through the exploration of their talents. To them, divinity is found in the happiness one feels from honing a craft, sharpening a skill, and exploring one's hobbies. Dedication Clerics understand that life can be difficult and full of challenges, but have faith that through the disciplined exploration of the different paths of life, they can gain the necessary resilience to weather those struggles.",
+				{
+					"subclassFeature": "Dedication Domain Spells|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Helping Hand|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Tips and Tricks|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Dedication Domain",
+			"page": 25,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"When you reach a Cleric level specified in the Dedication Domain Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"type": "table",
+					"caption": "Dedication Domain Spells",
+					"colLabels": [
+						"Cleric Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Bless|XPHB}, {@spell Borrowed Knowledge|SCC}, {@spell Enhance Ability|XPHB}, {@spell Gift of Alacrity|EGW}"
+						],
+						[
+							"5",
+							"{@spell Crusader's Mantle|XPHB}, {@spell Motivational Speech|AI}"
+						],
+						[
+							"7",
+							"{@spell Aura of Life|XPHB}, {@spell Freedom of Movement|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Greater Restoration|XPHB}, {@spell Skill Empowerment|XGE}"
+						]
+					]
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Dedication Domain Spells",
+			"page": 25,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"You can use your Channel Divinity to channel your passions to help your allies. As a Magic {@variantrule Action|XPHB}, you present your holy symbol and expend a use of your Channel Divinity to empower yourself for 10 minutes. For the duration, you can take the {@action Help|XPHB} action as a {@variantrule Bonus Action|XPHB} on your turns. When you do so you can target an ally within 5ft of you to give them advantage on their next attack, the target of the {@action Help|XPHB} can reroll one die made during this roll.",
+				"This effect ends early if you dismiss it (no action required), or become {@condition Incapacitated|XPHB}."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Helping Hand",
+			"page": 25,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in any combination of two languages, skills, or tools of your choice.",
+				"In addition, when you take the {@action Help|XPHB} action to Assist an {@variantrule Ability Check|XPHB}, that ally also gains a bonus to the roll equal to your Wisdom modifier."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Tips and Tricks",
+			"page": 25,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"Whenever you make an ability check with a skill or tool you are proficient with, you add a {@dice d4} to the result of the roll. You cannot benefit from this feature and the {@spell Guidance|XPHB} spell at the same time."
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Practiced Proficiency",
+			"page": 25,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Cleric",
+			"classSource": "PHB",
+			"entries": [
+				"You are able to channel your divine power into the various things you are proficient in to an extraordinary degree. The bonus die from your Practiced {@variantrule Proficiency|XPHB} feature increases from a {@dice d4} to a {@dice d10}. Additionally, when you take the {@action Help|XPHB} action to Assist an {@variantrule Attack Roll|XPHB} while under the effects of Helping Hand, that ally deals an additional {@damage 2d6} damage on a hit."
+			],
+			"header": 2,
+			"level": 17,
+			"name": "Focused Dedication",
+			"page": 26,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"entries": [
+				"Bones give structure to beings of flesh and blood, and it is said that their powerful feelings can seep into these foundations. The Bone Carvers of the Plains of Ruin have learned to bring the magic stored within the bones of the living out to serve them. These Bone Carvers use runes to draw magic from the bones and shape them for a specific task. They use their powerful emotions to then deploy this magic to their advantage. These warriors can be seen covered in the bones of beasts and humanoids alike.",
+				{
+					"subclassFeature": "Scrimshaw|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Path of the Bone Carver",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"entries": [
+				"You have a number of bones that are covered in magically etched markings called Scrimshaw Tokens equal to your Strength modifier. A Scrimshaw Token is expended when you use it, and you regain all expended Scrimshaw Tokens when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+				"While your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
+				{
+					"type": "entries",
+					"name": "Grasping Cage",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you cause bones to erupt from the earth at a creature you can see within 60 feet of you. The target must succeed on a Strength or Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Grappled|XPHB} by the bones for 1 minute. At the end of each of its turns, the target can remake the save, freeing itself on a success.",
+						"When you reach Barbarian level 6, the bones also inflict the {@condition Restrained|XPHB} condition. At level 10, the target also cannot cast a spell with somatic components."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Skeletal Warding",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, choose one of Acid, Cold, Fire, Lightning, Necrotic, Poison, Radiant, or Thunder. For 1 minute, you have {@variantrule Resistance|XPHB} to the chosen damage type. You can only be under the effect of one of these Wards at a time, and it ends early if your Rage ends.",
+						"Starting at Barbarian level 6, when you hit a target with a melee attack roll and deal damage to it, you also deal {@damage 1d6} damage of the same type as your Skeletal Warding. At level 10, whenever a creature hits you with a melee attack roll, it takes {@damage 2d6} damage of the same type as your Skeletal Warding."
+					]
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Scrimshaw",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"entries": [
+				"You understand how to draw out the inner magic from your own bones. You can expend a Scrimshaw Token to gain one of the following benefits.",
+				{
+					"type": "entries",
+					"name": "Enhance Ability",
+					"entries": [
+						"As an {@variantrule Action|XPHB}, choose one of Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. For 1 hour, you have {@variantrule Advantage|XPHB} on ability checks using the chosen ability."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Land's Stride",
+					"entries": [
+						"As an {@variantrule Action|XPHB}, you gain a {@variantrule Swim Speed|XPHB} or {@variantrule Climb Speed|XPHB} equal to your {@variantrule Speed|XPHB} for 1 hour."
+					]
+				}
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Digging Deeper",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"entries": [
+				"You can channel your Rage into the Scrimshaw Tokens as fuel, seeping your powerful emotions into the bones in place of magic. As an {@variantrule Action|XPHB}, you can expend a use of your Rage to regain all your Scrimshaw Tokens. Additionally, while your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
+				{
+					"type": "entries",
+					"name": "Essence Harvest",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, damage you deal with your weapon attacks harvest vital essence from your opponents. Until the end of your current turn, you regain a number of {@variantrule Hit Points|XPHB} equal to the damage dealt by your weapon."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Reflexive Reprisal",
+					"entries": [
+						"When you take damage from an enemy, you can immediately take a {@variantrule Reaction|XPHB} and make a weapon attack against that enemy."
+					]
+				}
+			],
+			"header": 2,
+			"level": 10,
+			"name": "Channeled Fury",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"entries": [
+				"You have learned how to pull the magic of the tokens without needing to channel your strong emotions. Your Rage no longer needs to be active in order to create effects using your Scrimshaw Tokens. Additionally, you can expend a Scrimshaw Token to create the following effects.",
+				{
+					"type": "entries",
+					"name": "Hollow Bones",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you gain a {@variantrule Flying|XPHB} {@variantrule Speed|XPHB} equal to your {@variantrule Speed|XPHB} and can hover for 1 minute. This effect ends early if your Rage ends. When this effect ends, you fall harmlessly to the ground at a rate of 60 feet per round."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Seismic Stomp",
+					"entries": [
+						"As an {@variantrule Action|XPHB}, all enemy creatures in a 60-foot cone must make a Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be knocked {@condition Prone|XPHB}."
+					]
+				}
+			],
+			"header": 2,
+			"level": 14,
+			"name": "It's In Your Bones",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"Bardic Colleges teach bards many ways to imbue their performances with arcane power. The College of Arcane Tailors dedicates itself to making costumes that enthrall and intrigue. The Bardic Regalia they create are famous for being the centerpieces of great performances and powerful arcane catalysts.",
+				{
+					"subclassFeature": "Bardic Regalia|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Bewitching Raiments|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "College of the Arcane Tailor",
+			"page": 21,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 13 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
+				"As a Magic action, you can extend a part of your Regalia to strike your enemies. Make a melee spell attack at a target you can see within 60 feet of you. On a hit, it takes {@damage 1d10} Force damage plus your Charisma modifier.",
+				"This damage increases by {@dice 1d10} when you reach Bard levels 5 ({@dice 2d10}), 11 ({@dice 3d10}), and 17 ({@dice 4d10})."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Bardic Regalia",
+			"page": 21,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"You always have the {@spell Charm Person|XPHB} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Charm Person|XPHB} without expending a spell slot.",
+				"At Bard level 6, you also always have the {@spell Incite Greed|AI} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Incite Greed|AI} without expending a spell slot."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Bewitching Raiments",
+			"page": 21,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"Your knowledge of weaving magic into the fabric of your Regalia has improved. Your Regalia can replicate a magic item from the Replicable Magic Items table below. This item does not require attunement even if it normally would.",
+				"You can only replicate one magic item at a time, and you can swap this item with another from the list after you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+				{
+					"caption": "Replicable Magic Items",
+					"colLabels": [
+						"Bard Level",
+						"Magic Items"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							{
+								"roll": {
+									"exact": 6
+								},
+								"type": "cell"
+							},
+							"Bag of Holding, Cap of Water Breathing, Cloak of Elvenkind, Cloak of the Manta Ray, Goggles of Night, Mariner's Armor, Hat of Vermin, Handy Spice Pouch, Prosthetic Limb (must look like and be made of cloth)."
+						],
+						[
+							{
+								"roll": {
+									"exact": 10
+								},
+								"type": "cell"
+							},
+							"Bracers of Archery, Boots of the Winterlands, Cloak of Protection, Gauntlets of Ogre Power, Gloves of Missile Snaring, Gloves of Swimming and Climbing, Gloves of Thievery, Hat of Disguise, Headband of Intellect, Helm of Telepathy, Slippers of Spider Climbing, Winged Boots"
+						],
+						[
+							{
+								"roll": {
+									"exact": 14
+								},
+								"type": "cell"
+							},
+							"Boots of Speed, Boots of Levitation, Cloak of the Bat"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"header": 2,
+			"level": 6,
+			"name": "A Tailored Experience",
+			"page": 21,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"You are able to use your mastery of magical tailoring to weave spells into the fabric of your Regalia. Your  Regalia now stores spells cast into it, holding them until you choose to use them. It can store up to a number of levels worth of spells equal to your Charisma Modifier at a time.",
+				"You can cast a spell into your Regalia by touching it as the spell is cast, expending the spell slot as normal. The spell has no effect, other than to be stored in the Regalia. If the Regalia can't hold the spell, the spell is expended with no effect. These spells appear as patches on your Regalia, but are {@condition invisible} to others unless detected by the *Detect Magic* spell or similar effects.",
+				"As a Magic action, you can open one of these patches to cast any spell stored in your Regalia. The spell cast from the Regalia is no longer stored in it, freeing up space."
+			],
+			"header": 2,
+			"level": 14,
+			"name": "It's All in the Stitching",
+			"page": 22,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"Dragons are powerful both physically and magically, their very presence inspiring many great artists. It is no wonder that bards, masters of weaving art and magic together, are drawn to these striking beings. The College of the Dragon Song is not only inspired by the imagery of dragons, but combines bardic and draconic magic to imbue its students with the same awe inspiring qualities as their school's namesake.",
+				{
+					"subclassFeature": "Dragon Fire Inspiration|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Martial Training|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"header": 2,
+			"level": 3,
+			"name": "College of the Dragon Song",
+			"page": 22,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Bardic Inspiration and choose a number of creatures equal to your Charisma modifier. The next time those creatures deal damage with a weapon attack, that attack deals an extra {@damage 1d6} Acid, Cold, Fire, Lightning, or Poison damage (your choice when you activate this feature).",
+				"This damage increases by {@dice 1d6} when you reach Bard levels 5 ({@dice 2d6}), 10 ({@dice 3d6}), and 15 ({@dice 4d6})."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Dragon Fire Inspiration",
+			"page": 22,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in martial weapons and training with medium armor. In addition, you can use the mastery property of two kinds of Simple or Martial weapons of your choice."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Martial Training",
+			"page": 23,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you enshroud yourself in draconic might, assuming your Draconic Mantle for 1 minute. When you do so, each creature of your choice within 60 feet of you that can see you must make a Wisdom saving throw against your Bard spell save DC. On a failed save, the creature is {@condition Frightened|XPHB} for the duration of this feature.",
+				"This transformation ends early if you dismiss it (no action required), become {@condition Incapacitated|XPHB}, or die. Once you use this feature, you can use it again until you finish a {@variantrule Long Rest|XPHB}. You can also restore your use of it by expending one use of your Bardic Inspiration (no action required).",
+				"While transformed, you gain the following benefits.",
+				{
+					"entries": [
+						"You have {@variantrule Advantage|XPHB} on Charisma ({@skill Intimidation|XPHB}) checks and you are immune to the {@condition Frightened|XPHB} condition."
+					],
+					"name": "Intimidating Presence",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"You have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					],
+					"name": "Spectral Wings",
+					"type": "entries"
+				}
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Draconic Mantle",
+			"page": 23,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Bard",
+			"classSource": "PHB",
+			"entries": [
+				"Your mastery of the Dragon Song is at its pinnacle, granting you the following benefits.",
+				{
+					"entries": [
+						"As part of the {@variantrule Bonus Action|XPHB} to activate Draconic Mantle and as a {@variantrule Bonus Action|XPHB} on subsequent turns while your Draconic Mantle is active, you can exhale a burst of elemental power in a 20-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or 60-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide. Each creature in the area must make a Dexterity saving throw, taking {@damage 4d10} + your Charisma modifier Acid, Cold, Fire, Lightning, or Poison damage (your choice each time you use this breath weapon) on a failed save, or half as much on a successful one."
+					],
+					"name": "Breath Weapon",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"Magical wings are now a permanent fixture of your body. You have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+					],
+					"name": "Wings Unfurled",
+					"type": "entries"
+				}
+			],
+			"header": 2,
+			"level": 14,
+			"name": "Dragon Song",
+			"page": 23,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song",
+			"subclassSource": "AltorasCharacterCreationOptions"
 		}
 	],
 	"subrace": [
@@ -4683,7 +6329,7 @@
 				{
 					"entries": [
 						"As an action, you can conjure a mass of webbing at a point within 60 feet of you. The webs fill a 20-foot {@variantrule Cube [Area of Effect]|XPHB|Cube} there for 1 hour. The webs are {@variantrule Difficult Terrain|XPHB}, and the area within them is {@variantrule Lightly Obscured|XPHB}.",
-						"The first time a creature enters the webs on a turn or starts its turn there, it must succeed on a Dexterity saving throw (DC = 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Constitution modifier) or have the {@condition Grappled|XPHB} condition while in the webs or until it takes an action to free itself.",
+						"The first time a creature enters the webs on a turn or starts its turn there, it must succeed on a Dexterity saving throw (DC 10 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or have the {@condition Grappled|XPHB} condition while in the webs or until it takes an action to free itself.",
 						"The webs are flammable. Any 5-foot {@variantrule Cube [Area of Effect]|XPHB|Cube} of webs exposed to fire burns away in 1 round, dealing {@damage 2d4} Fire damage to any creature that starts its turn in the fire.",
 						"After this trait is used, it must be recharged. At the start of your turn, roll {@dice 1d6}. On a roll of 5+, this trait is recharged."
 					],
@@ -4703,292 +6349,6 @@
 			"raceName": "Arachne",
 			"raceSource": "AltorasCharacterCreationOptions",
 			"source": "AltorasCharacterCreationOptions"
-		}
-	],
-	"subclass": [
-		{
-			"name": "College of the Arcane Tailor",
-			"subclassFeatures": [
-				"College of the Arcane Tailor|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
-				"A Tailored Experience|Bard||Arcane Tailor|AltorasCharacterCreationOptions|6",
-				"It's All in the Stitching|Bard||Arcane Tailor|AltorasCharacterCreationOptions|14"
-			],
-			"source": "AltorasCharacterCreationOptions",
-			"shortName": "Arcane Tailor",
-			"className": "Bard",
-			"classSource": "PHB"
-		},
-		{
-			"name": "College of the Dragon Song",
-			"subclassFeatures": [
-				"College of the Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
-				"Draconic Mantle|Bard||Dragon Song|AltorasCharacterCreationOptions|6",
-				"Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|14"
-			],
-			"source": "AltorasCharacterCreationOptions",
-			"shortName": "Dragon Song",
-			"className": "Bard",
-			"classSource": "PHB"
-		}
-	],
-	"subclassFeature": [
-		{
-			"name": "College of the Arcane Tailor",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 21,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"entries": [
-				"Bardic Colleges teach bards many ways to imbue their performances with arcane power. The College of Arcane Tailors dedicates itself to making costumes that enthrall and intrigue. The Bardic Regalia they create are famous for being the centerpieces of great performances and powerful arcane catalysts.",
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Bardic Regalia|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Bewitching Raiments|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3"
-				}
-			]
-		},
-		{
-			"name": "Bardic Regalia",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 21,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"header": 2,
-			"entries": [
-				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 13 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
-				"As a Magic action, you can extend a part of your Regalia to strike your enemies. Make a melee spell attack at a target you can see within 60 feet of you. On a hit, it takes {@damage 1d10} Force damage plus your Charisma modifier.",
-				"This damage increases by {@dice 1d10} when you reach Bard levels 5 ({@dice 2d10}), 11 ({@dice 3d10}), and 17 ({@dice 4d10})."
-			]
-		},
-		{
-			"name": "Bewitching Raiments",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 21,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"header": 2,
-			"entries": [
-				"You always have the {@spell Charm Person|XPHB} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Charm Person|XPHB} without expending a spell slot.",
-				"At Bard level 6, you also always have the {@spell Incite Greed|AI} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Incite Greed|AI} without expending a spell slot."
-			]
-		},
-		{
-			"name": "A Tailored Experience",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 21,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 6,
-			"header": 2,
-			"entries": [
-				"Your knowledge of weaving magic into the fabric of your Regalia has improved. Your Regalia can replicate a magic item from the Replicable Magic Items table below. This item does not require attunement even if it normally would.",
-				"You can only replicate one magic item at a time, and you can swap this item with another from the list after you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
-				{
-					"type": "table",
-					"caption": "Replicable Magic Items",
-					"colLabels": [
-						"Bard Level",
-						"Magic Items"
-					],
-					"colStyles": [
-						"col-1 text-center",
-						"col-11"
-					],
-					"rows": [
-						[
-							{
-								"type": "cell",
-								"roll": {
-									"exact": 6
-								}
-							},
-							"Bag of Holding, Cap of Water Breathing, Cloak of Elvenkind, Cloak of the Manta Ray, Goggles of Night, Mariner's Armor, Hat of Vermin, Handy Spice Pouch, Prosthetic Limb (must look like and be made of cloth)."
-						],
-						[
-							{
-								"type": "cell",
-								"roll": {
-									"exact": 10
-								}
-							},
-							"Bracers of Archery, Boots of the Winterlands, Cloak of Protection, Gauntlets of Ogre Power, Gloves of Missile Snaring, Gloves of Swimming and Climbing, Gloves of Thievery, Hat of Disguise, Headband of Intellect, Helm of Telepathy, Slippers of Spider Climbing, Winged Boots"
-						],
-						[
-							{
-								"type": "cell",
-								"roll": {
-									"exact": 14
-								}
-							},
-							"Boots of Speed, Boots of Levitation, Cloak of the Bat"
-						]
-					]
-				}
-			]
-		},
-		{
-			"name": "It's All in the Stitching",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 22,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 14,
-			"header": 2,
-			"entries": [
-				"You are able to use your mastery of magical tailoring to weave spells into the fabric of your Regalia. Your  Regalia now stores spells cast into it, holding them until you choose to use them. It can store up to a number of levels worth of spells equal to your Charisma Modifier at a time.",
-				"You can cast a spell into your Regalia by touching it as the spell is cast, expending the spell slot as normal. The spell has no effect, other than to be stored in the Regalia. If the Regalia can't hold the spell, the spell is expended with no effect. These spells appear as patches on your Regalia, but are {@condition invisible} to others unless detected by the *Detect Magic* spell or similar effects.",
-				"As a Magic action, you can open one of these patches to cast any spell stored in your Regalia. The spell cast from the Regalia is no longer stored in it, freeing up space."
-			]
-		},
-		{
-			"name": "College of the Dragon Song",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 22,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Dragon Song",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"header": 2,
-			"entries": [
-				"Dragons are powerful both physically and magically, their very presence inspiring many great artists. It is no wonder that bards, masters of weaving art and magic together, are drawn to these striking beings. The College of the Dragon Song is not only inspired by the imagery of dragons, but combines bardic and draconic magic to imbue its students with the same awe inspiring qualities as their school's namesake.",
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Dragon Fire Inspiration|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Martial Training|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3"
-				}
-			]
-		},
-		{
-			"name": "Dragon Fire Inspiration",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 22,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Dragon Song",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"header": 2,
-			"entries": [
-				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Bardic Inspiration and choose a number of creatures equal to your Charisma modifier. The next time those creatures deal damage with a weapon attack, that attack deals an extra {@damage 1d6} Acid, Cold, Fire, Lightning, or Poison damage (your choice when you activate this feature).",
-				"This damage increases by {@dice 1d6} when you reach Bard levels 5 ({@dice 2d6}), 10 ({@dice 3d6}), and 15 ({@dice 4d6})."
-			]
-		},
-		{
-			"name": "Martial Training",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 23,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Dragon Song",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"header": 2,
-			"entries": [
-				"You gain proficiency in martial weapons and training with medium armor. In addition, you can use the mastery property of two kinds of Simple or Martial weapons of your choice."
-			]
-		},
-		{
-			"name": "Draconic Mantle",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 23,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Dragon Song",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 6,
-			"header": 2,
-			"entries": [
-				"As a {@variantrule Bonus Action|XPHB}, you enshroud yourself in draconic might, assuming your Draconic Mantle for 1 minute. When you do so, each creature of your choice within 60 feet of you that can see you must make a Wisdom saving throw against your Bard spell save DC. On a failed save, the creature is {@condition Frightened|XPHB} for the duration of this feature.",
-				"This transformation ends early if you dismiss it (no action required), become {@condition Incapacitated|XPHB}, or die. Once you use this feature, you can use it again until you finish a {@variantrule Long Rest|XPHB}. You can also restore your use of it by expending one use of your Bardic Inspiration (no action required).",
-				"While transformed, you gain the following benefits.",
-				{
-					"type": "entries",
-					"name": "Intimidating Presence",
-					"entries": [
-						"You have {@variantrule Advantage|XPHB} on Charisma ({@skill Intimidation|XPHB}) checks and you are immune to the {@condition Frightened|XPHB} condition."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Spectral Wings",
-					"entries": [
-						"You have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
-					]
-				}
-			]
-		},
-		{
-			"name": "Dragon Song",
-			"source": "AltorasCharacterCreationOptions",
-			"page": 23,
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Dragon Song",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 14,
-			"header": 2,
-			"entries": [
-				"Your mastery of the Dragon Song is at its pinnacle, granting you the following benefits.",
-				{
-					"type": "entries",
-					"name": "Breath Weapon",
-					"entries": [
-						"As part of the {@variantrule Bonus Action|XPHB} to activate Draconic Mantle and as a {@variantrule Bonus Action|XPHB} on subsequent turns while your Draconic Mantle is active, you can exhale a burst of elemental power in a 20-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or 60-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide. Each creature in the area must make a Dexterity saving throw, taking {@damage 4d10} + your Charisma modifier Acid, Cold, Fire, Lightning, or Poison damage (your choice each time you use this breath weapon) on a failed save, or half as much on a successful one."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Wings Unfurled",
-					"entries": [
-						"Magical wings are now a permanent fixture of your body. You have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
-					]
-				}
-			]
-		}
-	],
-	"foundrySubclassFeature": [
-		{
-			"name": "Bewitching Raiments",
-			"source": "AltorasCharacterCreationOptions",
-			"className": "Bard",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Tailor",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"level": 3,
-			"entryData": {
-				"additionalSpells": [
-					{
-						"known": {
-							"3": [
-								"charm person|xphb"
-							],
-							"6": [
-								"incite greed|ai"
-							]
-						}
-					}
-				]
-			}
 		}
 	]
 }
