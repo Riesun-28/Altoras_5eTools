@@ -1491,12 +1491,12 @@
 					{
 						"choose": [
 							{
+								"count": 2,
 								"from": [
 									"anySkill",
 									"anyTool",
 									"anyLanguage"
-								],
-								"count": 2
+								]
 							}
 						]
 					}
@@ -1507,6 +1507,32 @@
 			"source": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Dedication",
 			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 3,
+			"name": "Scrimshaw",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restShort",
+				"uses.max": "@abilities.str.mod"
+			}
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"level": 3,
+			"name": "Incantations",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restShort",
+				"uses.max": "2 * @prof"
+			}
 		}
 	],
 	"monster": [
@@ -1519,7 +1545,7 @@
 			"action": [
 				{
 					"entries": [
-						"{@atk mw} {@hit 4 + PB} to hit, reach 5 ft. {@h}{@damage 1 + PB} Piercing damage plus {@damage 1d6} damage of the same type as its listed immunity."
+						"{@atk mw} {@hit 4 + PB} to hit, reach 5 ft. {@h}{@damage 5 + PB} Piercing damage plus {@damage 1d6} damage of the same type as its listed immunity."
 					],
 					"name": "Prick"
 				}
@@ -2227,6 +2253,250 @@
 				"fire"
 			],
 			"wis": 16
+		}
+	],
+	"optionalfeature": [
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point to give one willing creature you can see within 15 feet of you {@variantrule Advantage|XPHB} on Dexterity ({@skill Acrobatics|XPHB}) checks and Dexterity saving throws for 1 minute."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Acrobat's Enhancement",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"amount": 2,
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 2 Incantation Points to place a glyph in an unoccupied space you can see within 30 feet of you. This glyph is {@condition Invisible|XPHB} unless you allow a creature to see it.",
+				"When you place this glyph, choose which effect it has from the following list. The glyph activates when a creature steps on the glyph's space.",
+				{
+					"entries": [
+						"When activated, the triggering creature must make a Dexterity saving throw. On a failed save, the target is {@condition Restrained|XPHB} for 1 minute. On subsequent turns, the creature can use its {@variantrule Action|XPHB} to make a Strength ({@skill Athletics|XPHB}) or Dexterity ({@skill Acrobatics|XPHB}) check against your saving throw DC, ending the condition on a success."
+					],
+					"name": "Snaring",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"When activated, the triggering creature must make a Dexterity saving throw. On a failed save, the creature takes {@damage 2d10} + your Incantation Ability modifier in Force damage, or half as much on a successful one."
+					],
+					"name": "Explosive",
+					"type": "entries"
+				}
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Arcane Trap",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point to give one willing creature you can see within 15 feet of you {@variantrule Advantage|XPHB} on Strength ({@skill Athletics|XPHB}) checks and Strength saving throws for 1 minute."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Athlete's Enhancement",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point to give one willing creature you can see within 15 feet of you {@variantrule Advantage|XPHB} on Charisma ({@skill Persuasion|XPHB}) checks and Charisma saving throws for 1 minute."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Charlatan's Grace",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"When a creature misses you with a melee attack roll, you can take a {@variantrule Reaction|XPHB} and spend 1 Incantation Point to make a melee attack roll with a weapon or {@variantrule Unarmed Strike|XPHB} against that creature. If you hit, the target cannot take a {@variantrule Reaction|XPHB} until the start of your next turn."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Disruptive Riposte",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"amount": 2,
+				"name": "Incantation"
+			},
+			"entries": [
+				"When you hit a creature with an attack roll and deal damage to it, you can spend 2 Incantation Points to also deal {@damage 2d4} Acid, Cold, Fire, Lightning, or Thunder damage (your choice) and brand the creature for 1 minute. While branded, you always know its location, and it cannot benefit from the {@condition Invisible|XPHB} condition against you.",
+				"As a {@variantrule Bonus Action|XPHB} on each of your subsequent turns, you can deal another {@damage 2d4} damage of the same type to the branded creature so long as they are within 30 feet of you.",
+				{
+					"entries": [
+						"The damage increases by {@dice 1d4} for each additional Incantation Point you spend."
+					],
+					"name": "Incantation Upgrade",
+					"type": "entries"
+				}
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Elemental Brand",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point and choose a point you can see within 60 feet of you. Each creature in a 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point must make a Dexterity saving throw. On a failed save, the creature takes {@damage 2d4} + your Incantation ability modifier in Acid, Cold, Fire, Lightning, or Thunder damage (your choice), or half as much on a successful one.",
+				{
+					"entries": [
+						"The damage increases by {@dice 2d4} for each additional Incantation Point you spend."
+					],
+					"name": "Incantation Upgrade",
+					"type": "entries"
+				}
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Elemental Burst",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As an action, you can spend 1 Incantation Point and infuse one weapon you can see within 30 feet of you with elemental power. Choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. For 1 minute, the weapon deals an extra {@damage 1d4} damage of the chosen type when it hits.",
+				{
+					"entries": [
+						"You can target an additional weapon for each additional Incantation Point you spend."
+					],
+					"name": "Incantation Upgrade",
+					"type": "entries"
+				}
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Elemental Ignition",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"When you hit with a weapon attack roll, you can immediately take a {@variantrule Reaction|XPHB} and spend 1 Incantation Point to push the target 10 feet directly away from you. This movement provokes {@action Opportunity Attack|XPHB|Opportunity Attacks} as if they were moving willingly."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Forceful Strike",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"amount": 2,
+				"name": "Incantation"
+			},
+			"entries": [
+				"As an action, you can touch a willing creature and spend 2 Incantation Points to give it {@sense Darkvision|XPHB} with a range of 150 feet for 8 hours.",
+				{
+					"entries": [
+						"You can target an additional creature for every 2 additional Incantation Points you spend."
+					],
+					"name": "Incantation Upgrade",
+					"type": "entries"
+				}
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Night's Eye",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point to give one willing creature you can see within 15 feet of you {@variantrule Advantage|XPHB} on Wisdom ({@skill Perception|XPHB}) checks and Wisdom saving throws for 1 minute."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Sentinel's Vigil",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Incantation Point to grant yourself enhanced vision for 10 minutes. For the duration, you can see creatures and objects that have the {@condition Invisible|XPHB} condition as if they were visible, and you can see into the Ethereal Plane. Creatures and objects there appear ghostly."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Sight Beyond Sight",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Incantation"
+			},
+			"entries": [
+				"As an action, you can spend 1 Incantation Point and choose a point you can see within 60 feet of you. The terrain in a 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point becomes {@variantrule Difficult Terrain|XPHB} for 1 minute. When an enemy creature moves into or within the area, it takes {@damage 2d4} Acid, Cold, Fire, Lightning, or Thunder damage (your choice) for every 5 feet it travels."
+			],
+			"featureType": [
+				"I:I"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Terrain Alteration",
+			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
 		}
 	],
 	"race": [
@@ -5178,28 +5448,6 @@
 			]
 		},
 		{
-			"className": "Cleric",
-			"classSource": "PHB",
-			"name": "Dedication Domain",
-			"shortName": "Dedication",
-			"source": "AltorasCharacterCreationOptions",
-			"subclassFeatures": [
-				"Dedication Domain|Cleric||Dedication|AltorasCharacterCreationOptions|3",
-				"Practiced Proficiency|Cleric||Dedication|AltorasCharacterCreationOptions|6",
-				"Focused Dedication|Cleric||Dedication|AltorasCharacterCreationOptions|17"
-			],
-			"subclassSpells": [
-				"bless",
-				"borrowed knowledge",
-				"enhance ability",
-				"gift of alacrity",
-				"crusader's mantle",
-				"motivational speech",
-				"aura of life",
-				"freedom of movement",
-				"greater restoration",
-				"skill empowerment"
-			],
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -5223,32 +5471,31 @@
 						]
 					}
 				}
+			],
+			"className": "Cleric",
+			"classSource": "PHB",
+			"name": "Dedication Domain",
+			"shortName": "Dedication",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Dedication Domain|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+				"Practiced Proficiency|Cleric||Dedication|AltorasCharacterCreationOptions|6",
+				"Focused Dedication|Cleric||Dedication|AltorasCharacterCreationOptions|17"
+			],
+			"subclassSpells": [
+				"bless",
+				"borrowed knowledge",
+				"enhance ability",
+				"gift of alacrity",
+				"crusader's mantle",
+				"motivational speech",
+				"aura of life",
+				"freedom of movement",
+				"greater restoration",
+				"skill empowerment"
 			]
 		},
 		{
-			"className": "Cleric",
-			"classSource": "PHB",
-			"name": "Venom Domain",
-			"shortName": "Venom",
-			"source": "AltorasCharacterCreationOptions",
-			"subclassFeatures": [
-				"Venom Domain|Cleric||Venom|AltorasCharacterCreationOptions|3",
-				"Divination Master|Cleric||Venom|AltorasCharacterCreationOptions|6",
-				"Fated Delirium|Cleric||Venom|AltorasCharacterCreationOptions|6",
-				"Precognitive Trance|Cleric||Venom|AltorasCharacterCreationOptions|17"
-			],
-			"subclassSpells": [
-				"augury",
-				"comprehend languages",
-				"see invisibilty",
-				"ray of sickness",
-				"stinking cloud",
-				"tongues",
-				"arcane eye",
-				"blight",
-				"cloudkill",
-				"contagion"
-			],
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -5273,28 +5520,32 @@
 						]
 					}
 				}
+			],
+			"className": "Cleric",
+			"classSource": "PHB",
+			"name": "Venom Domain",
+			"shortName": "Venom",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Venom Domain|Cleric||Venom|AltorasCharacterCreationOptions|3",
+				"Divination Master|Cleric||Venom|AltorasCharacterCreationOptions|6",
+				"Fated Delirium|Cleric||Venom|AltorasCharacterCreationOptions|6",
+				"Precognitive Trance|Cleric||Venom|AltorasCharacterCreationOptions|17"
+			],
+			"subclassSpells": [
+				"augury",
+				"comprehend languages",
+				"see invisibilty",
+				"ray of sickness",
+				"stinking cloud",
+				"tongues",
+				"arcane eye",
+				"blight",
+				"cloudkill",
+				"contagion"
 			]
 		},
 		{
-			"className": "Druid",
-			"classSource": "PHB",
-			"name": "Circle of the False Moon",
-			"shortName": "False Moon",
-			"source": "AltorasCharacterCreationOptions",
-			"subclassFeatures": [
-				"Circle of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
-				"Searing Radiance|Druid||False Moon|AltorasCharacterCreationOptions|6",
-				"Blistering Moonlight|Druid||False Moon|AltorasCharacterCreationOptions|10",
-				"Borrowed Aptitude|Druid||False Moon|AltorasCharacterCreationOptions|14"
-			],
-			"subclassSpells": [
-				"mirror image",
-				"sacred flame",
-				"silent image",
-				"hypnotic pattern",
-				"greater invisibility",
-				"dream"
-			],
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -5314,28 +5565,28 @@
 						]
 					}
 				}
+			],
+			"className": "Druid",
+			"classSource": "PHB",
+			"name": "Circle of the False Moon",
+			"shortName": "False Moon",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Circle of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
+				"Searing Radiance|Druid||False Moon|AltorasCharacterCreationOptions|6",
+				"Blistering Moonlight|Druid||False Moon|AltorasCharacterCreationOptions|10",
+				"Borrowed Aptitude|Druid||False Moon|AltorasCharacterCreationOptions|14"
+			],
+			"subclassSpells": [
+				"mirror image",
+				"sacred flame",
+				"silent image",
+				"hypnotic pattern",
+				"greater invisibility",
+				"dream"
 			]
 		},
 		{
-			"className": "Druid",
-			"classSource": "PHB",
-			"name": "Circle of the Grove",
-			"shortName": "Grove",
-			"source": "AltorasCharacterCreationOptions",
-			"subclassFeatures": [
-				"Circle of the Grove|Druid||Grove|AltorasCharacterCreationOptions|3",
-				"Connected Roots|Druid||Grove|AltorasCharacterCreationOptions|6",
-				"Sturdy Bark|Druid||Grove|AltorasCharacterCreationOptions|10",
-				"The Grove's Champion|Druid||Grove|AltorasCharacterCreationOptions|14"
-			],
-			"subclassSpells": [
-				"create or destroy water",
-				"locate animals or plants",
-				"thorn whip",
-				"plant growth",
-				"guardian of nature",
-				"commune with nature"
-			],
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -5355,10 +5606,801 @@
 						]
 					}
 				}
+			],
+			"className": "Druid",
+			"classSource": "PHB",
+			"name": "Circle of the Grove",
+			"shortName": "Grove",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Circle of the Grove|Druid||Grove|AltorasCharacterCreationOptions|3",
+				"Connected Roots|Druid||Grove|AltorasCharacterCreationOptions|6",
+				"Sturdy Bark|Druid||Grove|AltorasCharacterCreationOptions|10",
+				"The Grove's Champion|Druid||Grove|AltorasCharacterCreationOptions|14"
+			],
+			"subclassSpells": [
+				"create or destroy water",
+				"locate animals or plants",
+				"thorn whip",
+				"plant growth",
+				"guardian of nature",
+				"commune with nature"
+			]
+		},
+		{
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"absorb elements|XGE",
+							"scorching ray|XPHB",
+							"shillelagh|XPHB"
+						],
+						"5": [
+							"thunder step|XGE"
+						],
+						"7": [
+							"guardian of nature|XPHB"
+						],
+						"9": [
+							"steel wind strike|XPHB"
+						]
+					}
+				}
+			],
+			"className": "Druid",
+			"classSource": "PHB",
+			"featProgression": [
+				{
+					"category": [
+						"FS"
+					],
+					"name": "Fighting Style",
+					"progression": {
+						"3": 1
+					}
+				}
+			],
+			"name": "Circle of the Warrior",
+			"shortName": "Warrior",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Circle of the Warrior|Druid||Warrior|AltorasCharacterCreationOptions|3",
+				"Extra Attack|Druid||Warrior|AltorasCharacterCreationOptions|6",
+				"Primal Mastery|Druid||Warrior|AltorasCharacterCreationOptions|10",
+				"Elemental Overload|Druid||Warrior|AltorasCharacterCreationOptions|14"
+			],
+			"subclassSpells": [
+				"absorb elements",
+				"scorching ray",
+				"shillelagh",
+				"thunder step",
+				"guardian of nature",
+				"steel wind strike"
+			]
+		},
+		{
+			"additionalSpells": [
+				{
+					"innate": {
+						"10": {
+							"daily": {
+								"1e": [
+									"detect magic|XPHB"
+								]
+							}
+						},
+						"15": {
+							"daily": {
+								"1e": [
+									"dispel magic|XPHB"
+								]
+							}
+						}
+					}
+				}
+			],
+			"className": "Fighter",
+			"classSource": "PHB",
+			"name": "Incantor",
+			"optionalfeatureProgression": [
+				{
+					"featureType": [
+						"I:I"
+					],
+					"name": "Incantations",
+					"progression": {
+						"10": 8,
+						"15": 10,
+						"3": 4,
+						"7": 6
+					}
+				}
+			],
+			"shortName": "Incantor",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Incantor|Fighter||Incantor|AltorasCharacterCreationOptions|3",
+				"Arcane Capacitor|Fighter||Incantor|AltorasCharacterCreationOptions|7",
+				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|7",
+				"Adept's Insight|Fighter||Incantor|AltorasCharacterCreationOptions|10",
+				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|10",
+				"Spell Breaker|Fighter||Incantor|AltorasCharacterCreationOptions|15",
+				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|15",
+				"Arcane Revitalization|Fighter||Incantor|AltorasCharacterCreationOptions|18"
+			]
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"name": "Ironwood Sentinel",
+			"shortName": "Ironwood",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Ironwood Sentinel|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+				"Ever Vigilant|Fighter||Ironwood|AltorasCharacterCreationOptions|7",
+				"Arboreal Interception|Fighter||Ironwood|AltorasCharacterCreationOptions|10",
+				"Heart of the Briar|Fighter||Ironwood|AltorasCharacterCreationOptions|15",
+				"Guardian of the Ironwood|Fighter||Ironwood|AltorasCharacterCreationOptions|18"
+			]
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"name": "Questing Knight",
+			"shortName": "Questing",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Questing Knight|Fighter||Questing|AltorasCharacterCreationOptions|3",
+				"Tandem Tactician|Fighter||Questing|AltorasCharacterCreationOptions|7",
+				"Chivalric Glory|Fighter||Questing|AltorasCharacterCreationOptions|10",
+				"Squire Training|Fighter||Questing|AltorasCharacterCreationOptions|15",
+				"Knight of the Realm|Fighter||Questing|AltorasCharacterCreationOptions|18"
 			]
 		}
 	],
 	"subclassFeature": [
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Knightly traditions are an ancient and storied part of civilization and none are as romanticized as questing! The questing knight travels the lands with their loyal squire helping people in need and growing their renown, at least that's how the stories go. In reality there are many reasons a knight might travel the land of Altoras. Many unlanded and minor nobles travel the land to earn a title. Others travel the land as part of a sacred rite, compelled by their Knightly order to go out and fulfill a sacred oath. Whatever their reason, a knight and their squire always draw the interest and speculation of the people.",
+				{
+					"subclassFeature": "Loyal Squire|Fighter||Questing|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Questing Knight",
+			"page": 34,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Your renown and prowess have attracted the attention of loyal squires who have pledged themselves to your service. Choose their stat block: Protector Squire, Divine Squire, or Crooked Squire.",
+				"The squire is friendly to you and your allies and obeys your commands. They are dismissed if you die.",
+				{
+					"type": "entries",
+					"name": "The Squire in Combat",
+					"entries": [
+						"In combat, the squire acts during your turn. They can move and use their {@variantrule Reaction|XPHB} on their own, but the only action they take is the {@action Dodge|XPHB} action, unless you take a {@variantrule Bonus Action|XPHB} on your turn to command them to take an action in their stat block or some other action. You can also sacrifice one of your attacks when you take the {@action Attack|XPHB} action to command the squire to make their own attack. If you are {@condition Incapacitated|XPHB}, the squire acts on their own and isn't limited to the {@action Dodge|XPHB} action."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Replacing the Squire",
+					"entries": [
+						"If the squire dies, you can replace them by spending 50 times your {@variantrule Proficiency|XPHB|Proficiency Bonus} in gold. A new squire comes to your side after 1 hour with all their {@variantrule Hit Points|XPHB}.",
+						"Whenever you finish a {@variantrule Long Rest|XPHB}, you can choose a different squire who arrives at your side. You choose their stat block and appearance. If you already have a squire from this feature, the old one is dismissed when the new one arrives."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Saving Throws",
+					"entries": [
+						"If one of the squire's actions requires a saving throw, the DC equals 8 + your Strength or Dexterity modifier (your choice) + your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					]
+				}
+			],
+			"level": 3,
+			"name": "Loyal Squire",
+			"page": 34,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"If your squire is within 5 feet of a creature, you have {@variantrule Advantage|XPHB} on weapon attack rolls against that creature. You gain this benefit only once per turn.",
+				"In addition, whenever your squire hits with their Strike and deals damage, they can deal your choice of Force damage or their normal damage type."
+			],
+			"level": 7,
+			"name": "Tandem Tactician",
+			"page": 35,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in the {@skill Persuasion|XPHB} skill. If you are already proficient in this skill, you instead gain proficiency in your choice of {@skill Intimidation|XPHB} or {@skill Performance|XPHB}.",
+				"In addition, whenever you make a Charisma ({@skill Persuasion|XPHB}) check, you can treat a {@dice d20} roll of 7 or lower as an 8."
+			],
+			"skillProficiencies": [
+				{
+					"persuasion": true
+				},
+				{
+					"choose": {
+						"from": [
+							"intimidation",
+							"performance"
+						]
+					}
+				}
+			],
+			"level": 10,
+			"name": "Chivalric Glory",
+			"page": 35,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"When you command your squire to take the Strike action, they can use it twice.",
+				"In addition, while your squire is within 15 feet of you, you have {@variantrule Advantage|XPHB} on {@variantrule Initiative|XPHB} checks."
+			],
+			"level": 15,
+			"name": "Squire Training",
+			"page": 35,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Your renown is known across the realms. You can now have two active squires at once.",
+				"Whenever you command the squires to take an action, you can command one or both of them at the same time. They do not have to take the same action.",
+				"Whenever you replace or restore a squire, you can replace or restore one or both of them at the same time, at no extra cost."
+			],
+			"level": 18,
+			"name": "Knight of the Realm",
+			"page": 35,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Questing",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"On the peaks of Unvollar, the Ironwood trees are the lifeblood of the Goliaths that live there. The Groves provide them resources to live, and the Ironwood is the heart of their friendship with their dwarven neighbors. It is little wonder then, that they have developed unique fighting styles to defend these trees. The Ironwood Sentinels are the warriors of nature charged with the defense of the Ironwood trees.",
+				{
+					"subclassFeature": "Bonus Proficiency|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Natural Adversary|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Unnatural Vigor|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Ironwood Sentinel",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in the {@skill Perception|XPHB} skill. If you are already proficient in this skill, you instead gain proficiency in the {@skill Insight|XPHB} or {@skill Investigation|XPHB} skill."
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				},
+				{
+					"choose": {
+						"from": [
+							"insight",
+							"investigation"
+						]
+					}
+				}
+			],
+			"level": 3,
+			"name": "Bonus Proficiency",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"When you end your turn within 5 feet of a creature, you can choose to mark them until the start of your next turn. Any creature marked by you has {@variantrule Disadvantage|XPHB} on attack rolls that don't target you."
+			],
+			"level": 3,
+			"name": "Natural Adversary",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Your fortitude is the stuff of legend. When you use your Second Wind feature, you also gain {@variantrule Resistance|XPHB} to Bludgeoning and Piercing damage for 1 minute. This effect ends early if you become {@condition Incapacitated|XPHB} or use your Second Wind feature again."
+			],
+			"level": 3,
+			"name": "Unnatural Vigor",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You can no longer be {@status surprised|XPHB} and have {@variantrule Advantage|XPHB} on Wisdom ({@skill Perception|XPHB}) checks to spot hidden threats or traps."
+			],
+			"level": 7,
+			"name": "Ever Vigilant",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"The Ironwood is forever with you, as you are with it, and it springs from your body to aid you in battle. When an ally you can see within 30 feet of you takes Acid, Cold, Fire, Lightning, Poison, or Thunder damage, you can take a {@variantrule Reaction|XPHB} to halve the damage dealt from that instance and store it in yourself.",
+				"After taking this {@variantrule Reaction|XPHB}, the first time you hit with a weapon attack on your next turn, you release the stored energy and deal additional damage equal to the amount of damage reduced. The damage type is the same as the damage reduced.",
+				"You can use this feature a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 10,
+			"name": "Arboreal Interception",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"When you use your Second Wind feature, the Ironwood within flourishes around you. For 1 minute, shifting branches spider out of your body in a 15-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation}. {@variantrule Enemy|XPHB} creatures treat this space as {@variantrule Difficult Terrain|XPHB} and take {@damage 1d4} Piercing damage for every 5 feet they travel inside the area.",
+				"This feature ends early if you dismiss it (no action required), use your Second Wind feature again, or become {@condition Incapacitated|XPHB}."
+			],
+			"level": 15,
+			"name": "Heart of the Briar",
+			"page": 33,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You have become a true guardian of the Ironwood. You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Amberclad Reincarnation",
+					"entries": [
+						"When you die, you become encased in amber. The amber casing has an AC of 18, {@variantrule Immunity|XPHB} to Poison and Psychic damage, {@variantrule Vulnerability|XPHB} to Bludgeoning damage, and {@variantrule Hit Points|XPHB} equal to half your maximum {@variantrule Hit Points|XPHB}.",
+						"If the amber casing is not destroyed after 30 days, you are resurrected with 1 {@variantrule Hit Points|XPHB|Hit Point}, and break out of the amber casing to continue your duty. If you are revived by other means during this time, you can freely break out of the amber casing."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Revitalization",
+					"entries": [
+						"As a {@variantrule Bonus Action|XPHB}, you can touch a creature, expend one of your {@variantrule Hit Point Dice|XPHB}, and roll the die. The target regains a number of {@variantrule Hit Points|XPHB} equal to the amount rolled plus your Constitution modifier."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "The Forest Remembers",
+					"entries": [
+						"You stop aging, and are immune to any effects that would cause you to age."
+					]
+				}
+			],
+			"level": 18,
+			"name": "Guardian of the Ironwood",
+			"page": 34,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Ironwood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"The Rock Gnomes of Unvollar have had to develop unique fighting techniques to survive their new environment. To stand against their forest counterparts on one side and the halflings on the other, they developed a system of minor magical abilities called incantations, and those who wield these incantations are known as incantors. The Rock Gnomes now export this knowledge to other nations, securing their neutrality in the geopolitics of Altoras.",
+				{
+					"subclassFeature": "Bonus Proficiency|Fighter||Incantor|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Incantor",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain proficiency in the {@skill Arcana|XPHB} skill. If you are already proficient in this skill, you instead gain {@variantrule Expertise|XPHB} in it."
+			],
+			"expertise": [
+				{
+					"arcana": true
+				}
+			],
+			"level": 3,
+			"name": "Bonus Proficiency",
+			"page": 31,
+			"skillProficiencies": [
+				{
+					"arcana": true
+				}
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You are able to channel the ambient arcane energies in the environment to produce Incantations seen in the \"Incantation Options\" section later in this subclass' description. To use an option, you must spend the number of Incantation Points that it costs.",
+				"You have a number of Incantation Points equal to two times your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended Incantation Points when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+				{
+					"entries": [
+						"To use an Incantation, you must provide a verbal component and use a weapon as a focus."
+					],
+					"name": "Components Required",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"Your Incantation Ability is Intelligence, Wisdom, or Charisma, choose when you select this subclass. If an Incantation requires a saving throw, the DC equals 8 + your Incantation Ability modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					],
+					"name": "Incantation Ability",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"Whenever you finish a {@variantrule Long Rest|XPHB}, you can prepare up to 4 Incantations. The number of Incantations you can prepare increases by 2 when you reach Fighter level 7 (6), 10 (8), and 15 (10)."
+					],
+					"name": "Incantations Prepared",
+					"type": "entries"
+				}
+			],
+			"level": 3,
+			"name": "Incantations",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Channeling the arcane energies around you comes easier. When you use your Action Surge feature, you also regain half of your expended Incantation Points."
+			],
+			"level": 7,
+			"name": "Arcane Capacitor",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"Your time spent channeling ambient arcane energies have made you very astute at their identification. You have {@variantrule Advantage|XPHB} on Intelligence ({@skill Arcana|XPHB}) checks to determine the source and nature of a magical effect.",
+				"In addition, you learn the {@spell Detect Magic|XPHB} spell. You can cast this spell without expending a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}.",
+				"The spellcasting ability for this spell is the same ability you chose for your Incantations."
+			],
+			"level": 10,
+			"name": "Adept's Insight",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You are able to disrupt magical effects from a heightened understanding of magic manipulation. You learn the {@spell Dispel Magic|XPHB} spell. You can cast this spell without a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}.",
+				"The spellcasting ability for this spell is the same ability you chose for your Incantations."
+			],
+			"level": 15,
+			"name": "Spell Breaker",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"When you use your Second Wind feature, you can spend Incantation Points to enhance the effect. For each Incantation Point you spend, you regain an additional {@dice 1d10} {@variantrule Hit Points|XPHB}."
+			],
+			"level": 18,
+			"name": "Arcane Revitalization",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain two additional Incantations of your choice."
+			],
+			"level": 7,
+			"name": "Additional Incantations",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain two additional Incantations of your choice."
+			],
+			"level": 10,
+			"name": "Additional Incantations",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Fighter",
+			"classSource": "PHB",
+			"entries": [
+				"You gain two additional Incantations of your choice."
+			],
+			"level": 15,
+			"name": "Additional Incantations",
+			"page": 31,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Incantor",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"As a member of the Circle of the Warrior, you are devoted to preserving the balance of the natural world of the Material Plane and beyond, same as every other druid. Much like the Totem Warriors of Slobratna, you made the choice to combine the strength of metal and combat with that of the elements themselves into its own tradition. Doing so has transformed you into a steadfast guardian and avenger of the elements, ready to join the frontlines of other warriors who seek to protect the world like you do.",
+				{
+					"subclassFeature": "Circle of the Warrior Spells|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Trained for Battle|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Primal Warrior|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Circle of the Warrior",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you reach a Druid level specified in the Circle of the Warrior Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Circle of the Warrior Spells",
+					"colLabels": [
+						"Druid Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Absorb Elements|XGE}, {@spell Scorching Ray|XPHB}, {@spell Shillelagh|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Thunder Step|XGE}"
+						],
+						[
+							"7",
+							"{@spell Guardian of Nature|XGE}"
+						],
+						[
+							"9",
+							"{@spell Steel Wind Strike|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Circle of the Warrior Spells",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"You gain a Fighting Style Feat of your choice and proficiency with your choice of {@item Smith's Tools|XPHB} or {@item Woodcarver's Tools|XPHB}.",
+				"In addition, you can use a simple or martial weapon as a {@variantrule Spellcasting Focus|XPHB} for your Druid spells."
+			],
+			"level": 3,
+			"name": "Trained for Battle",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"toolProficiencies": [
+				{
+					"choose": {
+						"count": 1,
+						"from": [
+							"smith's tools",
+							"woodcarver's tools"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Wild Shape"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can expend a use of your Wild Shape feature to channel the elements and empower your combat prowess instead of shape-shifting. Currents of raw elemental energy surge around you for 1 minute, until you gain the {@condition Incapacitated|XPHB} condition, or choose to dismiss it (no action required).",
+				"While your Primal Warrior is active, you gain the following benefits.",
+				{
+					"entries": [
+						"When you activate this ability, you gain {@variantrule Temporary Hit Points|XPHB} equal to two times your Druid level."
+					],
+					"name": "Temporary Hit Points",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"When you hit a creature with a weapon attack roll and deal damage to it, you also deal {@damage 1d8} Cold, Fire, Lightning, or Thunder damage (you choose when you activate Primal Warrior)."
+					],
+					"name": "Elemental Warrior",
+					"type": "entries"
+				}
+			],
+			"level": 3,
+			"name": "Primal Warrior",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"You can attack twice, instead of once, whenever you take the {@action Attack|XPHB} action on your turn. Moreover, you can cast one of your Druid cantrips in place of one of those attacks."
+			],
+			"level": 6,
+			"name": "Extra Attack",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"When you deal Cold, Fire, Lightning, or Thunder damage to one or more creatures, you can inflict an extra effect to one of those targets from the following list. You can inflict this extra effect only once per turn.",
+				{
+					"entries": [
+						"If you dealt Cold damage, the target's {@variantrule Speed|XPHB} is reduced by 10 feet, and it has {@variantrule Disadvantage|XPHB} on the next attack roll it makes."
+					],
+					"name": "Frostbrand",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"If you dealt Fire damage, choose another creature within 5 feet of them. That creature takes Fire damage equal to two times your Wisdom modifier."
+					],
+					"name": "Flametongue",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"If you dealt Lightning damage, the target must make a Strength saving throw against your spell save DC. On a failed save, the target is knocked {@condition Prone|XPHB}."
+					],
+					"name": "Stormstrike",
+					"type": "entries"
+				},
+				{
+					"entries": [
+						"If you dealt Thunder damage, the target is pushed 10 feet directly away from you."
+					],
+					"name": "Windfury",
+					"type": "entries"
+				}
+			],
+			"level": 10,
+			"name": "Primal Mastery",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Druid",
+			"classSource": "PHB",
+			"entries": [
+				"While your Primal Warrior feature is active, when you roll Cold, Fire, Lightning or Thunder damage and roll the highest number possible on any of the dice, choose one of those dice, roll it again, and add its result to the damage total."
+			],
+			"level": 14,
+			"name": "Elemental Overload",
+			"page": 30,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
 		{
 			"className": "Druid",
 			"classSource": "PHB",
@@ -5390,7 +6432,6 @@
 			"entries": [
 				"When you reach a Druid level specified in the Circle of the Grove Spells table, you thereafter always have the listed spells prepared.",
 				{
-					"type": "table",
 					"caption": "Circle of the Grove Spells",
 					"colLabels": [
 						"Druid Level",
@@ -5417,7 +6458,8 @@
 							"9",
 							"{@spell Commune with Nature|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
 			],
 			"level": 3,
@@ -5449,6 +6491,9 @@
 		{
 			"className": "Druid",
 			"classSource": "PHB",
+			"consumes": {
+				"name": "Wild Shape"
+			},
 			"entries": [
 				"As an {@variantrule Action|XPHB}, you can expend a use of your Wild Shape to summon a Plantlife Protector made of living or dead flora.",
 				"The Protector appears in an unoccupied space of your choice that you can see within 30 feet of you. The Protector is friendly to you and your companions and obeys your commands. See this creature's game statistics in the Plantlife Protector stat block below. You determine the Protector's appearance.",
@@ -5530,7 +6575,6 @@
 			"entries": [
 				"When you reach a Druid level specified in the Circle of the False Moon Spells table, you thereafter always have the listed spells prepared.",
 				{
-					"type": "table",
 					"caption": "Circle of the False Moon Spells",
 					"colLabels": [
 						"Druid Level",
@@ -5557,7 +6601,8 @@
 							"9",
 							"{@spell Dream|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
 			],
 			"header": 2,
@@ -5571,23 +6616,26 @@
 		{
 			"className": "Druid",
 			"classSource": "PHB",
+			"consumes": {
+				"name": "Wild Shape"
+			},
 			"entries": [
 				"As a {@variantrule Bonus Action|XPHB}, you can expend a use of your Wild Shape to wreath yourself in a Veil of the reflected moon for 10 minutes. It ends early if you dismiss it (no action required), manifest it again, or have the {@condition Incapacitated|XPHB} condition.",
 				"When you manifest your Veil and as a {@variantrule Bonus Action|XPHB} on your subsequent turns, you can summon an illusory copy of yourself in an unoccupied space you can see within 30 feet of yourself. The copy is animated and mimics your expressions and gestures. The copy has an AC of 10, 1 {@variantrule Hit Points|XPHB|Hit Point}, and {@variantrule Immunity|XPHB} to Poison and Psychic damage. If a creature takes the {@action Study|XPHB} action to examine the copy, it can determine that it is an illusion with a successful Intelligence ({@skill Investigation|XPHB}) check against your spell save DC. If a creature discerns any copy for what it is, it identifies which is the real you until the end of your Veil.",
 				"While a copy persists, you gain the following benefits.",
 				{
-					"type": "entries",
-					"name": "Distract",
 					"entries": [
 						"When both you and a copy are within 5 feet of a creature that can see the copy, you have {@variantrule Advantage|XPHB} on attack rolls against that creature."
-					]
+					],
+					"name": "Distract",
+					"type": "entries"
 				},
 				{
-					"type": "entries",
-					"name": "Move",
 					"entries": [
 						"As a {@variantrule Bonus Action|XPHB}, you can move any number of copies up to 30 feet to an unoccupied space you can see within 120 feet of yourself."
-					]
+					],
+					"name": "Move",
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -5605,11 +6653,11 @@
 				"Once per turn when you deal Radiant damage, you add your Wisdom modifier to the damage roll.",
 				"In addition, you gain the following additional benefits while in your Veil of the False Moon.",
 				{
-					"type": "entries",
-					"name": "Cast Spells",
 					"entries": [
 						"You can cast spells as though you were in a copy's space, but you must use your own senses."
-					]
+					],
+					"name": "Cast Spells",
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -5626,11 +6674,11 @@
 			"entries": [
 				"Your Veil has grown ever stronger. You gain the following benefits while in your Veil of the False Moon.",
 				{
-					"type": "entries",
-					"name": "Blind",
 					"entries": [
 						"When you or an ally within 60 feet of you is targeted with an attack, you can take a {@variantrule Reaction|XPHB} to force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attacker is {@condition Blinded|XPHB} until the start of your next turn."
-					]
+					],
+					"name": "Blind",
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -5686,7 +6734,6 @@
 			"entries": [
 				"When you reach a Cleric level specified in the Venom Domain Spells table, you thereafter always have the listed spells prepared.",
 				{
-					"type": "table",
 					"caption": "Venom Domain Spells",
 					"colLabels": [
 						"Cleric Level",
@@ -5713,7 +6760,8 @@
 							"9",
 							"{@spell Cloudkill|XPHB}, {@spell Contagion|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
 			],
 			"header": 2,
@@ -5744,23 +6792,23 @@
 			"entries": [
 				"You gain proficiency in the {@skill Medicine|XPHB} skill and with the {@item Poisoner's Kit|XPHB}. You also learn the {@spell Poison Spray|XPHB} cantrip."
 			],
+			"header": 2,
+			"level": 3,
+			"name": "Poisoner's Expertise",
+			"page": 26,
 			"skillProficiencies": [
 				{
 					"medicine": true
 				}
 			],
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom",
+			"subclassSource": "AltorasCharacterCreationOptions",
 			"toolProficiencies": [
 				{
 					"poisoner's kit": true
 				}
-			],
-			"header": 2,
-			"level": 3,
-			"name": "Poisoner's Expertise",
-			"page": 26,
-			"source": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Venom",
-			"subclassSource": "AltorasCharacterCreationOptions"
+			]
 		},
 		{
 			"className": "Cleric",
@@ -5836,7 +6884,6 @@
 			"entries": [
 				"When you reach a Cleric level specified in the Dedication Domain Spells table, you thereafter always have the listed spells prepared.",
 				{
-					"type": "table",
 					"caption": "Dedication Domain Spells",
 					"colLabels": [
 						"Cleric Level",
@@ -5863,7 +6910,8 @@
 							"9",
 							"{@spell Greater Restoration|XPHB}, {@spell Skill Empowerment|XGE}"
 						]
-					]
+					],
+					"type": "table"
 				}
 			],
 			"header": 2,
@@ -5956,20 +7004,17 @@
 				"You have a number of bones that are covered in magically etched markings called Scrimshaw Tokens equal to your Strength modifier. A Scrimshaw Token is expended when you use it, and you regain all expended Scrimshaw Tokens when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
 				"While your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
 				{
-					"type": "entries",
-					"name": "Grasping Cage",
 					"entries": [
-						"As a {@variantrule Bonus Action|XPHB}, you cause bones to erupt from the earth at a creature you can see within 60 feet of you. The target must succeed on a Strength or Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Grappled|XPHB} by the bones for 1 minute. At the end of each of its turns, the target can remake the save, freeing itself on a success.",
-						"When you reach Barbarian level 6, the bones also inflict the {@condition Restrained|XPHB} condition. At level 10, the target also cannot cast a spell with somatic components."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Skeletal Warding",
-					"entries": [
-						"As a {@variantrule Bonus Action|XPHB}, choose one of Acid, Cold, Fire, Lightning, Necrotic, Poison, Radiant, or Thunder. For 1 minute, you have {@variantrule Resistance|XPHB} to the chosen damage type. You can only be under the effect of one of these Wards at a time, and it ends early if your Rage ends.",
-						"Starting at Barbarian level 6, when you hit a target with a melee attack roll and deal damage to it, you also deal {@damage 1d6} damage of the same type as your Skeletal Warding. At level 10, whenever a creature hits you with a melee attack roll, it takes {@damage 2d6} damage of the same type as your Skeletal Warding."
-					]
+						{
+							"subclassFeature": "Grasping Cage|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+							"type": "refSubclassFeature"
+						},
+						{
+							"subclassFeature": "Skeletal Warding|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+							"type": "refSubclassFeature"
+						}
+					],
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -5983,21 +7028,56 @@
 		{
 			"className": "Barbarian",
 			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, choose one of Acid, Cold, Fire, Lightning, Necrotic, Poison, Radiant, or Thunder. For 1 minute, you have {@variantrule Resistance|XPHB} to the chosen damage type. You can only be under the effect of one of these Wards at a time, and it ends early if your Rage ends.",
+				"Starting at Barbarian level 6, when you hit a target with a melee attack roll and deal damage to it, you also deal {@damage 1d6} damage of the same type as your Skeletal Warding. At level 10, whenever a creature hits you with a melee attack roll, it takes {@damage 2d6} damage of the same type as your Skeletal Warding."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Skeletal Warding",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you cause bones to erupt from the earth at a creature you can see within 60 feet of you. The target must succeed on a Strength or Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be {@condition Grappled|XPHB} by the bones for 1 minute. At the end of each of its turns, the target can remake the save, freeing itself on a success.",
+				"When you reach Barbarian level 6, the bones also inflict the {@condition Restrained|XPHB} condition. At level 10, the target also cannot cast a spell with somatic components."
+			],
+			"header": 2,
+			"level": 3,
+			"name": "Grasping Cage",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
 			"entries": [
 				"You understand how to draw out the inner magic from your own bones. You can expend a Scrimshaw Token to gain one of the following benefits.",
 				{
-					"type": "entries",
-					"name": "Enhance Ability",
 					"entries": [
-						"As an {@variantrule Action|XPHB}, choose one of Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. For 1 hour, you have {@variantrule Advantage|XPHB} on ability checks using the chosen ability."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Land's Stride",
-					"entries": [
-						"As an {@variantrule Action|XPHB}, you gain a {@variantrule Swim Speed|XPHB} or {@variantrule Climb Speed|XPHB} equal to your {@variantrule Speed|XPHB} for 1 hour."
-					]
+						{
+							"subclassFeature": "Enhance Ability|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
+							"type": "refSubclassFeature"
+						},
+						{
+							"subclassFeature": "Land's Stride|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
+							"type": "refSubclassFeature"
+						}
+					],
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -6011,21 +7091,54 @@
 		{
 			"className": "Barbarian",
 			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As an {@variantrule Action|XPHB}, choose one of Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. For 1 hour, you have {@variantrule Advantage|XPHB} on ability checks using the chosen ability."
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Enhance Ability",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As an {@variantrule Action|XPHB}, you gain a {@variantrule Swim Speed|XPHB} or {@variantrule Climb Speed|XPHB} equal to your {@variantrule Speed|XPHB} for 1 hour."
+			],
+			"header": 2,
+			"level": 6,
+			"name": "Land's Stride",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
 			"entries": [
 				"You can channel your Rage into the Scrimshaw Tokens as fuel, seeping your powerful emotions into the bones in place of magic. As an {@variantrule Action|XPHB}, you can expend a use of your Rage to regain all your Scrimshaw Tokens. Additionally, while your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
 				{
-					"type": "entries",
-					"name": "Essence Harvest",
 					"entries": [
-						"As a {@variantrule Bonus Action|XPHB}, damage you deal with your weapon attacks harvest vital essence from your opponents. Until the end of your current turn, you regain a number of {@variantrule Hit Points|XPHB} equal to the damage dealt by your weapon."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Reflexive Reprisal",
-					"entries": [
-						"When you take damage from an enemy, you can immediately take a {@variantrule Reaction|XPHB} and make a weapon attack against that enemy."
-					]
+						{
+							"subclassFeature": "Essence Harvest|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
+							"type": "refSubclassFeature"
+						},
+						{
+							"subclassFeature": "Reflexive Reprisal|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
+							"type": "refSubclassFeature"
+						}
+					],
+					"type": "entries"
 				}
 			],
 			"header": 2,
@@ -6039,26 +7152,93 @@
 		{
 			"className": "Barbarian",
 			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, damage you deal with your weapon attacks harvest vital essence from your opponents. Until the end of your current turn, you regain a number of {@variantrule Hit Points|XPHB} equal to the damage dealt by your weapon."
+			],
+			"header": 2,
+			"level": 10,
+			"name": "Essence Harvest",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"When you take damage from an enemy, you can immediately take a {@variantrule Reaction|XPHB} and make a weapon attack against that enemy."
+			],
+			"header": 2,
+			"level": 10,
+			"name": "Reflexive Reprisal",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
 			"entries": [
 				"You have learned how to pull the magic of the tokens without needing to channel your strong emotions. Your Rage no longer needs to be active in order to create effects using your Scrimshaw Tokens. Additionally, you can expend a Scrimshaw Token to create the following effects.",
 				{
-					"type": "entries",
-					"name": "Hollow Bones",
 					"entries": [
-						"As a {@variantrule Bonus Action|XPHB}, you gain a {@variantrule Flying|XPHB} {@variantrule Speed|XPHB} equal to your {@variantrule Speed|XPHB} and can hover for 1 minute. This effect ends early if your Rage ends. When this effect ends, you fall harmlessly to the ground at a rate of 60 feet per round."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Seismic Stomp",
-					"entries": [
-						"As an {@variantrule Action|XPHB}, all enemy creatures in a 60-foot cone must make a Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be knocked {@condition Prone|XPHB}."
-					]
+						{
+							"subclassFeature": "Hollow Bones|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14",
+							"type": "refSubclassFeature"
+						},
+						{
+							"subclassFeature": "Seismic Stomp|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14",
+							"type": "refSubclassFeature"
+						}
+					],
+					"type": "entries"
 				}
 			],
 			"header": 2,
 			"level": 14,
 			"name": "It's In Your Bones",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you gain a {@variantrule Flying|XPHB} {@variantrule Speed|XPHB} equal to your {@variantrule Speed|XPHB} and can hover for 1 minute. This effect ends early if your Rage ends. When this effect ends, you fall harmlessly to the ground at a rate of 60 feet per round."
+			],
+			"header": 2,
+			"level": 14,
+			"name": "Hollow Bones",
+			"page": 24,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Bone Carver",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"consumes": {
+				"name": "Scrimshaw"
+			},
+			"entries": [
+				"As an {@variantrule Action|XPHB}, all enemy creatures in a 60-foot cone must make a Dexterity saving throw (DC = 8 + your Strength modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}) or be knocked {@condition Prone|XPHB}."
+			],
+			"header": 2,
+			"level": 14,
+			"name": "Seismic Stomp",
 			"page": 24,
 			"source": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Bone Carver",
