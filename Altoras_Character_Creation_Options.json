@@ -1462,7 +1462,7 @@
 	"foundrySubclassFeature": [
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entryData": {
 				"additionalSpells": [
 					{
@@ -1485,7 +1485,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entryData": {
 				"skillToolLanguageProficiencies": [
 					{
@@ -1510,7 +1510,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"level": 3,
 			"name": "Scrimshaw",
 			"source": "AltorasCharacterCreationOptions",
@@ -1523,7 +1523,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"level": 3,
 			"name": "Incantations",
 			"source": "AltorasCharacterCreationOptions",
@@ -1531,7 +1531,73 @@
 			"subclassSource": "AltorasCharacterCreationOptions",
 			"system": {
 				"recharge": "restShort",
-				"uses.max": "2 * @prof"
+				"uses.max": "2 * @abilities.int.mod"
+			}
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Tether",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subEntities": {
+				"item": [
+					{
+						"name": "Tether",
+						"source": "AltorasCharacterCreationOptions",
+						"page": 37,
+						"type": "R|XPHB",
+						"rarity": "none",
+						"foundrySystem": {
+							"equipped": true
+						},
+						"foundryActivities": [
+							{
+								"foundryId": "martialArts",
+								"name": "Tether Attack",
+								"type": "attack",
+								"activation": {
+									"type": "action",
+									"value": 1
+								},
+								"target": {
+									"affects": {
+										"count": "1",
+										"type": "creature"
+									}
+								},
+								"range": {
+									"value": "30",
+									"units": "ft"
+								},
+								"attack": {
+									"ability": "dex",
+									"type": {
+										"value": "melee",
+										"classification": "weapon"
+									}
+								},
+								"damage": {
+									"parts": [
+										{
+											"custom": {
+												"enabled": true,
+												"formula": "@scale.monk.die + @mod"
+											},
+											"types": [
+												"bludgeoning",
+												"piercing",
+												"slashing"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				]
 			}
 		}
 	],
@@ -2496,6 +2562,218 @@
 			"isClassFeatureVariant": true,
 			"name": "Terrain Alteration",
 			"page": 32,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point",
+				"amount": 2
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 2 Focus Points to replace it with a Blinding Tether. One creature of your choice that you can see within 30 feet of you must make a Constitution saving throw. On a failed save, the target takes Force damage equal to one roll of your Martial Arts die and is {@condition Blinded|XPHB} for 1 minute or until you lose {@status Concentration|XPHB} (as if {@status Concentration|XPHB|Concentrating} on a spell). At the end of each of its turns, the target can remake the save, ending the effect on a success."
+			],
+			"prerequisite": [
+				{
+					"level": {
+						"level": 6,
+						"class": {
+							"name": "Monk",
+							"source": "XPHB"
+						}
+					}
+				}
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Blinding Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"You can use your Deflect Attacks feature when an ally within 30 feet of you is hit with an attack roll to defend them. If you redirect the attack, the target creature must be within 5 feet of the ally if it was a melee attack or within 60 feet of the ally if it was a ranged attack."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Deflecting Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Fell Tether. One creature of your choice that you can see within 30 feet of you must make a Strength saving throw. On a failed save, the target takes Force damage equal to one roll of your Martial Arts die and is knocked {@condition Prone|XPHB}. On a success, the target takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Fell Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Disarming Tether. One creature of your choice that you can see within 30 feet of you must make a Strength saving throw. On a failed save, the target takes Force damage equal to one roll of your Martial Arts die and one item in its hand is dropped and immediately drawn to one of your free hands. If both your hands are occupied, the item drops harmlessly to your feet. On a success, the target takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Disarming Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point",
+				"amount": 2
+			},
+			"entries": [
+				"As an {@variantrule Action|XPHB}, you can expend 2 Focus Points to anchor a group of obstructive tethers to the ground at a point you can see within 60 feet of you. The tethers fill a 20-foot cube from that point for the duration. The tethers are {@variantrule Difficult Terrain|XPHB}, and last for 10 minutes, or until you lose {@status Concentration|XPHB} (as if {@status Concentration|XPHB|Concentrating} on a spell).",
+				"Each creature that starts its turn in the tethers or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is {@condition Restrained|XPHB} as long as it remains in the tethers or until it breaks free.",
+				"A creature {@condition restrained} by the tether can use its action to make a Strength saving throw. On a success, it is no longer {@condition Restrained|XPHB}."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Hindering Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Pushing Tether. One creature of your choice that you can see within 30 feet of you must make a Strength saving throw. On a failed save, the target takes Force damage equal to one roll of your Martial Arts die and, if it is Large or smaller, is pushed 10 feet directly away from you. On a success, the target takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Pushing Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Pulling Tether. One creature of your choice that you can see within 30 feet of you must make a Strength saving throw. On a failed save, the target takes Force damage equal to one roll of your Martial Arts die and, if it is Large or smaller, is pulled 10 feet directly towards you. On a success, the target takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Pulling Tether",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point",
+				"amount": 3
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can expend 3 Focus Points to give yourself a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB} for 1 minute, using your Tether to anchor onto your surroundings and swing around. This {@variantrule Fly Speed|XPHB} is negated when in an environment without objects or structures to anchor onto, such as open plains or high in the sky."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"prerequisite": [
+				{
+					"level": {
+						"level": 6,
+						"class": {
+							"name": "Monk",
+							"source": "XPHB"
+						}
+					}
+				}
+			],
+			"isClassFeatureVariant": true,
+			"name": "Tether Momentum",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point",
+				"amount": 4
+			},
+			"entries": [
+				"As an action, you can expend 4 Focus Points to summon innumerable copies of your Tether to draw your foes in. Each enemy creature in a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} must make a Dexterity saving throw. On a failed save, the creature takes Force damage equal to four rolls of your Martial Arts die and, if it is Large or smaller, is pulled to an unoccupied space within 5 feet of you. On a success, the creature takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"prerequisite": [
+				{
+					"level": {
+						"level": 10,
+						"class": {
+							"name": "Monk",
+							"source": "XPHB"
+						}
+					}
+				}
+			],
+			"isClassFeatureVariant": true,
+			"name": "Tether Singularity",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Tether Toss. Choose one object that you can see within 30 feet of you that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take Bludgeoning damage equal to two rolls of your Martial Arts die. On a success, the struck creature takes half damage only."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Tether Toss",
+			"page": 38,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"entries": [
+				"When you make an {@variantrule Unarmed Strike|XPHB} on your turn, you can expend 1 Focus Point to replace it with a Zip Tether. Choose a creature or structure within 60 feet of you. If the target is heavier than you, you are pulled to an unoccupied space within 5 feet of the target and can make an {@variantrule Unarmed Strike|XPHB} attack. On a hit, this attack deals additional damage equal to three rolls of your Martial Arts die as you slam into it with speed."
+			],
+			"featureType": [
+				"TT:WT"
+			],
+			"prerequisite": [
+				{
+					"level": {
+						"level": 10,
+						"class": {
+							"name": "Monk",
+							"source": "XPHB"
+						}
+					}
+				}
+			],
+			"isClassFeatureVariant": true,
+			"name": "Zip Tether",
+			"page": 39,
 			"source": "AltorasCharacterCreationOptions"
 		}
 	],
@@ -4196,7 +4474,7 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "PHB"
+						"source": "XPHB"
 					}
 				]
 			},
@@ -5412,39 +5690,39 @@
 	"subclass": [
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "College of the Arcane Tailor",
 			"shortName": "Arcane Tailor",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"College of the Arcane Tailor|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
-				"A Tailored Experience|Bard||Arcane Tailor|AltorasCharacterCreationOptions|6",
-				"It's All in the Stitching|Bard||Arcane Tailor|AltorasCharacterCreationOptions|14"
+				"College of the Arcane Tailor|Bard|XPHB|Arcane Tailor|AltorasCharacterCreationOptions|3",
+				"A Tailored Experience|Bard|XPHB|Arcane Tailor|AltorasCharacterCreationOptions|6",
+				"It's All in the Stitching|Bard|XPHB|Arcane Tailor|AltorasCharacterCreationOptions|14"
 			]
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "College of the Dragon Song",
 			"shortName": "Dragon Song",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"College of the Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
-				"Draconic Mantle|Bard||Dragon Song|AltorasCharacterCreationOptions|6",
-				"Dragon Song|Bard||Dragon Song|AltorasCharacterCreationOptions|14"
+				"College of the Dragon Song|Bard|XPHB|Dragon Song|AltorasCharacterCreationOptions|3",
+				"Draconic Mantle|Bard|XPHB|Dragon Song|AltorasCharacterCreationOptions|6",
+				"Dragon Song|Bard|XPHB|Dragon Song|AltorasCharacterCreationOptions|14"
 			]
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Path of the Bone Carver",
 			"shortName": "Bone Carver",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Path of the Bone Carver|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
-				"Digging Deeper|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
-				"Channeled Fury|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
-				"It's In Your Bones|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14"
+				"Path of the Bone Carver|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|3",
+				"Digging Deeper|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|6",
+				"Channeled Fury|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|10",
+				"It's In Your Bones|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|14"
 			]
 		},
 		{
@@ -5473,14 +5751,14 @@
 				}
 			],
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Dedication Domain",
 			"shortName": "Dedication",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Dedication Domain|Cleric||Dedication|AltorasCharacterCreationOptions|3",
-				"Practiced Proficiency|Cleric||Dedication|AltorasCharacterCreationOptions|6",
-				"Focused Dedication|Cleric||Dedication|AltorasCharacterCreationOptions|17"
+				"Dedication Domain|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|3",
+				"Practiced Proficiency|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|6",
+				"Focused Dedication|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|17"
 			],
 			"subclassSpells": [
 				"bless",
@@ -5522,15 +5800,15 @@
 				}
 			],
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Venom Domain",
 			"shortName": "Venom",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Venom Domain|Cleric||Venom|AltorasCharacterCreationOptions|3",
-				"Divination Master|Cleric||Venom|AltorasCharacterCreationOptions|6",
-				"Fated Delirium|Cleric||Venom|AltorasCharacterCreationOptions|6",
-				"Precognitive Trance|Cleric||Venom|AltorasCharacterCreationOptions|17"
+				"Venom Domain|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|3",
+				"Divination Master|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|6",
+				"Fated Delirium|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|6",
+				"Precognitive Trance|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|17"
 			],
 			"subclassSpells": [
 				"augury",
@@ -5567,15 +5845,15 @@
 				}
 			],
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Circle of the False Moon",
 			"shortName": "False Moon",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Circle of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
-				"Searing Radiance|Druid||False Moon|AltorasCharacterCreationOptions|6",
-				"Blistering Moonlight|Druid||False Moon|AltorasCharacterCreationOptions|10",
-				"Borrowed Aptitude|Druid||False Moon|AltorasCharacterCreationOptions|14"
+				"Circle of the False Moon|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|3",
+				"Searing Radiance|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|6",
+				"Blistering Moonlight|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|10",
+				"Borrowed Aptitude|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|14"
 			],
 			"subclassSpells": [
 				"mirror image",
@@ -5608,15 +5886,15 @@
 				}
 			],
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Circle of the Grove",
 			"shortName": "Grove",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Circle of the Grove|Druid||Grove|AltorasCharacterCreationOptions|3",
-				"Connected Roots|Druid||Grove|AltorasCharacterCreationOptions|6",
-				"Sturdy Bark|Druid||Grove|AltorasCharacterCreationOptions|10",
-				"The Grove's Champion|Druid||Grove|AltorasCharacterCreationOptions|14"
+				"Circle of the Grove|Druid|XPHB|Grove|AltorasCharacterCreationOptions|3",
+				"Connected Roots|Druid|XPHB|Grove|AltorasCharacterCreationOptions|6",
+				"Sturdy Bark|Druid|XPHB|Grove|AltorasCharacterCreationOptions|10",
+				"The Grove's Champion|Druid|XPHB|Grove|AltorasCharacterCreationOptions|14"
 			],
 			"subclassSpells": [
 				"create or destroy water",
@@ -5649,7 +5927,7 @@
 				}
 			],
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"featProgression": [
 				{
 					"category": [
@@ -5665,10 +5943,10 @@
 			"shortName": "Warrior",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Circle of the Warrior|Druid||Warrior|AltorasCharacterCreationOptions|3",
-				"Extra Attack|Druid||Warrior|AltorasCharacterCreationOptions|6",
-				"Primal Mastery|Druid||Warrior|AltorasCharacterCreationOptions|10",
-				"Elemental Overload|Druid||Warrior|AltorasCharacterCreationOptions|14"
+				"Circle of the Warrior|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|3",
+				"Extra Attack|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|6",
+				"Primal Mastery|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|10",
+				"Elemental Overload|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|14"
 			],
 			"subclassSpells": [
 				"absorb elements",
@@ -5701,7 +5979,7 @@
 				}
 			],
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Incantor",
 			"optionalfeatureProgression": [
 				{
@@ -5720,53 +5998,503 @@
 			"shortName": "Incantor",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Incantor|Fighter||Incantor|AltorasCharacterCreationOptions|3",
-				"Arcane Capacitor|Fighter||Incantor|AltorasCharacterCreationOptions|7",
-				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|7",
-				"Adept's Insight|Fighter||Incantor|AltorasCharacterCreationOptions|10",
-				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|10",
-				"Spell Breaker|Fighter||Incantor|AltorasCharacterCreationOptions|15",
-				"Additional Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|15",
-				"Arcane Revitalization|Fighter||Incantor|AltorasCharacterCreationOptions|18"
+				"Incantor|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|3",
+				"Arcane Capacitor|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|7",
+				"Adept's Insight|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|10",
+				"Spell Breaker|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|15",
+				"Arcane Revitalization|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|18"
 			]
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Ironwood Sentinel",
 			"shortName": "Ironwood",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Ironwood Sentinel|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
-				"Ever Vigilant|Fighter||Ironwood|AltorasCharacterCreationOptions|7",
-				"Arboreal Interception|Fighter||Ironwood|AltorasCharacterCreationOptions|10",
-				"Heart of the Briar|Fighter||Ironwood|AltorasCharacterCreationOptions|15",
-				"Guardian of the Ironwood|Fighter||Ironwood|AltorasCharacterCreationOptions|18"
+				"Ironwood Sentinel|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|3",
+				"Ever Vigilant|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|7",
+				"Arboreal Interception|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|10",
+				"Heart of the Briar|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|15",
+				"Guardian of the Ironwood|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|18"
 			]
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"name": "Questing Knight",
 			"shortName": "Questing",
 			"source": "AltorasCharacterCreationOptions",
 			"subclassFeatures": [
-				"Questing Knight|Fighter||Questing|AltorasCharacterCreationOptions|3",
-				"Tandem Tactician|Fighter||Questing|AltorasCharacterCreationOptions|7",
-				"Chivalric Glory|Fighter||Questing|AltorasCharacterCreationOptions|10",
-				"Squire Training|Fighter||Questing|AltorasCharacterCreationOptions|15",
-				"Knight of the Realm|Fighter||Questing|AltorasCharacterCreationOptions|18"
+				"Questing Knight|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|3",
+				"Tandem Tactician|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|7",
+				"Chivalric Glory|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|10",
+				"Squire Training|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|15",
+				"Knight of the Realm|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|18"
+			]
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"name": "Warrior of the Tether",
+			"shortName": "Tether",
+			"source": "AltorasCharacterCreationOptions",
+			"optionalfeatureProgression": [
+				{
+					"featureType": [
+						"TT:WT"
+					],
+					"name": "Tether Techniques",
+					"progression": {
+						"3": 2,
+						"6": 3,
+						"10": 4,
+						"14": 5,
+						"18": 6
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Warrior of the Tether|Monk|XPHB|Tether|AltorasCharacterCreationOptions|3",
+				"Harmonic Acrobatics|Monk|XPHB|Tether|AltorasCharacterCreationOptions|6",
+				"Extended Techniques|Monk|XPHB|Tether|AltorasCharacterCreationOptions|11",
+				"Peak Efficiency|Monk|XPHB|Tether|AltorasCharacterCreationOptions|17"
+			]
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"name": "Warrior of Weaponcraft",
+			"shortName": "Weaponcraft",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Warrior of Weaponcraft|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|3",
+				"Artisan of Combat|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|6",
+				"Aura Surge|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|11",
+				"Finishing Strike|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|17"
+			]
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"name": "Oath of the Aegis",
+			"shortName": "Aegis",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Oath of the Aegis|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|3",
+				"Aura of Assistance|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|7",
+				"Defense of the Meek|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|15",
+				"Aegis Form|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|20"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"blanche's reactive warding|ACCO",
+							"sanctuary|XPHB"
+						],
+						"5": [
+							"aid|XPHB",
+							"enhance ability|XPHB"
+						],
+						"9": [
+							"mass healing word|XPHB",
+							"thunder step|XGE"
+						],
+						"13": [
+							"dimension door|XPHB",
+							"otiluke's resilient sphere|XPHB"
+						],
+						"17": [
+							"mass cure wounds|XPHB",
+							"wall of stone|XPHB"
+						]
+					}
+				}
 			]
 		}
 	],
 	"subclassFeature": [
 		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"On the island of Arovatan, hobgoblin monks have been honing their craft for centuries to create the ultimate warrior: One perfect weapon of mind, body, soul, and tool. The product of this order is the Warrior of Weaponcraft, an artisan and warrior wielding a uniquely crafted weapon and offers no weaknesses.",
+				{
+					"subclassFeature": "Divine Bulwark|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Oath of the Aegis Spells|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Rapid Response|Paladin|XPHB|Aegis|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Oath of the Aegis",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"As a Magic action, you can expend one use of your Channel Divinity and choose a number of creatures up to or equal to your Charisma modifier, which can include you. Those chosen creatures gain {@variantrule Temporary Hit Points|XPHB} equal to two times your Paladin level."
+			],
+			"consumes": {
+				"name": "Channel Divinity"
+			},
+			"level": 3,
+			"name": "Divine Bulwark",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"When you reach a Paladin level specified in the Oath of the Aegis Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Oath of the Aegis Spells",
+					"colLabels": [
+						"Paladin Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"Blanche's Reactive Warding, {@spell Sanctuary|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Aid|XPHB}, {@spell Enhance Ability|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Mass Healing Word|XPHB}, {@spell Thunder Step|XGE}"
+						],
+						[
+							"13",
+							"{@spell Dimension Door|XPHB}, {@spell Otiluke's Resilient Sphere|XPHB}"
+						],
+						[
+							"17",
+							"{@spell Mass Cure Wounds|XPHB}, {@spell Wall of Stone|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Oath of the Aegis Spells",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Channel Divinity to bolster your ability to defend and aid others for 10 minutes. As part of this same {@variantrule Bonus Action|XPHB}, and as a {@variantrule Bonus Action|XPHB} on subsequent turns for the duration, you choose a creature you can see within 30 feet of you. You immediately move to an unoccupied space within 5 feet of the target and use your Lay on Hands feature as part of this same {@variantrule Bonus Action|XPHB}. Opportunity attacks made against you during this movement have {@variantrule Disadvantage|XPHB}."
+			],
+			"consumes": {
+				"name": "Channel Divinity"
+			},
+			"level": 3,
+			"name": "Rapid Response",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"When you restore {@variantrule Hit Points|XPHB} to yourself or an ally within your Aura of Protection, they restore additional {@variantrule Hit Points|XPHB} equal to your Charisma modifier."
+			],
+			"level": 7,
+			"name": "Aura of Assistance",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"When an ally you can see is hit by an attack within 60 feet of you, you can take a {@variantrule Reaction|XPHB} to give it a +2 bonus to its AC (including against the triggering attack) until the start of its next turn."
+			],
+			"level": 15,
+			"name": "Defense of the Meek",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"entries": [
+				"You can become a paragon of protection. As a {@variantrule Bonus Action|XPHB}, you gain the following benefits for 1 minute. Once this feature is used, you can't use it again until you finish a {@variantrule Long Rest|XPHB}. You can also restore your use of it by expending a level 5 spell slot (no action required).",
+				{
+					"type": "entries",
+					"name": "Double Healing",
+					"entries": [
+						"When you restore {@variantrule Hit Points|XPHB} to yourself or an ally, the total amount of {@variantrule Hit Points|XPHB} restored is doubled."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Sanctuary",
+					"entries": [
+						"Allies within 5 feet of you are considered to be under the effects of the {@spell Sanctuary|XPHB} spell."
+					]
+				}
+			],
+			"level": 20,
+			"name": "Aegis Form",
+			"page": 40,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"On the island of Arovatan, hobgoblin monks have been honing their craft for centuries to create the ultimate warrior: One perfect weapon of mind, body, soul, and tool. The product of this order is the Warrior of Weaponcraft, an artisan and warrior wielding a uniquely crafted weapon and offers no weaknesses.",
+				{
+					"subclassFeature": "Weaponcraft|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Form-Changing Weapon|Monk|XPHB|Weaponcraft|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Warrior of Weaponcraft",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain proficiency in {@item Tinker's Tools|XPHB} and one other type of {@item artisan's tools|XPHB} of your choice. Whenever you make an ability check that uses your proficiency with a tool, you can spend 1 Focus Point to gain a bonus to that check equal to one roll of your Martial Arts die."
+			],
+			"toolProficiencies": [
+				{
+					"tinker's tools": true,
+					"anyArtisansTool": 1
+				}
+			],
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"level": 3,
+			"name": "Weaponcraft",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You've mastered two types of weaponry and the skill to craft a single armament that can shift its form between those two weapons. Choose two types of simple or martial weapon. You become proficient with those weapons and they count as Monk weapons for you.",
+				"Using your {@item Tinker's Tools|XPHB} for an hour during a {@variantrule Long Rest|XPHB}, you can combine two weapons in your possession to create a single weapon called a Form-Changing Weapon. These weapons must be the same types as the ones you chose above. A Form-Changing Weapon has two modes, each corresponding to one of the weapons used in creating this new one. Using a Form-Changing weapon grants you the following benefits:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Form-Change",
+							"entries": [
+								"Before or after each attack made using your Form-Changing weapon, you can choose to change its mode (no action required). If you do, it swaps its form and function to that of the other weapon you used to create your Form-Changing Weapon."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Combat Momentum",
+							"entries": [
+								"If you hit with each attack you make while taking the {@action Attack|XPHB} action during your turn, you can spend 1 focus point and use your bonus action to make an attack with your Form-Changing Weapon. If that attack hits, it deals extra damage equal to two rolls of your Martial Arts die.",
+								"This extra damage increases by one roll of your Martial Arts die at Monk levels 6 (three) and 11 (four)."
+							]
+						}
+					]
+				}
+			],
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"level": 3,
+			"name": "Form-Changing Weapon",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"Your experience with your Form-Changing weapon allows you to use the Weapon Mastery properties of each kind of weapon that you chose for your Form-Changing weapon."
+			],
+			"level": 6,
+			"name": "Artisan of Combat",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You can force your life-force to surge, augmenting your strength and skill when necessary. After failing a Strength- or Dexterity-based ability check, you can immediately take a {@variantrule Reaction|XPHB} and spend 1 Focus Point to give yourself a bonus equal to a roll of your Martial Arts die, potentially turning the failure into a success."
+			],
+			"consumes": {
+				"name": "Focus Point"
+			},
+			"level": 11,
+			"name": "Aura Surge",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You've perfected a technique that guarantees deadly results. When you hit a {@variantrule Bloodied|XPHB} creature with an attack roll using your Combat Momentum and deal damage to it, you can spend 2 Focus Points to forgo the damage roll and instead use the maximum value for each die."
+			],
+			"consumes": {
+				"name": "Focus Point",
+				"amount": 2
+			},
+			"level": 17,
+			"name": "Finishing Strike",
+			"page": 39,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Weaponcraft",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"Warriors of the Tether follow a tradition that rides momentum and dances with flexible solids that they use as extensions of their physical form. Some other monasteries talk about distancing your physical self from the centers of conflict, you live it every day.",
+				{
+					"subclassFeature": "Tether|Monk|XPHB|Tether|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Tether Techniques|Monk|XPHB|Tether|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Warrior of the Tether",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain access to a unique weapon known as a Tether. This weapon is similar to a gauntlet or bracer that extracts a long thread when activated. The Tether doesn't occupy one of your hands when being used.",
+				"The Tether counts as a simple ranged weapon that can be used when making Unarmed Strikes. It has a range of 30 feet, and deals Bludgeoning, Piercing, or Slashing damage equal to one roll of your Martial Arts die on a hit (choose the damage type when you take this subclass)."
+			],
+			"level": 3,
+			"name": "Tether",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"You learn two techniques from the \"Tether Techniques\" section later in this subclass' description, which are specialized uses for your Tether fueled by Focus Points. You can only use one Tether Technique per turn, unless otherwise specified.",
+				"You learn one additional Tether Technique when you reach Monk levels 6 (3), 10 (4), 14 (5), and 18 (6). Whenever you learn a new Tether Technique, you can replace one Tether Technique you know with a different one."
+			],
+			"level": 3,
+			"name": "Tether Techniques",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"When something would cause you to be forcefully moved or fall {@condition Prone|XPHB}, you can take a {@variantrule Reaction|XPHB} to avoid the effect entirely. You are still subject to any other effects that may be caused from the source."
+			],
+			"level": 6,
+			"name": "Harmonic Acrobatics",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"The range of your Tether is increased to 60 feet, and when you target a creature for a Tether Technique, the range to do so is doubled.",
+				"In addition, you can use up to two Tether Techniques each turn."
+			],
+			"level": 11,
+			"name": "Extended Techniques",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Monk",
+			"classSource": "XPHB",
+			"entries": [
+				"Your Tether and Focus is a complete extension of yourself. The first time you expend Focus Points each turn, you expend one less Focus Point (minimum of 0)."
+			],
+			"level": 17,
+			"name": "Peak Efficiency",
+			"page": 37,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Tether",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Knightly traditions are an ancient and storied part of civilization and none are as romanticized as questing! The questing knight travels the lands with their loyal squire helping people in need and growing their renown, at least that's how the stories go. In reality there are many reasons a knight might travel the land of Altoras. Many unlanded and minor nobles travel the land to earn a title. Others travel the land as part of a sacred rite, compelled by their Knightly order to go out and fulfill a sacred oath. Whatever their reason, a knight and their squire always draw the interest and speculation of the people.",
 				{
-					"subclassFeature": "Loyal Squire|Fighter||Questing|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Loyal Squire|Fighter|XPHB|Questing|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -5779,7 +6507,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your renown and prowess have attracted the attention of loyal squires who have pledged themselves to your service. Choose their stat block: Protector Squire, Divine Squire, or Crooked Squire.",
 				"The squire is friendly to you and your allies and obeys your commands. They are dismissed if you die.",
@@ -5815,7 +6543,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"If your squire is within 5 feet of a creature, you have {@variantrule Advantage|XPHB} on weapon attack rolls against that creature. You gain this benefit only once per turn.",
 				"In addition, whenever your squire hits with their Strike and deals damage, they can deal your choice of Force damage or their normal damage type."
@@ -5829,7 +6557,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in the {@skill Persuasion|XPHB} skill. If you are already proficient in this skill, you instead gain proficiency in your choice of {@skill Intimidation|XPHB} or {@skill Performance|XPHB}.",
 				"In addition, whenever you make a Charisma ({@skill Persuasion|XPHB}) check, you can treat a {@dice d20} roll of 7 or lower as an 8."
@@ -5856,7 +6584,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you command your squire to take the Strike action, they can use it twice.",
 				"In addition, while your squire is within 15 feet of you, you have {@variantrule Advantage|XPHB} on {@variantrule Initiative|XPHB} checks."
@@ -5870,7 +6598,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your renown is known across the realms. You can now have two active squires at once.",
 				"Whenever you command the squires to take an action, you can command one or both of them at the same time. They do not have to take the same action.",
@@ -5885,19 +6613,19 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"On the peaks of Unvollar, the Ironwood trees are the lifeblood of the Goliaths that live there. The Groves provide them resources to live, and the Ironwood is the heart of their friendship with their dwarven neighbors. It is little wonder then, that they have developed unique fighting styles to defend these trees. The Ironwood Sentinels are the warriors of nature charged with the defense of the Ironwood trees.",
 				{
-					"subclassFeature": "Bonus Proficiency|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Bonus Proficiency|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Natural Adversary|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Natural Adversary|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Unnatural Vigor|Fighter||Ironwood|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Unnatural Vigor|Fighter|XPHB|Ironwood|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -5910,7 +6638,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in the {@skill Perception|XPHB} skill. If you are already proficient in this skill, you instead gain proficiency in the {@skill Insight|XPHB} or {@skill Investigation|XPHB} skill."
 			],
@@ -5936,7 +6664,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you end your turn within 5 feet of a creature, you can choose to mark them until the start of your next turn. Any creature marked by you has {@variantrule Disadvantage|XPHB} on attack rolls that don't target you."
 			],
@@ -5949,7 +6677,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your fortitude is the stuff of legend. When you use your Second Wind feature, you also gain {@variantrule Resistance|XPHB} to Bludgeoning and Piercing damage for 1 minute. This effect ends early if you become {@condition Incapacitated|XPHB} or use your Second Wind feature again."
 			],
@@ -5962,7 +6690,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You can no longer be {@status surprised|XPHB} and have {@variantrule Advantage|XPHB} on Wisdom ({@skill Perception|XPHB}) checks to spot hidden threats or traps."
 			],
@@ -5975,7 +6703,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"The Ironwood is forever with you, as you are with it, and it springs from your body to aid you in battle. When an ally you can see within 30 feet of you takes Acid, Cold, Fire, Lightning, Poison, or Thunder damage, you can take a {@variantrule Reaction|XPHB} to halve the damage dealt from that instance and store it in yourself.",
 				"After taking this {@variantrule Reaction|XPHB}, the first time you hit with a weapon attack on your next turn, you release the stored energy and deal additional damage equal to the amount of damage reduced. The damage type is the same as the damage reduced.",
@@ -5990,7 +6718,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you use your Second Wind feature, the Ironwood within flourishes around you. For 1 minute, shifting branches spider out of your body in a 15-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation}. {@variantrule Enemy|XPHB} creatures treat this space as {@variantrule Difficult Terrain|XPHB} and take {@damage 1d4} Piercing damage for every 5 feet they travel inside the area.",
 				"This feature ends early if you dismiss it (no action required), use your Second Wind feature again, or become {@condition Incapacitated|XPHB}."
@@ -6004,7 +6732,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You have become a true guardian of the Ironwood. You gain the following benefits.",
 				{
@@ -6039,15 +6767,15 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"The Rock Gnomes of Unvollar have had to develop unique fighting techniques to survive their new environment. To stand against their forest counterparts on one side and the halflings on the other, they developed a system of minor magical abilities called incantations, and those who wield these incantations are known as incantors. The Rock Gnomes now export this knowledge to other nations, securing their neutrality in the geopolitics of Altoras.",
 				{
-					"subclassFeature": "Bonus Proficiency|Fighter||Incantor|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Bonus Proficiency|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Incantations|Fighter||Incantor|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Incantations|Fighter|XPHB|Incantor|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6060,7 +6788,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in the {@skill Arcana|XPHB} skill. If you are already proficient in this skill, you instead gain {@variantrule Expertise|XPHB} in it."
 			],
@@ -6083,30 +6811,30 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
-				"You are able to channel the ambient arcane energies in the environment to produce Incantations seen in the \"Incantation Options\" section later in this subclass' description. To use an option, you must spend the number of Incantation Points that it costs.",
-				"You have a number of Incantation Points equal to two times your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended Incantation Points when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+				"You are able to channel the ambient arcane energies in the environment to produce incantations, fueled by Incantation Points.",
 				{
+					"type": "entries",
+					"name": "Incantations",
+					"entries": [
+						"You learn three incantations of your choice from the \"Incantation Options\" section later in this subclass' description. You learn two additional incantations when you reach Fighter levels 7, 10, and 15. Each time you learn a new incantation, you can also replace one incantation you know with a different one.",
+						"Your Incantation Ability is Intelligence, Wisdom, or Charisma, choose when you select this subclass. If an Incantation requires a saving throw, the DC equals 8 + your Incantation Ability modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Incantation Points",
+					"entries": [
+						"You have a number of Incantation Points equal to two times your incantation ability modifier, and you regain all expended Incantation Points when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Components Required",
 					"entries": [
 						"To use an Incantation, you must provide a verbal component and use a weapon as a focus."
-					],
-					"name": "Components Required",
-					"type": "entries"
-				},
-				{
-					"entries": [
-						"Your Incantation Ability is Intelligence, Wisdom, or Charisma, choose when you select this subclass. If an Incantation requires a saving throw, the DC equals 8 + your Incantation Ability modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
-					],
-					"name": "Incantation Ability",
-					"type": "entries"
-				},
-				{
-					"entries": [
-						"Whenever you finish a {@variantrule Long Rest|XPHB}, you can prepare up to 4 Incantations. The number of Incantations you can prepare increases by 2 when you reach Fighter level 7 (6), 10 (8), and 15 (10)."
-					],
-					"name": "Incantations Prepared",
-					"type": "entries"
+					]
 				}
 			],
 			"level": 3,
@@ -6118,7 +6846,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Channeling the arcane energies around you comes easier. When you use your Action Surge feature, you also regain half of your expended Incantation Points."
 			],
@@ -6131,7 +6859,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your time spent channeling ambient arcane energies have made you very astute at their identification. You have {@variantrule Advantage|XPHB} on Intelligence ({@skill Arcana|XPHB}) checks to determine the source and nature of a magical effect.",
 				"In addition, you learn the {@spell Detect Magic|XPHB} spell. You can cast this spell without expending a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}.",
@@ -6146,7 +6874,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You are able to disrupt magical effects from a heightened understanding of magic manipulation. You learn the {@spell Dispel Magic|XPHB} spell. You can cast this spell without a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}.",
 				"The spellcasting ability for this spell is the same ability you chose for your Incantations."
@@ -6160,7 +6888,7 @@
 		},
 		{
 			"className": "Fighter",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you use your Second Wind feature, you can spend Incantation Points to enhance the effect. For each Incantation Point you spend, you regain an additional {@dice 1d10} {@variantrule Hit Points|XPHB}."
 			],
@@ -6172,59 +6900,20 @@
 			"subclassSource": "AltorasCharacterCreationOptions"
 		},
 		{
-			"className": "Fighter",
-			"classSource": "PHB",
-			"entries": [
-				"You gain two additional Incantations of your choice."
-			],
-			"level": 7,
-			"name": "Additional Incantations",
-			"page": 31,
-			"source": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Incantor",
-			"subclassSource": "AltorasCharacterCreationOptions"
-		},
-		{
-			"className": "Fighter",
-			"classSource": "PHB",
-			"entries": [
-				"You gain two additional Incantations of your choice."
-			],
-			"level": 10,
-			"name": "Additional Incantations",
-			"page": 31,
-			"source": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Incantor",
-			"subclassSource": "AltorasCharacterCreationOptions"
-		},
-		{
-			"className": "Fighter",
-			"classSource": "PHB",
-			"entries": [
-				"You gain two additional Incantations of your choice."
-			],
-			"level": 15,
-			"name": "Additional Incantations",
-			"page": 31,
-			"source": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Incantor",
-			"subclassSource": "AltorasCharacterCreationOptions"
-		},
-		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"As a member of the Circle of the Warrior, you are devoted to preserving the balance of the natural world of the Material Plane and beyond, same as every other druid. Much like the Totem Warriors of Slobratna, you made the choice to combine the strength of metal and combat with that of the elements themselves into its own tradition. Doing so has transformed you into a steadfast guardian and avenger of the elements, ready to join the frontlines of other warriors who seek to protect the world like you do.",
 				{
-					"subclassFeature": "Circle of the Warrior Spells|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Circle of the Warrior Spells|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Trained for Battle|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Trained for Battle|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Primal Warrior|Druid||Warrior|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Primal Warrior|Druid|XPHB|Warrior|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6237,7 +6926,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you reach a Druid level specified in the Circle of the Warrior Spells table, you thereafter always have the listed spells prepared.",
 				{
@@ -6280,7 +6969,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain a Fighting Style Feat of your choice and proficiency with your choice of {@item Smith's Tools|XPHB} or {@item Woodcarver's Tools|XPHB}.",
 				"In addition, you can use a simple or martial weapon as a {@variantrule Spellcasting Focus|XPHB} for your Druid spells."
@@ -6305,7 +6994,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Wild Shape"
 			},
@@ -6336,7 +7025,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You can attack twice, instead of once, whenever you take the {@action Attack|XPHB} action on your turn. Moreover, you can cast one of your Druid cantrips in place of one of those attacks."
 			],
@@ -6349,7 +7038,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you deal Cold, Fire, Lightning, or Thunder damage to one or more creatures, you can inflict an extra effect to one of those targets from the following list. You can inflict this extra effect only once per turn.",
 				{
@@ -6390,7 +7079,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"While your Primal Warrior feature is active, when you roll Cold, Fire, Lightning or Thunder damage and roll the highest number possible on any of the dice, choose one of those dice, roll it again, and add its result to the damage total."
 			],
@@ -6403,19 +7092,19 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"The natural world is full of beautiful plant species, but unfortunately some of the most beautiful growths are also those that are the most at risk. The Druids of the Grove are connected to the will of The Shepherd and they use their connections to the wild to empower it to protect itself and others. The Grove allows druids to animate plantlife and spread their life-giving magics to nearby plants and animals. Druids of The Grove don’t tend to gather with others of their kind, as The Grove connects them all, and they will protect it until the very end.",
 				{
-					"subclassFeature": "Circle of the Grove Spells|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Circle of the Grove Spells|Druid|XPHB|Grove|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Plant Whisperer|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Plant Whisperer|Druid|XPHB|Grove|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Summon Protector|Druid||Grove|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Summon Protector|Druid|XPHB|Grove|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6428,7 +7117,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you reach a Druid level specified in the Circle of the Grove Spells table, you thereafter always have the listed spells prepared.",
 				{
@@ -6471,7 +7160,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You learn to speak, read, and write Sylvan.",
 				"In addition, while you are in physical contact with a plant, you imbue it with limited sentience and animation, giving you the ability to communicate with them, and you can use any of the {@action Influence|XPHB} action's skill options with them."
@@ -6490,7 +7179,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Wild Shape"
 			},
@@ -6509,7 +7198,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you or your Protector's {@variantrule Hit Points|XPHB} are restored by a spell, you can choose another creature within 15 feet of you or your Protector. That creature also regains {@variantrule Hit Points|XPHB} equal to two times your Wisdom modifier."
 			],
@@ -6522,7 +7211,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Learning to harness the natural defenses of the Protector, you gain {@variantrule Resistance|XPHB} to Poison damage, and you have {@variantrule Immunity|XPHB} to the {@condition Poisoned|XPHB} condition.",
 				"In addition, when you restore {@variantrule Hit Points|XPHB} to a creature with a spell, that creature also gains {@variantrule Temporary Hit Points|XPHB} equal to two times your Wisdom modifier."
@@ -6536,7 +7225,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you summon your Plantlife Protector, you can instead use the Sturdy Protector stat block, seen below.",
 				"In addition, when you summon your Protector, you can choose its size to be Large or Medium."
@@ -6550,15 +7239,15 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Some sacred places in the natural world are best protected not by force but by deception. The Circle of the False Moon uses the illusory aspect of the moon to deceive and disorient hapless travelers and raiders alike. If their illusions are unable to dissuade interlopers, they can devastate their foes by channeling the moon's stolen radiance.",
 				{
-					"subclassFeature": "Circle of the False Moon Spells|Druid||False Moon|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Circle of the False Moon Spells|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Veil of the False Moon|Druid||False Moon|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Veil of the False Moon|Druid|XPHB|False Moon|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6571,7 +7260,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you reach a Druid level specified in the Circle of the False Moon Spells table, you thereafter always have the listed spells prepared.",
 				{
@@ -6615,7 +7304,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Wild Shape"
 			},
@@ -6648,7 +7337,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Once per turn when you deal Radiant damage, you add your Wisdom modifier to the damage roll.",
 				"In addition, you gain the following additional benefits while in your Veil of the False Moon.",
@@ -6670,7 +7359,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your Veil has grown ever stronger. You gain the following benefits while in your Veil of the False Moon.",
 				{
@@ -6691,7 +7380,7 @@
 		},
 		{
 			"className": "Druid",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"While your Veil of the False Moon is active, you can maintain {@status Concentration|XPHB} on two spells at once so long as one of them is from the Illusion school of magic."
 			],
@@ -6705,19 +7394,19 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Many seers, shamans, and oracles throughout history have conjured guidance, prophecy, and the divine through the bottom of a vial. In this way, poison and fate intertwine. Clerics of the Venom Domain utilize both to enhance themselves and destroy their enemies. As the harnessers of this divine affliction, they are agents of change and destiny, ones that are feared and desperately sought after in the same hushed breath.",
 				{
-					"subclassFeature": "Venom Domain Spells|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Venom Domain Spells|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Ordained Affliction|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Ordained Affliction|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Poisoner's Expertise|Cleric||Venom|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Poisoner's Expertise|Cleric|XPHB|Venom|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6730,7 +7419,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you reach a Cleric level specified in the Venom Domain Spells table, you thereafter always have the listed spells prepared.",
 				{
@@ -6774,7 +7463,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"As a Magic {@variantrule Action|XPHB}, you can present your holy symbol and expend a use of your Channel Divinity to force one creature you can see within 60 feet of you to make a Constitution saving throw. On a failed save, the target is {@condition Poisoned|XPHB} for 8 hours. This divinely instilled poisoning ignores {@variantrule Immunity|XPHB} to the {@condition Poisoned|XPHB} condition."
 			],
@@ -6788,7 +7477,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in the {@skill Medicine|XPHB} skill and with the {@item Poisoner's Kit|XPHB}. You also learn the {@spell Poison Spray|XPHB} cantrip."
 			],
@@ -6812,7 +7501,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Through the venom, your mind is opened to all possibilities. All Cleric spells of the Divination school have the {@variantrule Ritual|XPHB} tag for you."
 			],
@@ -6826,7 +7515,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your faith in your deity empowers the toxins you unleash. Whenever you deal Poison damage, you ignore {@variantrule Resistance|XPHB} to Poison damage, and {@variantrule Immunity|XPHB} to Poison damage is treated as {@variantrule Resistance|XPHB}."
 			],
@@ -6840,7 +7529,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"As a {@variantrule Bonus Action|XPHB}, you can enter a precognitive trance where the divine toxins flow freely through your blood for 1 minute. This trance ends early if you dismiss it (no action required), or become {@condition Incapacitated|XPHB}. For the duration, you cannot be {@status surprised|XPHB}, your {@variantrule D20 Test|XPHB|D20 Tests} have {@variantrule Advantage|XPHB}, and attack rolls made against you have {@variantrule Disadvantage|XPHB}.",
 				"Once you use this feature, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. When your trance ends, you become {@condition Poisoned|XPHB} until you use this feature again."
@@ -6855,19 +7544,19 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"There are many ways to connect to the divine. Some do it through time honored and eclectic rituals, others, by the strength of their sword arm. Clerics of the Dedication domain do it through the exploration of their talents. To them, divinity is found in the happiness one feels from honing a craft, sharpening a skill, and exploring one's hobbies. Dedication Clerics understand that life can be difficult and full of challenges, but have faith that through the disciplined exploration of the different paths of life, they can gain the necessary resilience to weather those struggles.",
 				{
-					"subclassFeature": "Dedication Domain Spells|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Dedication Domain Spells|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Helping Hand|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Helping Hand|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Tips and Tricks|Cleric||Dedication|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Tips and Tricks|Cleric|XPHB|Dedication|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6880,7 +7569,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"When you reach a Cleric level specified in the Dedication Domain Spells table, you thereafter always have the listed spells prepared.",
 				{
@@ -6924,7 +7613,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You can use your Channel Divinity to channel your passions to help your allies. As a Magic {@variantrule Action|XPHB}, you present your holy symbol and expend a use of your Channel Divinity to empower yourself for 10 minutes. For the duration, you can take the {@action Help|XPHB} action as a {@variantrule Bonus Action|XPHB} on your turns. When you do so you can target an ally within 5ft of you to give them advantage on their next attack, the target of the {@action Help|XPHB} can reroll one die made during this roll.",
 				"This effect ends early if you dismiss it (no action required), or become {@condition Incapacitated|XPHB}."
@@ -6939,7 +7628,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in any combination of two languages, skills, or tools of your choice.",
 				"In addition, when you take the {@action Help|XPHB} action to Assist an {@variantrule Ability Check|XPHB}, that ally also gains a bonus to the roll equal to your Wisdom modifier."
@@ -6954,7 +7643,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Whenever you make an ability check with a skill or tool you are proficient with, you add a {@dice d4} to the result of the roll. You cannot benefit from this feature and the {@spell Guidance|XPHB} spell at the same time."
 			],
@@ -6968,7 +7657,7 @@
 		},
 		{
 			"className": "Cleric",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You are able to channel your divine power into the various things you are proficient in to an extraordinary degree. The bonus die from your Practiced {@variantrule Proficiency|XPHB} feature increases from a {@dice d4} to a {@dice d10}. Additionally, when you take the {@action Help|XPHB} action to Assist an {@variantrule Attack Roll|XPHB} while under the effects of Helping Hand, that ally deals an additional {@damage 2d6} damage on a hit."
 			],
@@ -6982,11 +7671,11 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Bones give structure to beings of flesh and blood, and it is said that their powerful feelings can seep into these foundations. The Bone Carvers of the Plains of Ruin have learned to bring the magic stored within the bones of the living out to serve them. These Bone Carvers use runes to draw magic from the bones and shape them for a specific task. They use their powerful emotions to then deploy this magic to their advantage. These warriors can be seen covered in the bones of beasts and humanoids alike.",
 				{
-					"subclassFeature": "Scrimshaw|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Scrimshaw|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -6999,18 +7688,18 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You have a number of bones that are covered in magically etched markings called Scrimshaw Tokens equal to your Strength modifier. A Scrimshaw Token is expended when you use it, and you regain all expended Scrimshaw Tokens when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
 				"While your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
 				{
 					"entries": [
 						{
-							"subclassFeature": "Grasping Cage|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+							"subclassFeature": "Grasping Cage|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|3",
 							"type": "refSubclassFeature"
 						},
 						{
-							"subclassFeature": "Skeletal Warding|Barbarian||Bone Carver|AltorasCharacterCreationOptions|3",
+							"subclassFeature": "Skeletal Warding|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|3",
 							"type": "refSubclassFeature"
 						}
 					],
@@ -7027,7 +7716,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7045,7 +7734,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7063,17 +7752,17 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You understand how to draw out the inner magic from your own bones. You can expend a Scrimshaw Token to gain one of the following benefits.",
 				{
 					"entries": [
 						{
-							"subclassFeature": "Enhance Ability|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
+							"subclassFeature": "Enhance Ability|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|6",
 							"type": "refSubclassFeature"
 						},
 						{
-							"subclassFeature": "Land's Stride|Barbarian||Bone Carver|AltorasCharacterCreationOptions|6",
+							"subclassFeature": "Land's Stride|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|6",
 							"type": "refSubclassFeature"
 						}
 					],
@@ -7090,7 +7779,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7107,7 +7796,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7124,17 +7813,17 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You can channel your Rage into the Scrimshaw Tokens as fuel, seeping your powerful emotions into the bones in place of magic. As an {@variantrule Action|XPHB}, you can expend a use of your Rage to regain all your Scrimshaw Tokens. Additionally, while your Rage is active, you can expend a Scrimshaw Token to create one of the following effects.",
 				{
 					"entries": [
 						{
-							"subclassFeature": "Essence Harvest|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
+							"subclassFeature": "Essence Harvest|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|10",
 							"type": "refSubclassFeature"
 						},
 						{
-							"subclassFeature": "Reflexive Reprisal|Barbarian||Bone Carver|AltorasCharacterCreationOptions|10",
+							"subclassFeature": "Reflexive Reprisal|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|10",
 							"type": "refSubclassFeature"
 						}
 					],
@@ -7151,7 +7840,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7168,7 +7857,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7185,17 +7874,17 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You have learned how to pull the magic of the tokens without needing to channel your strong emotions. Your Rage no longer needs to be active in order to create effects using your Scrimshaw Tokens. Additionally, you can expend a Scrimshaw Token to create the following effects.",
 				{
 					"entries": [
 						{
-							"subclassFeature": "Hollow Bones|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14",
+							"subclassFeature": "Hollow Bones|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|14",
 							"type": "refSubclassFeature"
 						},
 						{
-							"subclassFeature": "Seismic Stomp|Barbarian||Bone Carver|AltorasCharacterCreationOptions|14",
+							"subclassFeature": "Seismic Stomp|Barbarian|XPHB|Bone Carver|AltorasCharacterCreationOptions|14",
 							"type": "refSubclassFeature"
 						}
 					],
@@ -7212,7 +7901,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7229,7 +7918,7 @@
 		},
 		{
 			"className": "Barbarian",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"consumes": {
 				"name": "Scrimshaw"
 			},
@@ -7246,15 +7935,15 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Bardic Colleges teach bards many ways to imbue their performances with arcane power. The College of Arcane Tailors dedicates itself to making costumes that enthrall and intrigue. The Bardic Regalia they create are famous for being the centerpieces of great performances and powerful arcane catalysts.",
 				{
-					"subclassFeature": "Bardic Regalia|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Bardic Regalia|Bard|XPHB|Arcane Tailor|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Bewitching Raiments|Bard||Arcane Tailor|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Bewitching Raiments|Bard|XPHB|Arcane Tailor|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -7267,7 +7956,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 13 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
 				"As a Magic action, you can extend a part of your Regalia to strike your enemies. Make a melee spell attack at a target you can see within 60 feet of you. On a hit, it takes {@damage 1d10} Force damage plus your Charisma modifier.",
@@ -7283,7 +7972,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You always have the {@spell Charm Person|XPHB} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Charm Person|XPHB} without expending a spell slot.",
 				"At Bard level 6, you also always have the {@spell Incite Greed|AI} spell prepared. As a Magic action, you can expend a use of Bardic Inspiration to cast {@spell Incite Greed|AI} without expending a spell slot."
@@ -7298,7 +7987,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your knowledge of weaving magic into the fabric of your Regalia has improved. Your Regalia can replicate a magic item from the Replicable Magic Items table below. This item does not require attunement even if it normally would.",
 				"You can only replicate one magic item at a time, and you can swap this item with another from the list after you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
@@ -7354,7 +8043,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You are able to use your mastery of magical tailoring to weave spells into the fabric of your Regalia. Your  Regalia now stores spells cast into it, holding them until you choose to use them. It can store up to a number of levels worth of spells equal to your Charisma Modifier at a time.",
 				"You can cast a spell into your Regalia by touching it as the spell is cast, expending the spell slot as normal. The spell has no effect, other than to be stored in the Regalia. If the Regalia can't hold the spell, the spell is expended with no effect. These spells appear as patches on your Regalia, but are {@condition invisible} to others unless detected by the *Detect Magic* spell or similar effects.",
@@ -7370,15 +8059,15 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Dragons are powerful both physically and magically, their very presence inspiring many great artists. It is no wonder that bards, masters of weaving art and magic together, are drawn to these striking beings. The College of the Dragon Song is not only inspired by the imagery of dragons, but combines bardic and draconic magic to imbue its students with the same awe inspiring qualities as their school's namesake.",
 				{
-					"subclassFeature": "Dragon Fire Inspiration|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Dragon Fire Inspiration|Bard|XPHB|Dragon Song|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				},
 				{
-					"subclassFeature": "Martial Training|Bard||Dragon Song|AltorasCharacterCreationOptions|3",
+					"subclassFeature": "Martial Training|Bard|XPHB|Dragon Song|AltorasCharacterCreationOptions|3",
 					"type": "refSubclassFeature"
 				}
 			],
@@ -7392,7 +8081,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Bardic Inspiration and choose a number of creatures equal to your Charisma modifier. The next time those creatures deal damage with a weapon attack, that attack deals an extra {@damage 1d6} Acid, Cold, Fire, Lightning, or Poison damage (your choice when you activate this feature).",
 				"This damage increases by {@dice 1d6} when you reach Bard levels 5 ({@dice 2d6}), 10 ({@dice 3d6}), and 15 ({@dice 4d6})."
@@ -7407,7 +8096,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"You gain proficiency in martial weapons and training with medium armor. In addition, you can use the mastery property of two kinds of Simple or Martial weapons of your choice."
 			],
@@ -7421,7 +8110,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"As a {@variantrule Bonus Action|XPHB}, you enshroud yourself in draconic might, assuming your Draconic Mantle for 1 minute. When you do so, each creature of your choice within 60 feet of you that can see you must make a Wisdom saving throw against your Bard spell save DC. On a failed save, the creature is {@condition Frightened|XPHB} for the duration of this feature.",
 				"This transformation ends early if you dismiss it (no action required), become {@condition Incapacitated|XPHB}, or die. Once you use this feature, you can use it again until you finish a {@variantrule Long Rest|XPHB}. You can also restore your use of it by expending one use of your Bardic Inspiration (no action required).",
@@ -7451,7 +8140,7 @@
 		},
 		{
 			"className": "Bard",
-			"classSource": "PHB",
+			"classSource": "XPHB",
 			"entries": [
 				"Your mastery of the Dragon Song is at its pinnacle, granting you the following benefits.",
 				{
