@@ -111,7 +111,16 @@
 		{
 			"ability": [
 				{
-					"con": 1
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
 				}
 			],
 			"category": "G",
@@ -572,7 +581,17 @@
 		{
 			"ability": [
 				{
-					"con": 1
+					"choose":
+					{
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
 				}
 			],
 			"category": "G",
@@ -587,7 +606,7 @@
 				},
 				{
 					"entries": [
-						"As an action, you can exhale a 30-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} of poisonous gas. All creatures in that area must make a Constitution saving throw (DC = 8 + your Constitution modifier + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the creature takes {@damage 1d12} Poison damage, or half as much on a successful one.",
+						"As an action, you can exhale a 30-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} of poisonous gas. All creatures in that area must make a Constitution saving throw (DC 12 + your {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, the creature takes {@damage 1d12} Poison damage, or half as much on a successful one.",
 						"This damage increases by {@dice 1d12} at levels 5 ({@dice 2d12}), 11 ({@dice 3d12}), and 17 ({@dice 4d12})."
 					],
 					"name": "Poison Breath",
@@ -1598,6 +1617,185 @@
 						]
 					}
 				]
+			}
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Panther's Pounce",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "Once per turn before you make an attack rol"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "wis"
+						}
+					}
+				}
+			]
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Ram's Rush",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "Once per turn before you make an attack rol"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					}
+				}
+			]
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Serpent's Sting",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "Once per turn before you make an attack rol"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "wis"
+						}
+					}
+				}
+			]
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 7,
+			"name": "Bristling Boar",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restShort",
+				"uses.max": 1
+			}
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 7,
+			"name": "Hasty Horse",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restShort",
+				"uses.max": 1
+			}
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 7,
+			"name": "Goading Gorilla",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restShort",
+				"uses.max": 1
+			}
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"level": 11,
+			"name": "Falcon's Flight",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restLong",
+				"uses.max": "@abilities.dex.mod"
+			}
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Scent Specialist",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restLong",
+				"uses.max": "2 * @abilities.dex.mod"
+			}
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Intimidating Presence",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restLong",
+				"uses.max": "@abilities.cha.mod"
+			}
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"level": 3,
+			"name": "Fleeting Insight",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "restLong",
+				"uses.max": "@abilities.cha.mod"
 			}
 		}
 	],
@@ -2774,6 +2972,516 @@
 			"isClassFeatureVariant": true,
 			"name": "Zip Tether",
 			"page": 39,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"One creature that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, the target can't speak a deliberate lie for 10 minutes. The creature is aware of this effect and can avoid answering questions to which it would normally respond with a lie. Such a creature can be evasive yet must be truthful."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Attar of Honesty",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"You throw this caustic perfume at  a point you can see within 60 feet of you, and mist fills a 20-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point. Each creature inside the sphere must make a Dexterity saving throw. On a failed save, they take Acid damage equal to a roll of your Sneak Attack damage dice and have {@variantrule Disadvantage|XPHB} on all attack rolls until the end of their next turn. On a success, the creature takes half damage and does not suffer any other effects."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Caustic Kombucha",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"Each creature in a 20-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} must make a Wisdom saving throw. On a  failed save, the creature is under the effects of the {@spell Confusion|XPHB} spell until the start of your next turn. On a success, the creature must move in a random direction on their turn, but is otherwise unaffected."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Confounding Carnation",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"This heavy, sweet aura surrounds the target, creating a lust for violence. One creature that you can see within 60 feet of you must make a Dexterity saving throw. On a failed save, all creatures within 15 feet of the target have {@variantrule Advantage|XPHB} on attack rolls against the target for 1 minute."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Dragonblood Miasma",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"You throw this perfume at a point you can see within 30 feet of you. Each creature in a 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point must make a Wisdom Saving throw. On a failed save, the target loses {@status Concentration|XPHB} on any spells or other effects. In addition, for 1 minute, whenever the creature casts a spell, it must succeed on a Wisdom saving throw or have the spell fail and lose any resources spent on it."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Disenchanting Frankincense",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"Choose a willing creature you can see within 30 feet of you. For 1 minute, the creature's {@variantrule Speed|XPHB} is doubled, and it has {@variantrule Advantage|XPHB} on Dexterity ({@skill Acrobatics|XPHB}) and Charisma ({@skill Performance|XPHB}) checks."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Hesperidic Haste",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"This harsh mixture of hot spices saps the youth and vitality from its victim. Each creature in a 20-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} must make a Constitution saving throw. On a failed save, the creature takes Necrotic damage equal to a roll of your Sneak Attack damage dice and gains one level of {@condition Exhaustion|XPHB}. On a success, the creature takes half damage and suffers no other effects."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Hoary Spice",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"One creature that you can see within 30 feet of you must make a Strength saving throw. On a failed save, the target's {@variantrule Speed|XPHB} is halved until the end of its next turn and if it moves, it must move closer to you. On a success, the target's {@variantrule Speed|XPHB} is only reduced by 10 feet, and it can move in any direction."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Magnetic Miasma",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"This earthy odor renders the {@condition invisible}, visible. Choose a point you can see within 30 feet of you. Each creature in a 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point must make a Dexterity saving throw. On a failed save, the creature can't benefit from the {@condition Invisible|XPHB} condition for 1 minute."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Musk of Opacity",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"You throw this perfume at a point you can see within 60 feet of you. A 20-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point is {@variantrule Heavily Obscured|XPHB}. It lasts for 1 minute, or until a strong wind (such as one created by *Gust of Wind*) disperses it."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Obscuring Amber",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"You spray a chilling spritz in a 60-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide. Each creature in that area must make a Constitution saving throw. On a failed save, the creature takes Cold damage equal to a roll of your Sneak Attack damage dice. At the end of each of its turns, it must remake this saving throw, taking the same amount in Cold damage on a failed save. If a creature fails this saving throw three times, it becomes {@condition Petrified|XPHB}.",
+				"On a successful save, the creature takes half damage and this effect ends."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Petrifying Pine",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"Choose a willing creature you can see within 30 feet of you. Roll your Sneak Attack damage dice, and the target regains {@variantrule Hit Points|XPHB} equal to the value rolled. After being targeted by this perfume, the creature becomes immune to its effects until it finishes a {@variantrule Long Rest|XPHB}."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Soothing Balms",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"You throw this perfume at a point you can see within 30 feet of you. Each creature in a 15-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on that point must make a Wisdom saving throw. On a failed save, the creature becomes {@condition Unconscious|XPHB} for 10 minutes, until they take damage, or until a creature uses its {@variantrule Action|XPHB} to shake it awake."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Sleeping Saffron",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"Each creature in a 20-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} must make a Constitution saving throw. On a failed save, the creature takes Fire damage equal to a roll of your Sneak Attack damage dice, or half as much on a successful one. Flammable objects not worn or carried are lit on fire."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Smokey Ash",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Perfumer"
+			},
+			"entries": [
+				"Choose a willing creature you can see within 30 feet of you. For 10 minutes, it has {@variantrule Advantage|XPHB} on all Charisma ability checks. In addition, all Intelligence ({@skill Investigation|XPHB}) and Wisdom ({@skill Insight|XPHB} and {@skill Perception|XPHB}) checks made against the target have {@variantrule Disadvantage|XPHB}."
+			],
+			"featureType": [
+				"P"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Trickster's Narcissus",
+			"page": 43,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"When you hit a creature with a weapon attack roll, you can spend 1 Sorcery Point to deal extra Force damage equal to your Charisma modifier to the target. The target also cannot make {@action Opportunity Attack|XPHB|Opportunity Attacks} against you until the start of your next turn."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Careful Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"Before making a weapon attack roll, you can spend 1 Sorcery Point to increase the range of the attack by 30 feet. If the attack hits, it deals extra Force damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Distant Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"When you hit a creature with a weapon attack roll and deal damage to it, you can spend 1 Sorcery Point to deal extra Force damage equal to your Charisma modifier and reroll the weapon's damage dice. You must use the new roll."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Empowered Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 2
+			},
+			"entries": [
+				"When you hit a creature with a weapon attack roll, you can spend 2 Sorcery Points to deal extra Force damage equal to your Charisma modifier and mark the target. Before the start of your next turn, you can take a {@variantrule Reaction|XPHB} to detonate the mark, dealing Force damage equal to two times your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Extended Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 2
+			},
+			"entries": [
+				"When you hit a creature with a weapon attack roll, you can spend 2 Sorcery Points to deal extra Force damage equal to your Charisma modifier to that creature. Until the start of your next turn, the target has {@variantrule Disadvantage|XPHB} on all attack rolls."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Heightened Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can spend 1 Sorcery Point and make a weapon attack roll. On a hit, the target takes extra Force damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Quickened Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"When you miss with a weapon attack roll, you can spend 1 Sorcery Point to give a bonus to the attack roll equal to your Charisma modifier, potentially turning the miss into a hit. On a hit, the target takes extra Force damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Seeking Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"When you make a weapon attack roll, you can spend 1 Sorcery Point to give yourself {@variantrule Advantage|XPHB} on that attack. On a hit, the attack deals Psychic damage instead of the regular weapon's damage and deals additional Psychic damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Subtle Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point"
+			},
+			"entries": [
+				"When you hit with a weapon attack roll and deal damage, you can spend 1 Sorcery Point and choose Acid, Cold, Fire, Lightning, Poison, or Thunder. The damage of the attack becomes the chosen damage type, and deals extra damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Transmuted Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 2
+			},
+			"entries": [
+				"When you make a weapon attack roll, you can spend 2 Sorcery Points to target an additional creature within range. You use the same attack and damage rolls for both targets, and the attack deals extra Force damage equal to your Charisma modifier."
+			],
+			"featureType": [
+				"MM:WS"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Twinned Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 60 feet takes damage from a spell, you can expend your Focus and a reaction to cosmically magnify the repercussions of that attack. A pulse of corrupted reality originates from within the creature's space and spreads out for 5 feet in every direction. Each creature caught in the pulse must make a Constitution saving throw. On a failure, a creature takes {@damage 1d8} psychic damage and {@damage 1d8} necrotic damage and cannot regain hit points for the next minute. On a success, a target only takes half damage.",
+				{
+					"type": "entries",
+					"name": "Focus Upgrade",
+					"entries": [
+						"The necrotic damage increases by {@dice 1d8} when you reach Wizard levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
+					]
+				}
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Arcane Fallout",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When you are hit by a spell attack, you can expend your Focus and a reaction to absorb some or all of the magic being thrown your way. When you do, make an ability check using your spellcasting ability (DC 10 plus that spell's level). On a successful check, you can choose an expended spell slot to recover. The spell slot can have a level equal to no more than half your proficiency bonus rounded down. You then gain temporary hit points equal to five times the level of that slot."
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Devour Magic",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature enters a space within 10 feet of you, you can spend your Focus and a reaction to create a cosmic force that repels them from you. That creature makes a Strength saving throw. On a failure, the creature is pushed back 10 feet, takes {@damage 2d8} force damage, and cannot move to any space that is within 10 feet of you until the start of your next turn. On a success, the creature only takes half damage and is pushed back 5 feet.",
+				{
+					"type": "entries",
+					"name": "Focus Upgrade",
+					"entries": [
+						"The damage increases by {@dice 2d8} when you reach Wizard levels 5 ({@dice 4d8}), 11 ({@dice 6d8}), and 17 ({@dice 8d8})."
+					]
+				}
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Fundamental Repulsion",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 30 feet starts its turn, you can expend your Focus and a reaction to curse it with misfortune. The creature makes a Dexterity saving throw. On a failure, the creature falls {@condition prone} immediately, taking {@damage 2d8} force damage from the magnitude of the impact. On a success, the target takes no damage but falls {@condition prone} at the start of their next turn.",
+				{
+					"type": "entries",
+					"name": "Focus Upgrade",
+					"entries": [
+						"The damage increases by {@dice 2d8} when you reach Wizard levels 5 ({@dice 4d8}), 11 ({@dice 6d8}), and 17 ({@dice 8d8})."
+					]
+				}
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Impending Lunge",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 60 feet makes an ability check or saving throw, but before it makes the roll, you can expend your Focus and a reaction to limit their potential. The target makes a Wisdom saving throw. On a failure, the target takes {@damage 2d8} necrotic damage and one of its Ability Score of your choice becomes 10 until the start of their next turn. On a success, the target takes half damage and suffers no other effects.",
+				{
+					"type": "entries",
+					"name": "Focus Upgrade",
+					"entries": [
+						"The damage increases by {@dice 2d8} when you reach Wizard levels 5 ({@dice 4d8}), 11 ({@dice 6d8}), and 17 ({@dice 8d8})."
+					]
+				}
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Inflict Mediocrity",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 120 feet makes an attack roll, you can expend your Focus and a reaction to convert some of the force a creature puts into their attack into mental anguish, regardless if they hit or miss with it. That creature makes an Intelligence saving throw. On a failure, they take {@damage 2d8} psychic damage and they have disadvantage on attack rolls they make for the next minute. On a success they take half damage but suffer no additional effects.",
+				{
+					"type": "entries",
+					"name": "Focus Upgrade",
+					"entries": [
+						"The damage increases by {@dice 2d8} when you reach Wizard levels 5 ({@dice 4d8}), 11 ({@dice 6d8}), and 17 ({@dice 8d8})."
+					]
+				}
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Karmic Momentum",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 30 feet receives an amount of healing, you can expend your Focus and a reaction to invert that magic. When you do, make an ability check using your spellcasting ability (DC 15 minus your proficiency bonus). On a successful check, instead of healing, the creature takes necrotic damage equal to the amount they were going to heal for and you regain hit points equal to that amount."
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Vital Inversion",
+			"page": 54,
+			"source": "AltorasCharacterCreationOptions"
+		},
+		{
+			"entries": [
+				"When a creature within 30 feet makes hits with an attack with a weapon, you can expend your Focus and a reaction to try to momentarily alter the composition of the weapon the target is wielding to have the rigidity of a wet noodle. When you do, make an ability check using your spellcasting ability (DC 15 minus your proficiency bonus). On a successful check, when the target rolls damage for that attack, it deals minimum damage instead. On a failure, the attack only deals {@damage 1d4} less damage."
+			],
+			"featureType": [
+				"FT"
+			],
+			"isClassFeatureVariant": true,
+			"name": "Weapon Warping",
+			"page": 54,
 			"source": "AltorasCharacterCreationOptions"
 		}
 	],
@@ -6112,9 +6820,1898 @@
 					}
 				}
 			]
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"name": "Primal Warrior",
+			"shortName": "Primal",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Primal Warrior|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+				"Beast Cloak|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|7",
+				"Falcon's Flight|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|11",
+				"Chimeric Animus|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|15"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"feather fall|XPHB",
+							"primal savagery|XGE"
+						],
+						"5": [
+							"enhance ability|XPHB"
+						],
+						"9": [
+							"spirit guardians|XPHB"
+						],
+						"13": [
+							"death ward|XPHB"
+						],
+						"17": [
+							"mass cure wounds|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"name": "Perfumer",
+			"shortName": "Perfumer",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Perfumer|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|3",
+				"Aromatic Assault|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|9",
+				"Resourceful|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|13",
+				"Combination of Notes|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|17"
+			],
+			"optionalfeatureProgression": [
+				{
+					"featureType": [
+						"P"
+					],
+					"name": "Perfumes",
+					"progression": {
+						"3": 3,
+						"6": 5,
+						"10": 7,
+						"14": 9
+					}
+				}
+			]
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"name": "Riffraff",
+			"shortName": "Riffraff",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Riffraff|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|3",
+				"Putting On the Squeeze|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|9",
+				"Intimidating Presence|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|13",
+				"Frightful Coercion|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|17"
+			]
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"name": "Sea Sorcery",
+			"shortName": "Sea",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Sea Sorcery|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|3",
+				"Watery Defense|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|6",
+				"Shifting Form|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|14",
+				"One with the Waves|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|18"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"armor of agathys|XPHB",
+							"create or destroy water|XPHB",
+							"misty step|XPHB",
+							"rime's binding ice|FTD"
+						],
+						"5": [
+							"gaseous form|XPHB",
+							"sleet storm|XPHB"
+						],
+						"7": [
+							"control water|XPHB",
+							"watery sphere|XGE"
+						],
+						"9": [
+							"cone of cold|XPHB",
+							"maelstrom|XGE"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"name": "Warblood Sorcery",
+			"shortName": "Warblood",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Warblood Sorcery|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|3",
+				"Extra Attack|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|6",
+				"Battle Sorcery|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|14",
+				"Paradigm of Power|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|18"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"armor of agathys|XPHB",
+							"arcane vigor|XPHB",
+							"misty step|XPHB",
+							"shield|XPHB"
+						],
+						"5": [
+							"haste|XPHB",
+							"thunder step|XGE"
+						],
+						"7": [
+							"freedom of movement|XPHB",
+							"fire shield|XPHB"
+						],
+						"9": [
+							"hold monster|XPHB",
+							"steel wind strike|XPHB"
+						]
+					}
+				}
+			],
+			"optionalfeatureProgression": [
+				{
+					"featureType": [
+						"MM:WS"
+					],
+					"name": "Metamaneuvers",
+					"progression": {
+						"3": 2,
+						"6": 3,
+						"10": 4,
+						"14": 5,
+						"18": 6
+					}
+				}
+			]
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"name": "Consort Patron",
+			"shortName": "Consort",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Consort Patron|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3",
+				"Unstable Form|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|6",
+				"Ancient Knowledge|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|10",
+				"Unleashed Form|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|14"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"darkvision|XPHB",
+							"detect evil and good|XPHB",
+							"enhance ability|XPHB",
+							"magic missile|XPHB"
+						],
+						"5": [
+							"fly|XPHB",
+							"tongues|XGE"
+						],
+						"7": [
+							"arcane eye|XPHB",
+							"locate creature|XPHB"
+						],
+						"9": [
+							"modify memory|XPHB",
+							"yolande's regal presence|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"name": "Melody Patron",
+			"shortName": "Melody",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Melody Patron|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|3",
+				"Sonata|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|6",
+				"Aria|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|10",
+				"Grand Finale|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|14"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"dissonant whispers|XPHB",
+							"knock|XPHB",
+							"thunderwave|XPHB",
+							"silence|XPHB"
+						],
+						"5": [
+							"pulse wave|EGW",
+							"tongues|XPHB"
+						],
+						"7": [
+							"charm monster|XPHB",
+							"compulsion|XPHB"
+						],
+						"9": [
+							"animate objects|XPHB",
+							"destructive wave|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"name": "Greatwyrm Patron",
+			"shortName": "Greatwyrm",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"Greatwyrm Patron|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|3",
+				"Frightful Presence|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|6",
+				"Dragonsight|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|10",
+				"Prismatic Warding|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|10",
+				"Aspect of the Wyrm|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|14"
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"absorb elements|XGE",
+							"alter self|XPHB",
+							"chromatic orb|XPHB",
+							"dragon's breath|XPHB"
+						],
+						"5": [
+							"fear|XPHB",
+							"protection from energy|XPHB"
+						],
+						"7": [
+							"fire shield|XPHB",
+							"stoneskin|XPHB"
+						],
+						"9": [
+							"summon dragon|XPHB",
+							"yolande's regal presence|XPHB"
+						]
+					}
+				}
+			]
+		},
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"name": "The Forbidden Section",
+			"shortName": "Forbidden",
+			"source": "AltorasCharacterCreationOptions",
+			"subclassFeatures": [
+				"The Forbidden Section|Wizard|XPHB|Forbidden|AltorasCharacterCreationOptions|3",
+				"Mental Brace|Wizard|XPHB|Forbidden|AltorasCharacterCreationOptions|6",
+				"Mind-melting Magic|Wizard|XPHB|Forbidden|AltorasCharacterCreationOptions|10",
+				"Recalculate Ramifications|Wizard|XPHB|Forbidden|AltorasCharacterCreationOptions|14"
+			],
+			"optionalfeatureProgression": [
+				{
+					"featureType": [
+						"FT"
+					],
+					"name": "Focus Techniques",
+					"progression": {
+						"3": 2,
+						"6": 3,
+						"10": 4,
+						"14": 5,
+						"18": 6
+					}
+				}
+			]
 		}
 	],
 	"subclassFeature": [
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"entries": [
+				"Most magical academies have an area of study frowned upon or reserved for advanced learning and a restricted section containing information forbidden except where circumstances demand it. The Quills of Senec, spies and information brokers who collect information about the rest of Altoras and share... most of it with the courts of the world having a collection of all forbidden secrets. You are either an exceptionally well trusted member of Senecii society to be granted stewardship of such knowledge or more likely, a furious  intellect refusing to be denied the hidden truths of your reality.",
+				{
+					"subclassFeature": "Focus Spellcasting|Wizard|XPHB|Forbidden|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "The Forbidden Section",
+			"page": 53,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Forbidden",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"entries": [
+				"You've uncovered a means of casting taboo spells that has altered the way you see spellcasting as a whole. As a {@variantrule Bonus Action|XPHB}, you can choose to hold your Focus. Your Focus ends if you drop it (no action required), you expend it, you become {@condition Incapacitated|XPHB}, or you drop {@status Concentration|XPHB} (as if {@status Concentration|XPHB|Concentrating} on a spell).",
+				{
+					"type": "entries",
+					"name": "Focus Techniques",
+					"entries": [
+						"You learn one Focus Technique of your choice from the \"Focus Techniques\" section later in this subclass' description, which is used by expending your Focus. After using a Focus Technique, you can't use the same one again for 1 minute.",
+						"You learn one additional technique of your choice when you reach Wizard levels 5, 7, 9, 11, 13, 15, and 17. Each time you learn a new technique, you can also replace one technique you know with a different one,"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Saving Throws",
+					"entries": [
+						"If a technique requires a saving throw, the DC is your spell save DC."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spell Streaming",
+					"entries": [
+						"You can also expend your Focus when casting any of your Wizard spells. Doing so allows you to cast it without verbal, somatic, or material components (unless they are consumed by the spell)."
+					]
+				}
+			],
+			"level": 3,
+			"name": "Focus Spellcasting",
+			"page": 53,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Forbidden",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"entries": [
+				"While you are holding your Focus, when you make an Intelligence, Wisdom, and Charisma saving throw or a Constitution saving throw to maintain {@status Concentration|XPHB}, you gain a bonus to the roll equal to your Intelligence modifier."
+			],
+			"level": 6,
+			"name": "Mental Brace",
+			"page": 53,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Forbidden",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"entries": [
+				"When you expend your Focus on a spell or a Focus Technique that deals damage, each target also takes Psychic damage equal to your Intelligence modifier and is {@condition Frightened|XPHB} until the start of your next turn."
+			],
+			"level": 10,
+			"name": "Mind-melting Magic",
+			"page": 53,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Forbidden",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"entries": [
+				"Whenever you fail a saving throw or are hit by an attack, you can take a {@variantrule Reaction|XPHB} to succeed on the save or cause the attack to miss instead. Afterwards, you suffer one level of {@condition exhaustion}."
+			],
+			"level": 14,
+			"name": "Recalculate Ramifications",
+			"page": 53,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Forbidden",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"You've made a pact with a greatwyrm: an ancient dragon that has amassed enough power to pierce mortal bounds. Its ultimate goal may be nebulous, and varies depending on the type of dragon, but more often than not these pacts are made so that the greatwyrm can reach even greater heights. Should you be a faithful servant, you might share in its hoard and power. Maybe.",
+				{
+					"subclassFeature": "Greatwyrm Spells|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Essence of the Dragon|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Prismatic Burst|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Greatwyrm Patron",
+			"page": 51,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Greatwyrm Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Greatwyrm Spells",
+					"colLabels": [
+						"Warlock Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Absorb Elements|XGE}, {@spell Alter Self|XPHB}, {@spell Chromatic Orb|XPHB}, {@spell Dragon's Breath|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Fear|XPHB}, {@spell Protection from Energy|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Fire Shield|XPHB}, {@spell Stoneskin|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Summon Dragon|XPHB}, {@spell Yolande's Regal Presence|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Greatwyrm Spells",
+			"page": 51,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"You've been offered a mote of the dragon's essence as part of your service. You learn to speak, read, and write Draconic.",
+				"Choose which type of dragon you have formed a pact with from the Draconic Essence table, which informs the damage type used for later features.",
+				{
+					"caption": "Draconic Essence",
+					"colLabels": [
+						"Dragon Type",
+						"Damage Type"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Black",
+							"Acid"
+						],
+						[
+							"Blue",
+							"Lightning"
+						],
+						[
+							"Green",
+							"Poison"
+						],
+						[
+							"Red",
+							"Fire"
+						],
+						[
+							"White",
+							"Cold"
+						],
+						[
+							"Brass",
+							"Fire"
+						],
+						[
+							"Bronze",
+							"Lightning"
+						],
+						[
+							"Copper",
+							"Acid"
+						],
+						[
+							"Gold",
+							"Fire"
+						],
+						[
+							"Silver",
+							"Cold"
+						],
+						[
+							"Amethyst",
+							"Force"
+						],
+						[
+							"Crystal",
+							"Radiant"
+						],
+						[
+							"Emerald",
+							"Psychic"
+						],
+						[
+							"Sapphire",
+							"Thunder"
+						],
+						[
+							"Topaz",
+							"Necrotic"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"languageProficiencies": [
+				{
+					"draconic": true
+				}
+			],
+			"level": 3,
+			"name": "Essence of the Dragon",
+			"page": 51,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"When you hit with an attack roll on your turn, you can trigger a Prismatic Burst in a 10-foot radius {@variantrule Sphere [Area of Effect]|XPHB|Sphere} centered on the target. Each enemy creature in that area must make a Dexterity saving throw against your Warlock spell save DC, taking {@damage 1d8} damage of the same type as your Draconic Essence on a failed save.",
+				"You can trigger Prismatic Burst only once per turn. The damage of this feature increases by {@dice 1d8} when you reach Warlock levels 5 ({@dice 2d8}), 11 ({@dice 3d8}), and 17 ({@dice 4d8})."
+			],
+			"level": 3,
+			"name": "Prismatic Burst",
+			"page": 52,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"When you are targeted by an attack roll, you can immediately take a {@variantrule Reaction|XPHB} to call upon the Frightful Presence of your patron and force the attacker to make a Wisdom saving throw against your Warlock spell save DC. On a failed save, the target is {@condition Frightened|XPHB} until the start of its next turn. On a success, the target is immune to this feature for 24 hours."
+			],
+			"level": 6,
+			"name": "Frightful Presence",
+			"page": 52,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"When you are targeted by an attack roll, you can immediately take a {@variantrule Reaction|XPHB} to call upon the Frightful Presence of your patron and force the attacker to make a Wisdom saving throw against your Warlock spell save DC. On a failed save, the target is {@condition Frightened|XPHB} until the start of its next turn. On a success, the target is immune to this feature for 24 hours."
+			],
+			"level": 10,
+			"name": "Dragonsight",
+			"page": 52,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Entrenched in your patron's element, you gain {@variantrule Resistance|XPHB} to the damage type of your Draconic Essence."
+			],
+			"resist": [
+				{
+					"any": 1
+				}
+			],
+			"level": 10,
+			"name": "Prismatic Warding",
+			"page": 52,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"As a Magic action, you can assume the form of your patron, tasting a fraction of their power. You assume the form of a dragon for 1 minute. {@variantrule Enemy|XPHB} creatures that see you transform must make a Wisdom saving throw against your Warlock spell save DC or be {@condition Frightened|XPHB} until the start of your next turn.",
+				"This form ends early if you dismiss it (no action required), or die. Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}.",
+				"While transformed, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Damage Immunity",
+					"entries": [
+						"You gain {@variantrule Immunity|XPHB} to the damage type of your Draconic Essence."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Draconic Presence",
+					"entries": [
+						"You grow to Large size -- along with anything you are wearing -- and your Strength score becomes equal to your Charisma score. If there isn't enough room for you to increase your size, your size doesn't change."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fly Speed",
+					"entries": [
+						"You gain a {@variantrule Fly Speed|XPHB} of 40 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Natural Armor",
+					"entries": [
+						"Your {@variantrule Armor Class|XPHB} becomes 17 if it's lower than that."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Natural Weapons",
+					"entries": [
+						"You have claws, fangs, and a tail that can be used as melee weapons which you are proficient with. On a hit, your fangs and tail deal {@damage 1d10} Piercing damage, and your claws deal {@damage 1d6} Slashing damage. You can take a {@variantrule Bonus Action|XPHB} on each of your turns to make an attack with your claws."
+					]
+				}
+			],
+			"level": 14,
+			"name": "Aspect of the Wyrm",
+			"page": 52,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"When the requiem arrived to Altoras from their destroyed world, they brought with them the mystical force that swims through their souls: The Melody. As it permeated through this new land, its form evolved into a resonance; a Hum that can be heard through all things, should you but listen.",
+				{
+					"subclassFeature": "Melody Spells|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Overture|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Stage Tuning|Warlock|XPHB|Melody|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Melody Patron",
+			"page": 50,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Melody Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Melody Spells",
+					"colLabels": [
+						"Warlock Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"Accompanying Note, {@spell Dissonant Whispers|XPHB}, {@spell Knock|XPHB}, {@spell Thunderwave|XPHB}, {@spell Silence|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Pulse Wave|EGW}, {@spell Tongues|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Charm Monster|XPHB}, {@spell Compulsion|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Animate Objects|XPHB}, {@spell Destructive Wave|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Melody Spells",
+			"page": 50,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Whenever you cast a Level 1+ spell with a verbal component or score a {@variantrule Critical Hit|XPHB}, you can harness the resonance in one of the following ways:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Temporary Hit Points",
+							"entries": [
+								"You gain {@variantrule Temporary Hit Points|XPHB} equal to the level of the spell + your Charisma modifier."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Thunderous Resonance",
+							"entries": [
+								"One creature of your choice within 60 feet that can hear you takes Thunder damage equal to two times the level of the spell."
+							]
+						}
+					]
+				}
+			],
+			"level": 3,
+			"name": "Overture",
+			"page": 50,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Your heartbeat is tuned to the Melody. You gain proficiency in {@skill Performance|XPHB} and one {@item Musical Instrument|XPHB} of your choice. You can also use a {@item Musical Instrument|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Warlock spells."
+			],
+			"skillProficiencies": [
+				{
+					"performance": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyMusicalInstrument": 1
+				}
+			],
+			"level": 3,
+			"name": "Stage Tuning",
+			"page": 50,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can begin a performance that lasts for 1 minute, emanating an aura of mystical music in a 60-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation}. The performance ends early if you dismiss it (no action required), become {@condition Incapacitated|XPHB}, or die.",
+				"For the duration, your Overture feature is activated whenever you or an ally casts a Level 1+ spell with a verbal component or scores a {@variantrule Critical Hit|XPHB} within the aura. If you gain {@variantrule Temporary Hit Points|XPHB}, you can instead grant them to any ally within the aura.",
+				"Once you complete your performance, you can't begin a new one until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore your use of it."
+			],
+			"level": 6,
+			"name": "Sonata",
+			"page": 50,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Your body and soul are one with the sounds of the universe. You gain {@variantrule Resistance|XPHB} to Thunder damage, and you are Immune to the {@condition Deafened|XPHB} condition. Additionally, you can mimic sounds you hear, including someone's voice, with near perfect accuracy. Creatures must succeed on a Wisdom ({@skill Insight|XPHB}) check versus your Warlock spell save DC to determine the sound is falsified."
+			],
+			"resist": [
+				"thunder"
+			],
+			"conditionImmune": [
+				"deafened"
+			],
+			"level": 10,
+			"name": "Aria",
+			"page": 51,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"As a Magic action, you can cast the {@spell Power Word Pain|XGE} spell without expending a spell slot. When you do, you can also target a second creature within 15 feet of the original target.",
+				"You can choose to cast the {@spell Power Word Stun|XPHB} spell instead when you reach Warlock level 15, or the {@spell Power Word Kill|XPHB} spell at Warlock level 17.",
+				"Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 14,
+			"name": "Grand Finale",
+			"page": 51,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Your patron is a being of infinite knowledge, but for one reason or another this knowledge was locked away alongside the bulk of its power. Its memory shattered, it is only able to collect its physical form by making a pact with you. This pact you have formed is an intimate one, one that promises to be with you on every step of the journey; as you grow in power, it slowly regains its own.",
+				{
+					"subclassFeature": "Consort Spells|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Little Bird on your Shoulder|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Fleeting Insight|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Consort Patron",
+			"page": 48,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Consort Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Consort Spells",
+					"colLabels": [
+						"Warlock Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Darkvision|XPHB}, {@spell Detect Evil and Good|XPHB}, {@spell Enhance Ability|XPHB}, {@spell Magic Missile|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Fly|XPHB}, {@spell Tongues|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Arcane Eye|XPHB}, {@spell Locate Creature|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Modify Memory|XPHB}, {@spell Yolande's Regal Presence|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Consort Spells",
+			"page": 48,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain the Pact of the Chain eldritch invocation, if you don't already have it. The familiar summoned by that invocation must use the Consort statblock below. Choose a creature type for the consort from the Consort Details table, which also informs the languages it speaks and its immunities.",
+				"This familiar is your patron, but at a fraction of its power. It can offer you insights and make requests of you, but its memory is hazy. The link made between you via the pact is its most concrete attachment.",
+				"While summoned, the following additional rules apply:",
+				{
+					"type": "entries",
+					"name": "Independent",
+					"entries": [
+						"In combat, the consort -- your patron -- is not explicitly controlled. When you give it commands, you are instead encouraging it to take a certain course of action. It is still an ally to you and your allies, but may disobey at the DM's discretion."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Disappearance of the Familiar",
+					"entries": [
+						"The consort cannot be dismissed, it will only ever disappear to a pocket dimension. The consort only dies if you do, and is similarly revived if you are revived."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Telepathic Connection",
+					"entries": [
+						"The consort can deliver any spell you cast, not just ones with a range of touch. After all, they gave them to you. The other normal restrictions apply, and you must still maintain {@status Concentration|XPHB} if the spell requires it."
+					]
+				},
+				{
+					"caption": "Consort Details",
+					"colLabels": [
+						"Creature Type",
+						"Language",
+						"Immunity"
+					],
+					"colStyles": [
+						"col-1",
+						"col-2",
+						"col-3"
+					],
+					"rows": [
+						[
+							"Celestial",
+							"Celestial",
+							"Radiant"
+						],
+						[
+							"Fey",
+							"Sylvan",
+							"Psychic"
+						],
+						[
+							"Fiend (Demon)",
+							"Abyssal",
+							"Poison"
+						],
+						[
+							"Fiend (Devil)",
+							"Infernal",
+							"Fire"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Little Bird on your Shoulder",
+			"page": 48,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"In brief flashes, the consort can muster up motes of its infinite knowledge. When you make a {@variantrule D20 Test|XPHB}, the consort can take a {@variantrule Reaction|XPHB} to offer this insight to you. You can roll a {@dice d6} immediately after seeing the result on the {@dice d20} and add it to the roll.",
+				"The consort can take this reaction a number of times equal to your Charisma modifier, and regains all expended uses after you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 3,
+			"name": "Fleeting Insight",
+			"page": 48,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, the consort can tap into an unstable visage of its true power, taking on a powerful new form seen in the Unstable Form table for 1 minute. This form ends early if you dismiss it (no action required), or the consort drops to 0 {@variantrule Hit Points|XPHB}.",
+				"While in this form, the consort's game statistics are replaced by the forms statistics, but it retains its alignment, feats, languages, and Intelligence, Wisdom, and Charisma scores. It also retains its {@variantrule Proficiency|XPHB|Proficiency Bonus}, {@variantrule Speed|XPHB}, skill and saving throw proficiencies, and immunities and resistances, in addition to gaining the ones in the stat block. If the stat block's {@variantrule Speed|XPHB} or skill or saving throw modifier is higher than the consorts, use the one in the stat block. Additionally, you can command the consort as a {@variantrule Bonus Action|XPHB} on your turn.",
+				"After the consort enters this form, it can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore its use of it.",
+				{
+					"caption": "Unstable Form",
+					"colLabels": [
+						"Creature Type",
+						"Stat Block"
+					],
+					"colStyles": [
+						"col-1",
+						"col-2"
+					],
+					"rows": [
+						[
+							"Celestial",
+							"Giant Elk"
+						],
+						[
+							"Fey",
+							"Sea Hag"
+						],
+						[
+							"Fiend (Demon)",
+							"Rutterkin"
+						],
+						[
+							"Fiend (Devil)",
+							"Spined Devil"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 6,
+			"name": "Unstable Form",
+			"page": 49,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Your bond with your patron has allowed a fraction of its true power to return. The consort's Intelligence or Wisdom score increases to 20.",
+				"In addition, it gains proficiency and {@variantrule Expertise|XPHB} in one skill of your choice from {@skill Arcana|XPHB}, {@skill History|XPHB}, {@skill Medicine|XPHB}, {@skill Nature|XPHB}, {@skill Survival|XPHB}, or {@skill Religion|XPHB}."
+			],
+			"level": 10,
+			"name": "Ancient Knowledge",
+			"page": 49,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"entries": [
+				"Your patron has unlocked greater power, and is now able to transform into its Unleashed Form as a {@variantrule Bonus Action|XPHB}, seen in the Unleashed Form table. This form follows the same rules as its Unstable Form.",
+				"After entering its Unleashed Form, the consort can't do so again until you finish a {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore its use of it.",
+				{
+					"caption": "Unleashed Form",
+					"colLabels": [
+						"Creature Type",
+						"Stat Block"
+					],
+					"colStyles": [
+						"col-1",
+						"col-2"
+					],
+					"rows": [
+						[
+							"Celestial",
+							"Battleforce Angel"
+						],
+						[
+							"Fey",
+							"Pixie Wonderbringer"
+						],
+						[
+							"Fiend (Demon)",
+							"Chasme"
+						],
+						[
+							"Fiend (Devil)",
+							"White Abishai"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 14,
+			"name": "Unleashed Form",
+			"page": 49,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your magic springs from a mystical link between the magic in your soul and the innate aptitude for weaponry. You might trace a distant ancestor to an ancient sorcerer of the past who combined the might of their sword with sorcery, or you may just be naturally gifted with the arcane and have a knack for weapons. Whatever your past, magic is inherent in your blood along with an affinity for battle. The power within your veins grants you with a natural prowess for combat, making your weapon feel like a natural extension of your body. Your place is amidst the fray, while you rely on your arcane ability to shield you from harm and your martial might to overwhelm your foes.",
+				{
+					"subclassFeature": "Born for War|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Warblood Sorcery Spells|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Metamaneuvers|Sorcerer|XPHB|Warblood|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Warblood Sorcery",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain proficiency in light armor, medium armor, shields, and one martial weapon of your choice.",
+				"In addition, you can use a simple or martial weapon as a {@variantrule Spellcasting Focus|XPHB} for your Sorcerer spells."
+			],
+			"armorProficiencies": [
+				{
+					"light": true,
+					"medium": true,
+					"shield": true
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"choose": {
+						"count": 1,
+						"fromFilter": "type=martial weapon|miscellaneous=mundane"
+					}
+				}
+			],
+			"level": 3,
+			"name": "Born for War",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"You can tap into the wellspring of power within yourself to enhance your strikes with magical effects; you gain two Metamaneuver options from \"Metamaneuver Options\" later in this subclass' description.",
+				"To use an option, you must spend the number of Sorcery Points that it costs. You can only use one Metamaneuver option on an attack.",
+				"Whenever you gain a Sorcerer level, you can replace one of your Metamaneuver options with a different one. You gain one more option at Sorcerer levels 6, 10, 14, and 18."
+			],
+			"level": 3,
+			"name": "Metamaneuvers",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"When you reach a Sorcerer level specified in the Sea Sorcery Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Warblood Sorcery Spells",
+					"colLabels": [
+						"Sorcerer Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Arcane Vigor|XPHB}, {@spell Armor of Agathys|XPHB}, {@spell Misty Step|XPHB}, {@spell Shield|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Haste|XPHB}, {@spell Thunder Step|XGE}"
+						],
+						[
+							"7",
+							"{@spell Freedom of Movement|XPHB}, {@spell Fire Shield|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Hold Monster|XPHB}, {@spell Steel Wind Strike|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Warblood Sorcery Spells",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"You can attack twice, instead of once, whenever you take the Attack action on your turn. Moreover, you can cast one of your cantrips in place of one of those attacks."
+			],
+			"level": 6,
+			"name": "Extra Attack",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your martial magic now flows fiercer within you. Once on each of your turns while your Innate Sorcery is active, you can use up to two Metamaneuver options on an attack instead of one.",
+				"If more than one Metamaneuver is applied to an attack, it only deals the extra damage once."
+			],
+			"level": 14,
+			"name": "Battle Sorcery",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your mastery of both sword and spell has reached its pinnacle. Once on each of your turns while your Innate Sorcery feature is active, you can use one Metamaneuver option without spending Sorcery Points on it, and you can use up to three Metamaneuver options on an attack instead of up to two.",
+				"Additionally, you may teleport 30 feet (no action required) once per turn before or after you take the {@action Attack|XPHB} action or {@action Magic|XPHB} action."
+			],
+			"level": 18,
+			"name": "Paradigm of Power",
+			"page": 47,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warblood",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"The Sea Sorcerer is originally a piece of UA material that was very fun and flavourful but uniquely clunky to execute, likely the reason it was never fully published. A popular homebrew, The Revised Sea Sorcerer solved the initial issues but also presented new ones. This version is a new take, combining elements from both versions and introducing new ones in the hopes to create a more cohesive experience.",
+				{
+					"subclassFeature": "Curse of the Sea|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Sea Sorcery Spells|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Soul of the Sea|Sorcerer|XPHB|Sea|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Sea Sorcery",
+			"page": 45,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can curse a creature you can see within 60 feet of you for 1 minute. The curse ends early if you dismiss it (no action required), the cursed creature becomes {@condition Incapacitated|XPHB}, or you use this feature to curse a different target.",
+				"When you cast a spell that deals Cold damage to the cursed target or forces it to move, you can cause one of the following additional effects of your choice. You can inflict this effect only once per turn.",
+				{
+					"type": "entries",
+					"name": "Damage",
+					"entries": [
+						"The cursed creature takes additional Cold damage equal to your Charisma modifier."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Shove",
+					"entries": [
+						"The cursed creature is moved 15 feet horizontally in any direction."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Slow",
+					"entries": [
+						"The cursed creature's {@variantrule Speed|XPHB} is reduced by 10 feet until the end of its next turn."
+					]
+				}
+			],
+			"level": 3,
+			"name": "Curse of the Sea",
+			"page": 45,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"When you reach a Sorcerer level specified in the Sea Sorcery Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Sea Sorcery Spells",
+					"colLabels": [
+						"Sorcerer Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Armor of Agathys|XPHB}, {@spell Create or Destroy Water|XPHB}, {@spell Misty Step|XPHB}, {@spell Rime's Binding Ice|FTD}"
+						],
+						[
+							"5",
+							"{@spell Gaseous Form|XPHB}, {@spell Sleet Storm|XPHB}"
+						],
+						[
+							"7",
+							"{@spell Control Water|XPHB}, {@spell Watery Sphere|XGE}"
+						],
+						[
+							"9",
+							"{@spell Cone of Cold|XPHB}, {@spell Maelstrom|XGE}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Sea Sorcery Spells",
+			"page": 45,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your tie to the sea grants you the ability to breathe underwater, and you have a {@variantrule Swim Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+			],
+			"level": 3,
+			"name": "Soul of the Sea",
+			"page": 45,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain {@variantrule Resistance|XPHB} to Cold damage. In addition, you gain the ability to defend yourself by momentarily assuming a watery form. After you take damage, you can take a {@variantrule Reaction|XPHB} and spend 3 Sorcery Points to gain {@variantrule Resistance|XPHB} to the damage dealt and move up to your {@variantrule Speed|XPHB}. This movement doesn't provoke {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+			],
+			"level": 6,
+			"name": "Watery Defense",
+			"page": 45,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your body has taken on the properties of water, allowing you to squeeze through a space as narrow as 1 inch wide. You can also move through any creature's space without penalty.",
+				"If you end a turn in a solid object, you are shunted to the nearest unoccupied space and take {@damage 1d10} Force damage for every 5 feet you were moved."
+			],
+			"level": 14,
+			"name": "Shifting Form",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Sorcerer",
+			"classSource": "XPHB",
+			"entries": [
+				"Your being is altered by the power of the sea, granting you the following benefits.",
+				{
+					"type": "entries",
+					"name": "Cold Immunity",
+					"entries": [
+						"You are Immune to Cold damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Physical Resistance",
+					"entries": [
+						"You have {@variantrule Resistance|XPHB} to Bludgeoning, Piercing, and Slashing damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Immovable",
+					"entries": [
+						"You have immunity to the {@condition Grappled|XPHB} and {@condition Restrained|XPHB} condition and cannot be forcefully moved against your will (excluding your Shifting Form feature)."
+					]
+				}
+			],
+			"level": 18,
+			"name": "One with the Waves",
+			"page": 46,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"While many rogues acquit themselves using stealth and guile, there are many still who use strength and intimidation. Riffraff rogues specialize in fighting dirty and looking tough. While still maintaining many of the skills a traditional rogue might, they sometimes prefer to approach life's problems with the simple solutions one can only impart with the application of a bludgeon.",
+				{
+					"subclassFeature": "Brutalizer|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Get a Hold of 'Em|Rogue|XPHB|Riffraff|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Riffraff",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain proficiency in all simple and martial melee weapons that deal Bludgeoning damage, and those weapons can trigger your Sneak Attack. You also gain training in medium armor.",
+				"At Rogue level 5, the saving throws for your Cunning Strike feature can use your Strength instead of your Dexterity."
+			],
+			"weaponProficiencies": [
+				{
+					"mace|XPHB": true,
+					"flail|XPHB": true,
+					"warhammer|XPHB": true
+				}
+			],
+			"armorProficiencies": [
+				{
+					"medium": true
+				}
+			],
+			"level": 3,
+			"name": "Brutalizer",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you can make an {@variantrule Unarmed Strike|XPHB} to Grapple or Shove a creature. You can also trigger your Sneak Attack against a creature you have {@condition Grappled|XPHB} even if you don't have {@variantrule Advantage|XPHB} on the roll."
+			],
+			"level": 3,
+			"name": "Get a Hold of 'Em",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"You can use the mastery property of one additional weapon of your choice. After you hit a creature you have {@condition Grappled|XPHB} with a weapon's mastery property, it has {@variantrule Disadvantage|XPHB} on Strength ({@skill Athletics|XPHB}) and Dexterity ({@skill Acrobatics|XPHB}) checks to escape the grapple until the start of your next turn.",
+				"Additionally, at the start of each of your turns, any creature {@condition Grappled|XPHB} by you takes Bludgeoning damage equal to a roll of half your Sneak Attack damage dice (rounded down)."
+			],
+			"level": 9,
+			"name": "Putting On the Squeeze",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"With a look, your foes falter. When a creature you can see makes a {@variantrule D20 Test|XPHB} while within 30 feet of you, you can immediately take a {@variantrule Reaction|XPHB} to impose {@variantrule Disadvantage|XPHB} on that roll. The creature must be able to see you in order to be a target.",
+				"You can use this feature a number of times equal to your Charisma modifier, and regain all expended uses after you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 13,
+			"name": "Intimidating Presence",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"With a word, you can bend them to your will. As an action, you can attempt to coerce a creature within 30 feet of you into doing your bidding. You issue any course of action or activity to be completed, and the target must make a Wisdom saving throw with a DC equal to 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Charisma modifier. The target must be able to hear and understand you.",
+				"On a failed save, the target pursues the coercion to the best of its ability for {@dice 1d4} days or until you or your allies deal damage to it. If the suggested activity can be completed in a shorter time, the coercion ends for the target upon completing it.",
+				"Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 17,
+			"name": "Frightful Coercion",
+			"page": 44,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"The dwarves of Unvollar are an industrious people and many have formed clans around their craft. The most famous of these is the Perfumer clan. The perfumers have gained a reputation for their skills in not only concocting pleasant scents but also espionage and spycraft. They use these perfumes to disorient their enemies and aid their allies. A clan that has risen to power will look to higher a contingent of perfumers on retainer for the political struggles they may engage in. ",
+				{
+					"subclassFeature": "Bonus Proficiency|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Scent Specialist|Rogue|XPHB|Perfumer|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Perfumer",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain proficiency with {@item Alchemist's Supplies|XPHB}. If you already have this proficiency, you gain proficiency in one other type of {@item artisan's tools|XPHB} of your choice."
+			],
+			"toolProficiencies": [
+				{
+					"alchemist's supplies": true
+				},
+				{
+					"anyArtisansTool": 1
+				}
+			],
+			"level": 3,
+			"name": "Bonus Proficiency",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"You gain access to a number of perfumes that can assist you and your allies.",
+				{
+					"type": "entries",
+					"name": "Perfumes",
+					"entries": [
+						"You learn three perfumes of your choice from the \"Perfume Options\" section later in this subclass' description.",
+						"You learn two additional perfumes of your choice when you reach Rogue levels 9, 13, and 17. Each time you learn a new perfume, you can replace one perfume you know with a different one."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Preparing",
+					"entries": [
+						"When you finish a {@variantrule Long Rest|XPHB}, you can use {@item Alchemist's Supplies|XPHB} to produce the perfumes you know into empty flasks you touch. You can produce a number of these equal to two times your {@variantrule Proficiency|XPHB|Proficiency Bonus}, but you can't prepare more than three of the same kind.",
+						"You or a friendly creature can use these perfumes as an action, after which the perfume is consumed."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Saving Throws",
+					"entries": [
+						"If a perfume requires a saving throw, the DC equals 8 + your Intelligence, Wisdom, or Charisma modifier (your choice) + your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					]
+				}
+			],
+			"level": 3,
+			"name": "Scent Specialist",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"Your ability to deploy your perfumes has been trained in the crucible of combat. When you take the {@action Attack|XPHB} action on your turn, you can use any perfume as a {@variantrule Bonus Action|XPHB}."
+			],
+			"level": 9,
+			"name": "Aromatic Assault",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"You can put together perfumes significantly faster. When you finish a {@variantrule Short Rest|XPHB}, you can use {@item Alchemist's Supplies|XPHB} to prepare a number of perfumes equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, up to your usual maximum.",
+				"Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 13,
+			"name": "Resourceful",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"entries": [
+				"Your exploration of perfumes has yielded you the capacity to combine scents. As an action, you can combine two of your perfumes together. On use, this consumes both perfumes and delivers both effects at once."
+			],
+			"level": 17,
+			"name": "Combination of Notes",
+			"page": 42,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Perfumer",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"Rangers of this conclave are flexible and stalwart defenders of the wilds. They weave primal magic inspired by the beasts they protect in their duty, spurring mutations of horns, hooves, teeth, and claws.",
+				{
+					"subclassFeature": "Beast Soul Strike|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Primal Warrior Spells|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Primal Warrior",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"When you reach a Ranger level specified in the Primal Warrior Spells table, you thereafter always have the listed spells prepared.",
+				{
+					"caption": "Primal Warrior Spells",
+					"colLabels": [
+						"Ranger Level",
+						"Prepared Spells"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell Feather Fall|XPHB}, {@spell Primal Savagery|XGE}"
+						],
+						[
+							"5",
+							"{@spell Enhance Ability|XPHB}"
+						],
+						[
+							"9",
+							"{@spell Spirit Guardians|XPHB}"
+						],
+						[
+							"13",
+							"{@spell Death Ward|XPHB}"
+						],
+						[
+							"17",
+							"{@spell Mass Cure Wounds|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			],
+			"level": 3,
+			"name": "Primal Warrior Spells",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"You can enhance your attacks with magic pulled from the primal forces of the world. Before you make an attack roll, you can choose to enhance the attack with one of the following effects. You can enhance an attack only once per turn.",
+				{
+					"subclassFeature": "Serpent's Sting|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Ram's Rush|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Panther's Pounce|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|3",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 3,
+			"name": "Beast Soul Strike",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"You leap up to 20 feet in any direction before making your attack roll. On a hit, you also deal {@damage 1d8} Slashing damage and the target must make a Dexterity saving throw or be knocked {@condition Prone|XPHB}."
+			],
+			"level": 3,
+			"name": "Panther's Pounce",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"If you have moved at least 20 feet before hitting the target, you also deal {@damage 1d8} Bludgeoning damage, and you can make one melee weapon attack roll as a {@variantrule Bonus Action|XPHB} on this turn."
+			],
+			"level": 3,
+			"name": "Ram's Rush",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"On a hit, you also deal {@damage 1d8} Piercing damage and the target must make a Constitution saving throw. On a failed save, the target's {@variantrule Speed|XPHB} is reduced by half, and it cannot take a {@variantrule Reaction|XPHB} until the end of its next turn."
+			],
+			"level": 3,
+			"name": "Serpent's Sting",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"You imbue yourself with the magic of different beasts, granting you the following special abilities. Each of them can be used once, and you must finish a Short or Long Rest before using them again.",
+				{
+					"subclassFeature": "Bristling Boar|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|7",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Hasty Horse|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|7",
+					"type": "refSubclassFeature"
+				},
+				{
+					"subclassFeature": "Goading Gorilla|Ranger|XPHB|Primal|AltorasCharacterCreationOptions|7",
+					"type": "refSubclassFeature"
+				}
+			],
+			"level": 7,
+			"name": "Beast Cloak",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"When you are hit by a melee attack roll, you can take a {@variantrule Reaction|XPHB} to mantle yourself in the bristling hide of the boar. You gain {@variantrule Temporary Hit Points|XPHB} equal to three times your Dexterity modifier, and the attacker takes Force damage equal to half the damage dealt to you by the attack."
+			],
+			"level": 7,
+			"name": "Bristling Boar",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, your {@variantrule Speed|XPHB} is doubled until the end of your next turn."
+			],
+			"level": 7,
+			"name": "Hasty Horse",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"As an action, you challenge your foes with the might of the silverback. Creatures of your choice within 30 feet of you that can see you must succeed on a Wisdom saving throw against your spell save DC. On a failed save, the creature must direct hostile actions towards you and it can't willingly move to a space that is more than 30 feet away from you for 1 minute. A creature affected by this can remake the save at the end of each of its turns, ending the effect on a success."
+			],
+			"level": 7,
+			"name": "Goading Gorilla",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"You can channel the spirit of a noble falcon to take flight. As a {@variantrule Bonus Action|XPHB}, you gain a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB} for 1 minute or until you become {@condition Incapacitated|XPHB}.",
+				"You can use this feature a number of times equal to your Dexterity modifier, and regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+			],
+			"level": 11,
+			"name": "Falcon's Flight",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
+		{
+			"className": "Ranger",
+			"classSource": "XPHB",
+			"entries": [
+				"As a {@variantrule Bonus Action|XPHB}, you take on a chimeric form, infusing yourself with the power of numerous beasts for 1 minute. For the duration, you gain the following benefits. Once you use this feature, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+				{
+					"type": "entries",
+					"name": "Blindsight",
+					"entries": [
+						"You gain {@sense Blindsight|XPHB} with a range of 60 feet."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Regeneration",
+					"entries": [
+						"At the start of each of your turns, you regain {@variantrule Hit Points|XPHB} equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Resistance",
+					"entries": [
+						"You gain a +2 bonus to your {@variantrule Armor Class|XPHB} and {@variantrule Resistance|XPHB} to Bludgeoning, Piercing, and Slashing damage."
+					]
+				}
+			],
+			"level": 15,
+			"name": "Chimeric Animus",
+			"page": 41,
+			"source": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Primal",
+			"subclassSource": "AltorasCharacterCreationOptions"
+		},
 		{
 			"className": "Paladin",
 			"classSource": "XPHB",
