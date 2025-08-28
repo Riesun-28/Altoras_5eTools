@@ -26,6 +26,2204 @@
 			}
 		]
 	},
+	"background": [
+		{
+			"name": "Crown Guard",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 59,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "costume|xphb"
+						},
+						{
+							"item": "fine clothes|xphb"
+						},
+						{
+							"item": "gaming set|xphb"
+						},
+						{
+							"item": "signal whistle|xphb"
+						},
+						{
+							"value": 2400
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You were a trained and trusted member of a protective unit assigned to the head of state of your country or one of their family. Whether you were discharged honorably or dishonorably, the demands of the job have become a part of you, empowering you to safeguard your companions in battle.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Dexterity, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "Protector"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Insight|XPHB}, {@skill Perception|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Costume|XPHB}, {@item Fine Clothes|XPHB}, {@item Gaming Set|XPHB} (same as above), {@item Signal Whistle|XPHB}, 24 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Deck Mage",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 59,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "handaxe|xphb"
+						},
+						{
+							"item": "hooded lantern|xphb"
+						},
+						{
+							"item": "gaming set|xphb"
+						},
+						{
+							"item": "rope|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 3600
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"name": "Deck Mage Spells",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": {
+									"from": [
+										"mending|xphb",
+										"prestidigitation|xphb",
+										"gust|xge",
+										"shape water|xge",
+										"control flames|xge"
+									],
+									"count": 2
+								}
+							}
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Druid;Wizard"
+									}
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"fog cloud|XPHB",
+							"purify food and drink|XPHB"
+						],
+						"s2": [
+							"gust of wind|XPHB",
+							"skywrite|XGE"
+						],
+						"s3": [
+							"water breathing|XPHB",
+							"tidal wave|XGE"
+						],
+						"s4": [
+							"control water|XPHB",
+							"fabricate|XPHB"
+						],
+						"s5": [
+							"cone of cold|XPHB",
+							"control winds|XPHB"
+						]
+					}
+				}
+			],
+			"entries": [
+				"You've spent time as a Deck Mage, a spellcaster hired to provide utility and firepower to naval vessels. The wealthy of Altoras often have Deck Mages on retainer, using their manipulation of water and air to decrease their travel time. Deck Mages are a powerful asset to any ship, from the daunting navies of Tersis and Kamiralik to the fearsome orcish raiders of Heim Hjera.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Intelligence, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Arcana|XPHB}, {@skill Survival|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Handaxe|XPHB}, {@item Hooded Lantern|XPHB}, {@item Gaming Set|XPHB} (same as above), {@item Rope|XPHB}, {@item Traveler's Clothes|XPHB}, 36 GP; or (B) 50 GP"
+						}
+					]
+				},
+				"When you select this Background, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Two Cantrips",
+					"entries": [
+						"You learn two cantrips of your choice from Mending, Fire Bolt, Gust, Shape Water, or Control Flame. Intelligence, Wisdom, or Charisma is your spellcasting ability for this Background's spells (choose when you select this Background)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Level 1 Spell",
+					"entries": [
+						"Choose a Level 1 spell from the Druid or Wizard spell list. You always have it prepared. You can cast it once without a spell slot, and you regain the ability to cast it  in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Spells",
+					"entries": [
+						"If you have the Spellcasting or Pact Magic feature, the spells on the Deck Mage Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "No Origin Feat",
+					"entries": [
+						"Deck Mages do not gain an Origin feat."
+					]
+				},
+				{
+					"caption": "Deck Mage Spells",
+					"colLabels": [
+						"Spell Level",
+						"Spell Name"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell Fog Cloud|XPHB}, {@spell Purify Food and Drink|XPHB}"
+						],
+						[
+							"2",
+							"{@spell Gust of Wind|XPHB}, {@spell Skywrite|XGE}"
+						],
+						[
+							"3",
+							"{@spell Water Breathing|XPHB}, {@spell Tidal Wave|XGE}"
+						],
+						[
+							"4",
+							"{@spell Control Water|XPHB}, {@spell Fabricate|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Cone of Cold|XPHB}, {@spell Control Winds|XGE}"
+						]
+					],
+					"type": "table"
+				}
+			]
+		},
+		{
+			"name": "Dwarven Glassblower",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 59,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"investigation": true,
+					"sleight of hand": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"glassblower's tools": true
+				}
+			],
+			"feats": [
+				{
+					"crafter|XPHB": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "glassblower's tools|xphb"
+						},
+						{
+							"item": "fine clothes|xphb"
+						},
+						{
+							"value": 500
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You are either a dwarf or through long study of their craft have become familiar with their arts. Your reputation for crafting finery, be it glassteel made for weaponry or jewels fit for kings, precedes you. Artist or artisan, you bring forth wonders with your hands.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Constitution, Intelligence, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Crafter|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Investigation|XPHB}, {@skill Sleight of Hand|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Glassblower's Tools|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Glassblower's Tools|XPHB}, {@item Fine Clothes|XPHB}, 5 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Fearsome Raider",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 59,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"navigator's tools": true
+				}
+			],
+			"feats": [
+				{
+					"savage attacker|XPHB": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "navigator's tools|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"item": "grappling hook|xphb"
+						},
+						{
+							"item": "handaxe|xphb",
+							"quantity": 2
+						},
+						{
+							"value": 900
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You grew up among the orcs of Heim Hjera and learned to sail and plunder with the best of them. Notorious for the speed and ferocity of their attacks, the orcs have a love for battle and glory.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Constitution, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Savage Attacker|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Intimidation|XPHB}, {@skill Perception|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Navigator's Tools|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Navigator's Tools|XPHB}, {@item Traveler's Clothes|XPHB}, {@item Grappling Hook|XPHB}, 2 {@item Handaxe|XPHB|Handaxes}, 9 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Golden Courtier",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 59,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true,
+					"performance": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"calligrapher's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "calligrapher's supplies|xphb"
+						},
+						{
+							"item": "fine clothes|xphb"
+						},
+						{
+							"item": "parchment|xphb",
+							"quantity": 10
+						},
+						{
+							"item": "ink|xphb"
+						},
+						{
+							"item": "ink pen|xphb"
+						},
+						{
+							"value": 1400
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"A native or a long-time dignitary of Muhana's Golden Court, you have balanced the art of courtly graces with the court’s demands for displays of military prowess from all its guests and residents. ",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "Noble Bearing"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Intimidation|XPHB}, {@skill Performance|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Calligrapher's Supplies|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Calligrapher's Supplies|XPHB}, {@item Fine Clothes|XPHB}, {@item Parchment|XPHB} (10 sheets), {@item Ink|XPHB}, {@item Ink Pen|XPHB}, 14 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gondolier",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 60,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"skilled|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "gaming set|xphb"
+						},
+						{
+							"item": "hooded lantern|xphb"
+						},
+						{
+							"item": "rope|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 4100
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You have served as a ferryman on the clouds of Skyholm, using levitation and immovable rods to ferry non-flying creatures between the mountaintop islands.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Dexterity, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Skilled|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Athletics|XPHB}, {@skill Perception|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Gaming Set|XPHB} (same as above), {@item Hooded Lantern|XPHB}, {@item Rope|XPHB}, {@item Traveler's Clothes|XPHB}, 41 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hedge Mage",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 60,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"herbalism kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "herbalism kit|xphb"
+						},
+						{
+							"item": "hooded lantern|xphb"
+						},
+						{
+							"item": "tinderbox|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 3800
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"name": "Hedge Mage Spells",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": {
+									"from": [
+										"chill touch|xphb",
+										"light|xphb",
+										"mind sliver|xphb",
+										"prestidigitation|xphb",
+										"produce flame|xphb"
+									],
+									"count": 2
+								}
+							}
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Warlock;Wizard"
+									}
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"bane|XPHB",
+							"hex|XPHB"
+						],
+						"s2": [
+							"augury|XPHB",
+							"moonbeam|XPHB"
+						],
+						"s3": [
+							"bestow curse|XPHB",
+							"hunger of hadar|XPHB"
+						],
+						"s4": [
+							"death ward|XPHB",
+							"divination|XPHB"
+						],
+						"s5": [
+							"greater restoration|XPHB",
+							"legend lore|XPHB"
+						]
+					}
+				}
+			],
+			"entries": [
+				"\"With a sprinkle of whimsy and a touch of wildness, I dance between the realms. For in the hands of a Hedge Mage, even the tiniest bloom holds the potential to weave spells of awe. In nature’s embrace I find my power, for within the ordinary lies the extraordinary.\"",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Intelligence, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Arcana|XPHB}, {@skill Survival|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Herbalism Kit|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Herbalism Kit|XPHB}, {@item Hooded Lantern|XPHB}, {@item Tinderbox|XPHB}, {@item Traveler's Clothes|XPHB}, 38 GP; or (B) 50 GP"
+						}
+					]
+				},
+				"When you select this Background, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Two Cantrips",
+					"entries": [
+						"You learn two cantrips of your choice from Chill Touch, Light, Mind Sliver, Prestidigitation, or Produce Flame. Intelligence, Wisdom, or Charisma is your spellcasting ability for this Background's spells (choose when you select this Background)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Level 1 Spell",
+					"entries": [
+						"Choose a Level 1 spell from the Warlock or Wizard spell list. You always have it prepared. You can cast it once without a spell slot, and you regain the ability to cast it  in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Spells",
+					"entries": [
+						"If you have the Spellcasting or Pact Magic feature, the spells on the Hedge Mage Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "No Origin Feat",
+					"entries": [
+						"Hedge Mages do not gain an Origin feat."
+					]
+				},
+				{
+					"caption": "Hedge Mage Spells",
+					"colLabels": [
+						"Spell Level",
+						"Spell Name"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell Bane|XPHB}, {@spell Hex|XPHB}"
+						],
+						[
+							"2",
+							"{@spell Augury|XPHB}, {@spell Moonbeam|XPHB}"
+						],
+						[
+							"3",
+							"{@spell Bestow Curse|XPHB}, {@spell Hunger of Hadar|XGE}"
+						],
+						[
+							"4",
+							"{@spell Death Ward|XPHB}, {@spell Divination|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Greater Restoration|XPHB}, {@spell Legend Lore|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			]
+		},
+		{
+			"name": "Mage Student",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 60,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"history": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "costume|xphb|Costume (school uniform)"
+						},
+						{
+							"item": "ink|xphb"
+						},
+						{
+							"item": "ink pen|xphb"
+						},
+						{
+							"item": "parchment|xphb",
+							"quantity": 10
+						},
+						{
+							"item": "robe|xphb"
+						},
+						{
+							"value": 3200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"name": "Mage Student Spells",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": {
+									"from": [
+										"mage hand|xphb",
+										"produce flame|xphb",
+										"thaumaturgy|xphb",
+										"prestidigitation|xphb",
+										"vicious mockery|xphb"
+									],
+									"count": 2
+								}
+							}
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Bard;Wizard"
+									}
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"expeditious retreat|XPHB",
+							"unseen servant|XPHB"
+						],
+						"s2": [
+							"borrowed knowledge|SCC",
+							"enhance ability|XPHB"
+						],
+						"s3": [
+							"catnap|XGE",
+							"fly|XPHB"
+						],
+						"s4": [
+							"freedom of movement|XPHB",
+							"mordenkainen's private sanctum|XPHB"
+						],
+						"s5": [
+							"passwall|XPHB",
+							"telekinesis|XPHB"
+						]
+					}
+				}
+			],
+			"entries": [
+				"Altoras has many fine magical institutions, from the University of Ty Ymenydd in Unvollar to the College of Spellcraft in Salvation. You were a student of such an institution, training in the ways of spellcraft to supplement your lifestyle or as the beginning of your journey into the arcane.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Intelligence, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Arcana|XPHB}, {@skill History|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Costume|XPHB} (school uniform), {@item Ink|XPHB}, {@item Ink Pen|XPHB}, {@item Parchment|XPHB} (10 sheets), {@item Robe|XPHB}, 32 GP; or (B) 50 GP"
+						}
+					]
+				},
+				"When you select this Background, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Two Cantrips",
+					"entries": [
+						"You learn two cantrips of your choice from Mage Hand, Prestidigitation, Produce Flame, Thaumaturgy, or Vicious Mockery. Intelligence, Wisdom, or Charisma is your spellcasting ability for this Background's spells (choose when you select this Background)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Level 1 Spell",
+					"entries": [
+						"Choose a Level 1 spell from the Bard or Wizard spell list. You always have it prepared. You can cast it once without a spell slot, and you regain the ability to cast it  in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Spells",
+					"entries": [
+						"If you have the Spellcasting or Pact Magic feature, the spells on the Mage Student Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "No Origin Feat",
+					"entries": [
+						"Mage Students do not gain an Origin feat."
+					]
+				},
+				{
+					"caption": "Mage Student Spells",
+					"colLabels": [
+						"Spell Level",
+						"Spell Name"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell Expeditious Retreat|XPHB}, {@spell Unseen Servant|XPHB}"
+						],
+						[
+							"2",
+							"{@spell Borrowed Knowledge|SCC}, {@spell Enhance Ability|XPHB}"
+						],
+						[
+							"3",
+							"{@spell Catnap|XGE}, {@spell Fly|XPHB}"
+						],
+						[
+							"4",
+							"{@spell Freedom of Movement|XPHB}, {@spell Mordenkainen's Private Sanctum|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Passwall|XPHB}, {@spell Telekinesis|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			]
+		},
+		{
+			"name": "Maritime Sentinel",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 61,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"alert|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"navigator's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "dagger|xphb"
+						},
+						{
+							"item": "navigator's tools|xphb"
+						},
+						{
+							"item": "rope|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 2100
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You were once a marine on a fishery vessel, hunting dangerous marine Kaiju for food and safety. You’re no stranger to danger on the seas and you may even be a survivor of the Night of the Red Sea. As such, you have honed your ability to keep one eye open at all times. ",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Dexterity, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Alert|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Athletics|XPHB}, {@skill Perception|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Navigator's Tools}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Dagger|XPHB}, {@item Navigator's Tools|XPHB}, {@item Rope|XPHB}, {@item Traveler's Clothes|XPHB}, 21 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Master of the Sea",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 61,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"tough|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"navigator's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "block and tackle|xphb"
+						},
+						{
+							"item": "navigator's tools|xphb"
+						},
+						{
+							"item": "net|xphb"
+						},
+						{
+							"item": "rope|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 2000
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You were taught to sail by the hobgoblins of Kamiralik, widely known to be the best sailors in the world. They imparted upon you the importance of discipline and the will to explore, and by doing so, to better oneself.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Constitution, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Tough|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Athletics|XPHB}, {@skill Survival|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Navigator's Tools}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Block and Tackle|XPHB}, {@item Navigator's Tools|XPHB}, {@item Net|XPHB}, {@item Rope|XPHB}, {@item Traveler's Clothes|XPHB}, 20 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Quill Training",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 61,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"skilled|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"history": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "disguise kit|xphb"
+						},
+						{
+							"item": "fine clothes|xphb"
+						},
+						{
+							"item": "parchment|xphb",
+							"quantity": 10
+						},
+						{
+							"value": 900
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You have been trained from a young age to infiltrate society and steal information. The Quills are an elven organization of scribes who record the world’s history. Many are also spies, who pass along important information to the elves of Telberec.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Dexterity, Intelligence, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Skilled|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Deception|XPHB}, {@skill History|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Disguise Kit}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Disguise Kit|XPHB}, {@item Fine Clothes|XPHB}, {@item Parchment|XPHB} (10 sheets), 9 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Raised Wild",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 61,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"magic initiate;druid|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"woodcarver's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "club|xphb"
+						},
+						{
+							"item": "hunting trap|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"item": "woodcarver's tools|xphb"
+						},
+						{
+							"value": 4200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You were raised by halflings in the wilds of Altoras. Your kind shun all civilization, and are more at home in the canopy of the forest than in the confines of the city.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Dexterity, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Magic Initiate|XPHB} (Druid)"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Animal Handling|XPHB}, {@skill Survival|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Woodcarver's Tools}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Club|XPHB}, {@item Hunting Trap|XPHB}, {@item Traveler's Clothes|XPHB}, {@item Woodcarver's Tools}, 42 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Revolutionary Survivor",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 62,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"history": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"mason's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "map|xphb|Map of Home"
+						},
+						{
+							"item": "map case|xphb"
+						},
+						{
+							"item": "mason's tools|xphb"
+						},
+						{
+							"item": "pouch|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 3600
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"You've fought and survived through a civil war in your home city, such as Salvation or Haven. You either remember the before time as the glory days or when change was less scary than things staying the same. Either way, you have a dream of what your city should be and have work to help rebuild it.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Constitution, Intelligence, Wisdom"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "Friends in Low Places"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill History|XPHB}, {@skill Survival|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Mason's Tools}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Map|XPHB} (of home), {@item Map Case|XPHB}, {@item Mason's ToolsX|PHB}, {@item Pouch|XPHB}, {@item Traveler's Clothes|XPHB}, 36 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Root Sea Diplomat",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 62,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"lucky|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"persuasion": true,
+					"history": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"calligrapher's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+												{
+							"item": "calligrapher's supplies|xphb"
+						},
+						{
+							"item": "fine clothes|xphb"
+						},
+						{
+							"item": "map|xphb|Map of the Root Sea"
+						},
+						{
+							"item": "map case|xphb"
+						},
+						{
+							"item": "parchment|xphb",
+							"quantity": 10
+						},
+						{
+							"item": "ink|xphb"
+						},
+						{
+							"item": "ink pen|xphb"
+						},
+						
+						{
+							"value": 1200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				"Though often found in the human city states around the northern fringes of the Root Sea, many nations send delegations of diplomats to avert war with their neighbors — and sometimes, instigate it.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Intelligence, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Lucky|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill History|XPHB}, {@skill Persuasion|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "{@item Calligrapher's Supplies}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Calligrapher's Supplies|XPHB}, {@item Fine Clothes|XPHB}, {@item Ink|XPHB}, {@item Ink Pen|XPHB}, {@item Map|XPHB} (of the Root Sea), {@item Map Case|XPHB}, 36 GP; or (B) 50 GP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Skull Taker Initiate",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 62,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"perception": true,
+					"religion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "ccrowbar|xphb"
+						},
+						{
+							"item": "gaming set|xphb"
+						},
+						{
+							"item": "handaxe|xphb"
+						},
+						{
+							"item": "hooded lantern|xphb"
+						},
+						{
+							"item": "holy water|xphb"
+						},
+						{
+							"item": "tinderbox|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 1000
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"name": "Skull Taker Initiate Spells",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": {
+									"from": [
+										"toll the dead|xphb",
+										"sacred flame|xphb",
+										"thaumaturgy|xphb",
+										"spare the dying|xphb",
+										"word of radiance|xphb"
+									],
+									"count": 2
+								}
+							}
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Cleric;Paladin"
+									}
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"protection from evil and good|XPHB",
+							"sanctuary|XPHB"
+						],
+						"s2": [
+							"gentle repose|XPHB",
+							"warding bond|XPHB"
+						],
+						"s3": [
+							"aura of vitality|XPHB",
+							"crusader's mantle|XPHB"
+						],
+						"s4": [
+							"aura of life|XPHB",
+							"fire shield|XPHB"
+						],
+						"s5": [
+							"dawn|XGE",
+							"dispel evil and good|XPHB"
+						]
+					}
+				}
+			],
+			"entries": [
+				"The Skull Takers originated in Heim Hjera, its ranks are mostly clerics, paladins, and rangers. As time has progressed many from different walks of life have joined this order, to fight for the living. The order prepares its members to face undeath wherever they find it, which is reflected in the magic they train their members to wield.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Wisdom, Charisma"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Perception|XPHB}, {@skill Religion|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Crowbar|XPHB}, {@item Gaming Set|XPHB} (same as above), {@item Handaxe|XPHB}, {@item Hooded Lantern|XPHB}, {@item Holy Water|XPHB}, {@item Tinderbox|XPHB}, {@item Traveler's Clothes|XPHB}, 10 GP; or (B) 50 GP"
+						}
+					]
+				},
+				"When you select this Background, you gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Two Cantrips",
+					"entries": [
+						"You learn two cantrips of your choice from Toll the Dead, Thaumaturgy, Sacred Flame, Spare the Dying, or Word of Radiance. Intelligence, Wisdom, or Charisma is your spellcasting ability for this Background's spells (choose when you select this Background)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Level 1 Spell",
+					"entries": [
+						"Choose a Level 1 spell from the Cleric or Paladin spell list. You always have it prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Spells",
+					"entries": [
+						"If you have the Spellcasting or Pact Magic feature, the spells on the Skull Taker Initiate Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "No Origin Feat",
+					"entries": [
+						"Skull Taker Initiates do not gain an Origin feat."
+					]
+				},
+				{
+					"caption": "Skull Taker Initiate Spells",
+					"colLabels": [
+						"Spell Level",
+						"Spell Name"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell Protection from Evil and Good|XPHB}, {@spell Sanctuary|XPHB}"
+						],
+						[
+							"2",
+							"{@spell Gentle Repose|XPHB}, {@spell Warding Bond|XPHB}"
+						],
+						[
+							"3",
+							"{@spell Aura of Vitality|XPHB}, {@spell Crusader's Mantle|XPHB}"
+						],
+						[
+							"4",
+							"{@spell Aura of Life|XPHB}, {@spell Fire Shield|XPHB}"
+						],
+						[
+							"5",
+							"{@spell Dawn|XGE}, {@spell Dispel Evil and Good|XPHB}"
+						]
+					],
+					"type": "table"
+				}
+			]
+		}
+	],
 	"feat": [
 		{
 			"category": "O",
@@ -581,8 +2779,7 @@
 		{
 			"ability": [
 				{
-					"choose":
-					{
+					"choose": {
 						"from": [
 							"str",
 							"dex",
