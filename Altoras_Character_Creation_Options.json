@@ -176,11 +176,29 @@
 					"name": "Spit",
 					"type": "entries",
 					"entries": [
-						"You have acid glands which count as a simple ranged weapon you are proficient with, and can be used when making Unarmed Strikes. Your acid spit has a range of 30 / 90 and {@itemProperty F|XPHB|Finesse}, and deals {@dice 1d6} {@item Acid|XPHB} damage on a hit."
+						"You have grown acid glands which count as a simple ranged weapon you are proficient with. Your acid spit has a short range of 30 feet, a long range of 90 feet and the Finesse property. On a hit, they deal 1d8 Acid damage."
 					]
 				}
 			],
-			"category": "G"
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Acid Resistance",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "acid"
+						}
+					],
+					"transfer": true
+				}
+			]
 		},
 		{
 			"name": "Amphibious",
@@ -195,6 +213,11 @@
 							"con"
 						]
 					}
+				}
+			],
+			"prerequisite": [
+				{
+					"level": 4
 				}
 			],
 			"entries": [
