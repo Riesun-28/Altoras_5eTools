@@ -14248,6 +14248,226 @@
 			"subclassShortName": "Maledictor"
 		},
 		{
+			"name": "Veil of the False Moon",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Druid",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 10
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Wild Shape|Druid|XPHB|2"
+								}
+							}
+						]
+					},
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "False Moon"
+		},
+		{
+			"name": "Primal Warrior",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Druid",
+			"activities": [
+				{
+					"type": "heal",
+					"healing": {
+						"types": [
+							"temphp"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "2 * @classes.druid.levels"
+						}
+
+					},
+					"activation": {
+						"type": "bonus action"
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Wild Shape|Druid|XPHB|2"
+								}
+							}
+						]
+					},
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Warrior"
+		},
+		{
+			"name": "Summon Protector",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Druid",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "hours",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Wild Shape|Druid|XPHB|2"
+								}
+							}
+						]
+					},
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove"
+		},
+		{
+			"name": "Sturdy Bark",
+			"level": 10,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Druid",
+			"effects": [
+				{
+					"name": "Poison Resistance",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "poison"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"mode": "ADD",
+							"value": "poisoned"
+						}
+					],
+					"transfer": true
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Grove"
+		},
+		{
+			"name": "Helping Hand",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Cleric",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 10
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Channel Divinity"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dedication"
+		},
+		{
+			"name": "Precognitive Trance",
+			"level": 17,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Cleric",
+			"system": {
+				"uses": {
+					"max": "1",
+					"recovery": "sr"
+				}
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Venom"
+		},
+		{
 			"name": "Tips and Tricks",
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
@@ -14343,7 +14563,8 @@
 												"formula": "@scale.monk.die + @mod"
 											}
 										}
-									]
+									],
+									"includeBase": false
 								},
 								"target": {
 									"affects": {
@@ -14351,7 +14572,7 @@
 										"count": "1"
 									}
 								},
-								"foundryId": "martialArts",
+								"foundryId": "Tether",
 								"activation": {
 									"type": "action",
 									"value": 1
