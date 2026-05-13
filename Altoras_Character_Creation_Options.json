@@ -6411,22 +6411,126 @@
 		{
 			"ac": [
 				{
-					"special": "14 + PB"
+					"special": "15 + PB"
 				}
 			],
-			"hp": {
-				"special": "4 + four times your Warlock level (The consort has a number of Hit Dice [d6s] equal to your Warlock level)"
-			},
-			"cha": 9,
-			"con": 10,
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The consort makes two attacks."
+					]
+				},
+				{
+					"name": "Radiant Spear",
+					"entries": [
+						"{@atk ma,ra} Bonus equals your spell attack modifier, reach 5 ft. or range 60 ft. {@h}{@damage 2d10 + 3 + your Charisma modifier} Radiant damage and the target is {@condition Blinded|XPHB} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Flame Siphon",
+					"entries": [
+						"{@atk ma} Bonus equals your spell attack modifier, reach 5 ft {@h}{@damage 2d6 + 4 + your Charisma modifier} Fire damage plus {@damage 2d6} Force damage. The consort gains Temporary Hit Points equal to the Fire damage dealt."
+					]
+				},
+				{
+					"name": "Demonic Bite",
+					"entries": [
+						"{@atk ma} Bonus equals your spell attack modifier, reach 5 ft {@h}{@damage 2d12 + 4 + your Charisma modifier} Necrotic damage and the target is {@condition Poisoned|XPHB} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Frightening Strike",
+					"entries": [
+						"{@atk ma,ra} Bonus equals your spell attack modifier, reach 5 ft. or range 60 ft. {@h}{@damage 2d10 + 3 + your Charisma modifier} Psychic damage and the target is {@condition Frightened|XPHB} until the end of its next turn."
+					]
+				}
+			],
+			"alignment": [
+				"A"
+			],
+			"cha": 25,
+			"con": 17,
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
 			"dex": 18,
-			"int": 10,
-			"str": 5,
-			"wis": 12,
-			"name": "Consort",
-			"page": 48,
+			"familiar": true,
+			"hp": {
+				"special": "Use the consort's Hit Points and Hit Point DIce"
+			},
+			"immune": [
+				{
+					"immune": [
+						"radiant"
+					],
+					"note": "(Celestial)"
+				},
+				{
+					"immune": [
+						"fire"
+					],
+					"note": "(Devil)"
+				},
+				{
+					"immune": [
+						"necrotic"
+					],
+					"note": "(Demon)"
+				},
+				{
+					"immune": [
+						"psychic"
+					],
+					"note": "(Fey)"
+				}
+			],
+			"int": 25,
+			"languages": [
+				"All"
+			],
+			"miscTags": [
+				"RA",
+				"MA",
+				"MLW",
+				"THW"
+			],
+			"name": "Consort: Unleashed Form",
+			"page": 54,
+			"passive": 17,
+			"pbNote": "equals your Proficiency Bonus",
 			"size": [
-				"T"
+				"H"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"swim": 40,
+				"canHover": true
+			},
+			"str": 21,
+			"trait": [
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The consort has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Soul Link",
+					"entries": [
+						"Add your Charisma modifier to any saving throw the consort makes. If you have the Devil's Sight and/or Witch Sight invocations, the consort gains those benefits as well."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
 			],
 			"type": {
 				"type": {
@@ -6437,27 +6541,162 @@
 					]
 				}
 			},
-			"speed": {
-				"fly": {
-					"number": 40,
-					"condition": "(hover)"
-				},
-				"walk": 10,
-				"canHover": true
+			"wis": 25,
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"senseTags": [
+				"SD"
+			],
+			"skill": {
+				"acrobatics": "+4",
+				"athletics": "+5",
+				"perception": "+7",
+				"arcana": "+7",
+				"history": "+7",
+				"medicine": "+7",
+				"nature": "+7",
+				"survival": "+7",
+				"religion": "+7"
 			},
+			"reaction": [
+				{
+					"name": "Fleeting Insight {@recharge 5}",
+					"entries": [
+						"{@actTrigger} You or the consort makes a {@dice D20} Test. {@actResponse} The consort adds 7 to the roll."
+					]
+				}
+			],
+			"shortName": "Unleashed Form",
+			"conditionInflict": [
+				"blinded",
+				"frightened",
+				"poisoned"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"bonus": [
+				{
+					"name": "Unleashed Power {@recharge 5}",
+					"entries": [
+						"The consort casts Polymorph or Confusion (Fey Only); Fear or Fire Shield (Devil Only); Mass Healing Word or Guardian of Faith (Celestial Only); Stinking Cloud or Ray of Sickness (Demon Only). This spell doesn't require Material components and uses your spell save DC and spell attack modifier."
+					]
+				}
+			],
+			"damageTags": [
+				"F",
+				"N",
+				"O",
+				"R",
+				"Y"
+			]
+		},
+		{
+			"ac": [
+				{
+					"special": "15 + PB"
+				}
+			],
+			"action": [
+				{
+					"name": "Radiant Spear",
+					"entries": [
+						"{@atk ma,ra} Bonus equals your spell attack modifier, reach 5 ft. or range 60 ft. {@h}{@damage 2d10 + 3 + your Charisma modifier} Radiant damage and the target is {@condition Blinded|XPHB} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Flame Siphon",
+					"entries": [
+						"{@atk ma} Bonus equals your spell attack modifier, reach 5 ft {@h}{@damage 2d6 + 4 + your Charisma modifier} Fire damage plus {@damage 2d6} Force damage. The consort gains Temporary Hit Points equal to the Fire damage dealt."
+					]
+				},
+				{
+					"name": "Demonic Bite",
+					"entries": [
+						"{@atk ma} Bonus equals your spell attack modifier, reach 5 ft {@h}{@damage 2d12 + 4 + your Charisma modifier} Necrotic damage and the target is {@condition Poisoned|XPHB} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Frightening Strike",
+					"entries": [
+						"{@atk ma,ra} Bonus equals your spell attack modifier, reach 5 ft. or range 60 ft. {@h}{@damage 2d10 + 3 + your Charisma modifier} Psychic damage and the target is {@condition Frightened|XPHB} until the end of its next turn."
+					]
+				}
+			],
+			"alignment": [
+				"A"
+			],
+			"cha": 11,
+			"con": 15,
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"dex": 17,
+			"familiar": true,
+			"hp": {
+				"special": "Use the consort's Hit Points and Hit Point DIce"
+			},
+			"immune": [
+				{
+					"immune": [
+						"radiant"
+					],
+					"note": "(Celestial)"
+				},
+				{
+					"immune": [
+						"fire"
+					],
+					"note": "(Devil)"
+				},
+				{
+					"immune": [
+						"necrotic"
+					],
+					"note": "(Demon)"
+				},
+				{
+					"immune": [
+						"psychic"
+					],
+					"note": "(Fey)"
+				}
+			],
+			"int": 12,
+			"languages": [
+				"Common and Abyssal (Demon)",
+				"Celestial (Celestial)",
+				"Infernal (Devil)",
+				"or Sylvan (Fey)"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"CE",
+				"I",
+				"S"
+			],
+			"miscTags": [
+				"RA",
+				"MA",
+				"MLW",
+				"THW"
+			],
+			"name": "Consort: Unstable Form",
+			"page": 54,
+			"passive": 12,
+			"pbNote": "equals your Proficiency Bonus",
+			"size": [
+				"L"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"speed": {
+				"walk": 40
+			},
+			"str": 19,
 			"trait": [
-				{
-					"name": "Evasion",
-					"entries": [
-						"When the consort is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails."
-					]
-				},
-				{
-					"name": "Flyby",
-					"entries": [
-						"The consort doesn't provoke opportunity attacks when it flies out of an enemy's reach."
-					]
-				},
 				{
 					"name": "Magic Resistance",
 					"entries": [
@@ -6467,59 +6706,202 @@
 				{
 					"name": "Soul Link",
 					"entries": [
-						"The consort has all the Eldritch Invocations you have, excluding any Pact Boons. If an invocation has limited uses, those uses are shared between you and the consort. The consort’s spellcasting ability is Intelligence or Wisdom (choose when you choose this subclass)."
+						"Add your Charisma modifier to any saving throw the consort makes. If you have the Devil's Sight and/or Witch Sight invocations, the consort gains those benefits as well."
 					]
 				}
 			],
-			"action": [
-				{
-					"name": "Prick",
-					"entries": [
-						"{@atk mw} {@hit 4 + PB} to hit, reach 5 ft. {@h}{@damage 5 + PB} Piercing damage plus {@damage 1d6} damage of the same type as its listed immunity."
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"type": {
+				"type": {
+					"choose": [
+						"celestial",
+						"fey",
+						"fiend"
 					]
 				}
-			],
-			"immune": [
-				{
-					"special": "The one listed in the Consort Details table"
-				}
-			],
-			"pbNote": "equals your Proficiency Bonus",
+			},
+			"wis": 15,
 			"senses": [
 				"darkvision 60 ft."
-			],
-			"source": "AltorasCharacterCreationOptions",
-			"passive": 11,
-			"familiar": true,
-			"miscTags": [
-				"MW"
-			],
-			"alignment": [
-				"A"
-			],
-			"languages": [
-				"Common and the one listed in the Consort Details table"
 			],
 			"senseTags": [
 				"D"
 			],
-			"shortName": true,
-			"traitTags": [
-				"Flyby",
-				"Magic Resistance"
+			"skill": {
+				"acrobatics": "+3",
+				"athletics": "+4",
+				"perception": "+2"
+			},
+			"reaction": [
+				{
+					"name": "Fleeting Insight (CHA mod/day)",
+					"entries": [
+						"{@actTrigger} You or the consort makes a {@dice D20} Test. {@actResponse} The consort adds your Charisma modifier to the roll."
+					]
+				}
+			],
+			"shortName": "Unstable Form",
+			"conditionInflict": [
+				"blinded",
+				"frightened",
+				"poisoned"
 			],
 			"damageTags": [
-				"P"
+				"F",
+				"N",
+				"O",
+				"R",
+				"Y"
+			]
+		},
+		{
+			"ac": [
+				{
+					"special": "13 + PB"
+				}
 			],
-			"environment": [
-				"urban"
+			"action": [
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk ma} Bonus equals your spell attack modifier, reach 5 ft. {@h}{@damage 1d4 + 3 + your Charisma modifier} Piercing damage plus {@damage 1d6} FIre (Devil), Necrotic (Demon), Psychic (Fey), or Radiant (Celestial) damage."
+					]
+				},
+				{
+					"name": "Bolt",
+					"entries": [
+						"{@atk ra} Bonus equals your spell attack modifier, range 60 ft. {@h} {@damage 1d6 + 3 + your Charisma modifier} FIre (Devil), Necrotic (Demon), Psychic (Fey), or Radiant (Celestial) damage."
+					]
+				}
 			],
-			"languageTags": [
-				"C"
+			"alignment": [
+				"A"
 			],
+			"cha": 11,
+			"con": 12,
 			"conditionImmune": [
 				"charmed",
 				"frightened"
+			],
+			"dex": 17,
+			"familiar": true,
+			"hp": {
+				"special": "15 + four times your Warlock level (The consort has a number of Hit Dice [d4s] equal to your Warlock level)"
+			},
+			"immune": [
+				{
+					"immune": [
+						"radiant"
+					],
+					"note": "(Celestial)"
+				},
+				{
+					"immune": [
+						"fire"
+					],
+					"note": "(Devil)"
+				},
+				{
+					"immune": [
+						"necrotic"
+					],
+					"note": "(Demon)"
+				},
+				{
+					"immune": [
+						"psychic"
+					],
+					"note": "(Fey)"
+				}
+			],
+			"int": 12,
+			"languages": [
+				"Common and Abyssal (Demon)",
+				"Celestial (Celestial)",
+				"Infernal (Devil)",
+				"or Sylvan (Fey)"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"CE",
+				"I",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"name": "Consort",
+			"page": 52,
+			"passive": 12,
+			"pbNote": "equals your Proficiency Bonus",
+			"size": [
+				"T"
+			],
+			"source": "AltorasCharacterCreationOptions",
+			"speed": {
+				"walk": 40
+			},
+			"str": 6,
+			"trait": [
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The consort has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Soul Link",
+					"entries": [
+						"Add your Charisma modifier to any saving throw the consort makes. If you have the Devil's Sight and/or Witch Sight invocations, the consort gains those benefits as well."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"When the consort is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"type": {
+				"type": {
+					"choose": [
+						"celestial",
+						"fey",
+						"fiend"
+					]
+				}
+			},
+			"wis": 15,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"senseTags": [
+				"D"
+			],
+			"skill": {
+				"perception": "+2"
+			},
+			"reaction": [
+				{
+					"name": "Fleeting Insight (CHA mod/day)",
+					"entries": [
+						"{@actTrigger} You or the consort makes a {@dice D20} Test. {@actResponse} The consort adds your Charisma modifier to the roll."
+					]
+				}
+			],
+			"damageTags": [
+				"F",
+				"N",
+				"P",
+				"R",
+				"Y"
 			]
 		},
 		{
@@ -10163,11 +10545,7 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Little Bird on your Shoulder|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Fleeting Insight|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3"
+					"subclassFeature": "Chained Together as One|Warlock|XPHB|Consort|AltorasCharacterCreationOptions|3"
 				}
 			],
 			"className": "Warlock",
@@ -10182,15 +10560,16 @@
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
 				"The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Consort Spells table, you thereafter always have the listed spells prepared.",
+				"The consort can cast each of these spells without expending a spell slot once per Long Rest. It uses your spell save DC and maintains Concentration if necessary.",
 				{
 					"rows": [
 						[
 							"3",
-							"{@spell Darkvision|XPHB}, {@spell Detect Evil and Good|XPHB}, {@spell Enhance Ability|XPHB}, {@spell Magic Missile|XPHB}"
+							"{@spell Detect Magic|XPHB}, {@spell Enhance Ability|XPHB}, {@spell Enthrall|XPHB}, {@spell Identify|XPHB}"
 						],
 						[
 							"5",
-							"{@spell Fly|XPHB}, {@spell Tongues|XPHB}"
+							"{@spell Clairvoyance|XPHB}, {@spell Tongues|XPHB}"
 						],
 						[
 							"7",
@@ -10198,7 +10577,7 @@
 						],
 						[
 							"9",
-							"{@spell Modify Memory|XPHB}, {@spell Yolande's Regal Presence|XPHB}"
+							"{@spell Scrying|XPHB}, {@spell Legend Lore|XPHB}"
 						]
 					],
 					"type": "table",
@@ -10219,85 +10598,36 @@
 			"subclassShortName": "Consort"
 		},
 		{
-			"name": "Little Bird on your Shoulder",
+			"name": "Chained Together as One",
 			"page": 52,
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You gain the Pact of the Chain eldritch invocation, if you don't already have it. The familiar summoned by that invocation must use the Consort statblock below. Choose a creature type for the consort from the Consort Details table, which also informs the languages it speaks and its immunities.",
+				"You gain the Pact of the Chain and Investment of the Chain Master invocations, if you didn't already have them, and even if you don't meet the requirements. The spirit summoned by {@spell Find Familiar|XPHB} must use the Consort statblock below.",
+				"When you gain this feature, choose the consort's creature type from Celestial, Fey, or Fiend (Demon or Devil). You choose the appearance of the consort, but this has no effect on its {@variantrule Size|XPHB} or statistics.",
 				"This familiar is your patron, but at a fraction of its power. It can offer you insights and make requests of you, but its memory is hazy. The link made between you via the pact is its most concrete attachment.",
 				"While summoned, the following additional rules apply:",
 				{
+					"type": "entries",
 					"name": "Independent",
-					"type": "entries",
 					"entries": [
-						"In combat, the consort -- your patron -- is not explicitly controlled. When you give it commands, you are instead encouraging it to take a certain course of action. It is still an ally to you and your allies, but may disobey at the DM's discretion."
+						"The consort -- your patron -- will obey most of your commands, but may disobey if it disagrees with it (e.g. commanding it to move directly into a hazard. This is meant to be used lightly, but is at DM's discretion)."
 					]
 				},
 				{
+					"type": "entries",
 					"name": "Disappearance of the Familiar",
-					"type": "entries",
 					"entries": [
-						"The consort cannot be dismissed, it will only ever disappear to a pocket dimension. The consort only dies if you do, and is similarly revived if you are revived."
+						"The consort cannot be dismissed forever, it will only ever disappear to a pocket dimension. The consort only dies if you do, and is similarly revived if you are revived."
 					]
 				},
 				{
+					"type": "entries",
 					"name": "Telepathic Connection",
-					"type": "entries",
 					"entries": [
-						"The consort can deliver any spell you cast, not just ones with a range of touch. After all, they gave them to you. The other normal restrictions apply, and you must still maintain {@status Concentration|XPHB} if the spell requires it."
-					]
-				},
-				{
-					"rows": [
-						[
-							"Celestial",
-							"Celestial",
-							"Radiant"
-						],
-						[
-							"Fey",
-							"Sylvan",
-							"Psychic"
-						],
-						[
-							"Fiend (Demon)",
-							"Abyssal",
-							"Poison"
-						],
-						[
-							"Fiend (Devil)",
-							"Infernal",
-							"Fire"
-						]
-					],
-					"type": "table",
-					"caption": "Consort Details",
-					"colLabels": [
-						"Creature Type",
-						"Language",
-						"Immunity"
-					],
-					"colStyles": [
-						"col-1",
-						"col-2",
-						"col-3"
+						"The consort can deliver any spell you cast, not just ones with a range of touch. The other normal restrictions apply, and you must still maintain {@status Concentration|XPHB} if the spell requires it."
 					]
 				}
-			],
-			"className": "Warlock",
-			"classSource": "XPHB",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Consort"
-		},
-		{
-			"name": "Fleeting Insight",
-			"page": 52,
-			"level": 3,
-			"source": "AltorasCharacterCreationOptions",
-			"entries": [
-				"In brief flashes, the consort can muster up motes of its infinite knowledge. When you make a {@variantrule D20 Test|XPHB}, the consort can take a {@variantrule Reaction|XPHB} to offer this insight to you. You can roll a {@dice d6} immediately after seeing the result on the {@dice d20} and add it to the roll.",
-				"The consort can take this reaction a number of times equal to your Charisma modifier, and regains all expended uses after you finish a {@variantrule Long Rest|XPHB}."
 			],
 			"className": "Warlock",
 			"classSource": "XPHB",
@@ -10310,39 +10640,9 @@
 			"level": 6,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"As a {@variantrule Bonus Action|XPHB}, the consort can tap into an unstable visage of its true power, taking on a powerful new form seen in the Unstable Form table for 1 minute. This form ends early if you dismiss it (no action required), or the consort drops to 0 {@variantrule Hit Points|XPHB}.",
-				"While in this form, the consort's game statistics are replaced by the forms statistics, but it retains its alignment, feats, languages, and Intelligence, Wisdom, and Charisma scores. It also retains its {@variantrule Proficiency|XPHB|Proficiency Bonus}, {@variantrule Speed|XPHB}, skill and saving throw proficiencies, and immunities and resistances, in addition to gaining the ones in the stat block. If the stat block's {@variantrule Speed|XPHB} or skill or saving throw modifier is higher than the consorts, use the one in the stat block. Additionally, you can command the consort as a {@variantrule Bonus Action|XPHB} on your turn.",
-				"After the consort enters this form, it can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore its use of it.",
-				{
-					"rows": [
-						[
-							"Celestial",
-							"Giant Elk"
-						],
-						[
-							"Fey",
-							"Sea Hag"
-						],
-						[
-							"Fiend (Demon)",
-							"Rutterkin"
-						],
-						[
-							"Fiend (Devil)",
-							"Spined Devil"
-						]
-					],
-					"type": "table",
-					"caption": "Unstable Form",
-					"colLabels": [
-						"Creature Type",
-						"Stat Block"
-					],
-					"colStyles": [
-						"col-1",
-						"col-2"
-					]
-				}
+				"As a {@variantrule Bonus Action|XPHB}, the consort can tap into an unstable visage of its true power for 1 minute. The consort's stat block is replaced with the Unstable Form stat block (on the next page) for the duration, but it retains its {@variantrule Hit Points|XPHB} and {@variantrule Hit Point Dice|XPHB}. The Unstable Form is still considered a familiar for the purposes of your invocations. It has the same creature type and alignment as the consort. You choose the appearance of the Unstable Form, but this has no effect on its {@variantrule Size|XPHB} or statistics.",
+				"This form ends early if the consort drops to 0 {@variantrule Hit Points|XPHB}.",
+				"After the consort enters this form, it can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore its use of it."
 			],
 			"className": "Warlock",
 			"classSource": "XPHB",
@@ -10355,8 +10655,9 @@
 			"level": 10,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"Your bond with your patron has allowed a fraction of its true power to return. The consort's Intelligence or Wisdom score increases to 20.",
-				"In addition, it gains proficiency and {@variantrule Expertise|XPHB} in one skill of your choice from {@skill Arcana|XPHB}, {@skill History|XPHB}, {@skill Medicine|XPHB}, {@skill Nature|XPHB}, {@skill Survival|XPHB}, or {@skill Religion|XPHB}."
+				"Your bond has allowed your patron's knowledge and memory to return with significant stability. The consort's Intelligence and Wisdom scores become 25.",
+				"In addition, it gains proficiency and {@variantrule Expertise|XPHB} in one skill of your choice from {@skill Arcana|XPHB}, {@skill History|XPHB}, {@skill Medicine|XPHB}, {@skill Nature|XPHB}, {@skill Survival|XPHB}, or {@skill Religion|XPHB}.",
+				"Finally, the consort retains it's Intelligence and Wisdom scores and it's skill proficiencies when it enters Unstable or Unleashed Form."
 			],
 			"className": "Warlock",
 			"classSource": "XPHB",
@@ -10369,38 +10670,8 @@
 			"level": 14,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"Your patron has unlocked greater power, and is now able to transform into its Unleashed Form as a {@variantrule Bonus Action|XPHB}, seen in the Unleashed Form table. This form follows the same rules as its Unstable Form.",
-				"After entering its Unleashed Form, the consort can't do so again until you finish a {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore its use of it.",
-				{
-					"rows": [
-						[
-							"Celestial",
-							"Battleforce Angel"
-						],
-						[
-							"Fey",
-							"Pixie Wonderbringer"
-						],
-						[
-							"Fiend (Demon)",
-							"Chasme"
-						],
-						[
-							"Fiend (Devil)",
-							"White Abishai"
-						]
-					],
-					"type": "table",
-					"caption": "Unleashed Form",
-					"colLabels": [
-						"Creature Type",
-						"Stat Block"
-					],
-					"colStyles": [
-						"col-1",
-						"col-2"
-					]
-				}
+				"Your patron has unlocked greater power, and is now able to transform into its Unleashed Form (on the next page) as a {@variantrule Bonus Action|XPHB}. This form follows the same rules as its Unstable Form. You choose the appearance of the Unleashed Form, but this has no effect on its {@variantrule Size|XPHB} or statistics.",
+				"After entering its Unleashed Form, the consort can't do so again until you finish a {@variantrule Long Rest|XPHB}."
 			],
 			"className": "Warlock",
 			"classSource": "XPHB",
