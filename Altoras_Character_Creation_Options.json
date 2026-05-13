@@ -9350,7 +9350,7 @@
 				"Those bards who affiliate themselves with the College of Cartomancy honor an ancient tradition of magic based on using a deck of playing cards that have been turned into Decks of Power. The cards in a Deck of Power are a reflection of each Cartomancer that owns it, whether it is to divine the future, perform elaborate displays of showmanship, or outmaneuver adversaries. These bards believe that the magic channeled through each card drawn is an expression of fate itself and they are a conduit of change in the world around them.",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Deck of Power|Wizard|XPHB|Cartomancy|AltorasCharacterCreationOptions|3"
+					"subclassFeature": "Deck of Power|Bard|XPHB|Cartomancy|AltorasCharacterCreationOptions|3"
 				}
 			],
 			"className": "Bard",
@@ -9500,11 +9500,11 @@
 				"Barbarians who follow the Path of Cosmic Chaos have been touched by the esoteric power of far-off realms. Unleashing that power through their Rage allows them to sculpt their bodies and battlefield.",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Unleash Chaos|Wizard|XPHB|Cosmic Chaos|AltorasCharacterCreationOptions|3"
+					"subclassFeature": "Unleash Chaos|Barbarian|XPHB|Cosmic Chaos|AltorasCharacterCreationOptions|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Extraplanar Embodiment|Wizard|XPHB|Cosmic Chaos|AltorasCharacterCreationOptions|3"
+					"subclassFeature": "Extraplanar Embodiment|Barbarian|XPHB|Cosmic Chaos|AltorasCharacterCreationOptions|3"
 				}
 			],
 			"className": "Barbarian",
