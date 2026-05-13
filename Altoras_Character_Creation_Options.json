@@ -11328,7 +11328,7 @@
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You leap up to 20 feet in any direction before making your attack roll. On a hit, you also deal {@damage 1d8} Slashing damage and the target must make a Dexterity saving throw or be knocked {@condition Prone|XPHB}."
+				"You leap up to 20 feet in any direction before making your attack roll. On a hit, you also deal {@damage 1d4} Slashing damage and the target must make a Dexterity saving throw against your spell save DC or be knocked {@condition Prone|XPHB}."
 			],
 			"className": "Ranger",
 			"classSource": "XPHB",
@@ -11341,7 +11341,7 @@
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"If you have moved at least 20 feet before hitting the target, you also deal {@damage 1d8} Bludgeoning damage, and you can make one melee weapon attack roll as a {@variantrule Bonus Action|XPHB} on this turn."
+				"If you have moved at least 20 feet before hitting the target, you also deal {@damage 1d4} Bludgeoning damage, and you can make one melee weapon attack roll as a {@variantrule Bonus Action|XPHB} on this turn."
 			],
 			"className": "Ranger",
 			"classSource": "XPHB",
@@ -11354,7 +11354,7 @@
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"On a hit, you also deal {@damage 1d8} Piercing damage and the target must make a Constitution saving throw. On a failed save, the target's {@variantrule Speed|XPHB} is reduced by half, and it cannot take a {@variantrule Reaction|XPHB} until the end of its next turn."
+				"On a hit, you also deal {@damage 1d4} Piercing damage and the target must make a Constitution saving throw against your spell save DC. On a failed save, the target's {@variantrule Speed|XPHB} is reduced by half, and it cannot take a {@variantrule Reaction|XPHB} until the end of its next turn."
 			],
 			"className": "Ranger",
 			"classSource": "XPHB",
@@ -11392,7 +11392,7 @@
 			"level": 7,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"When you are hit by a melee attack roll, you can take a {@variantrule Reaction|XPHB} to mantle yourself in the bristling hide of the boar. You gain {@variantrule Temporary Hit Points|XPHB} equal to three times your Dexterity modifier, and the attacker takes Force damage equal to half the damage dealt to you by the attack."
+				"When you are hit by a melee attack roll, you can take a {@variantrule Reaction|XPHB} to mantle yourself in the bristling hide of the boar. You gain {@variantrule Temporary Hit Points|XPHB} equal to three times your Dexterity modifier, and the attacker takes Piercing damage equal to half the damage dealt to you by the attack."
 			],
 			"className": "Ranger",
 			"classSource": "XPHB",
@@ -11405,7 +11405,7 @@
 			"level": 7,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"As a {@variantrule Bonus Action|XPHB}, your {@variantrule Speed|XPHB} is doubled until the end of your next turn."
+				"On your turn, you can double your {@variantrule Speed|XPHB} until the start of your next turn."
 			],
 			"className": "Ranger",
 			"classSource": "XPHB",
@@ -13319,7 +13319,7 @@
 			"header": 2,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 13 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
+				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 14 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
 				"As a Magic action, you can extend a part of your Regalia to strike your enemies. Make a melee spell attack at a target you can see within 60 feet of you. On a hit, it takes {@damage 1d10} Force damage plus your Charisma modifier.",
 				"This damage increases by {@dice 1d10} when you reach Bard levels 5 ({@dice 2d10}), 11 ({@dice 3d10}), and 17 ({@dice 4d10})."
 			],
@@ -13444,7 +13444,7 @@
 			"header": 2,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Bardic Inspiration and choose a number of creatures equal to your Charisma modifier. The next time those creatures deal damage with a weapon attack, that attack deals an extra {@damage 1d6} Acid, Cold, Fire, Lightning, or Poison damage (your choice when you activate this feature).",
+				"As a {@variantrule Bonus Action|XPHB}, you can expend one use of your Bardic Inspiration and choose a number of creatures up to your Charisma modifier that are within 60 feet of you. The next time those creatures deal damage with a weapon attack, that attack deals an extra {@damage 1d6} Acid, Cold, Fire, Lightning, or Poison damage (your choice when you activate this feature). This bonus disappears after 1 minute if unused.",
 				"This damage increases by {@dice 1d6} when you reach Bard levels 5 ({@dice 2d6}), 10 ({@dice 3d6}), and 15 ({@dice 4d6})."
 			],
 			"className": "Bard",
@@ -13459,7 +13459,22 @@
 			"header": 2,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You gain proficiency in martial weapons and training with medium armor. In addition, you can use the mastery property of two kinds of Simple or Martial weapons of your choice."
+				"You learn to read, speak, and write Draconic. You also gain proficiency in martial weapons and training with medium armor. Finally, you can use the mastery property of two kinds of Simple or Martial weapons of your choice."
+			],
+			"languageProficiencies": [
+				{
+					"draconic": true
+				}
+			],
+			"armorProficiencies": [
+				{
+					"medium": true
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"martial": true
+				}
 			],
 			"className": "Bard",
 			"classSource": "XPHB",
@@ -13815,6 +13830,172 @@
 	],
 	"foundrySubclassFeature": [
 		{
+			"name": "Bardic Regalia",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Bard",
+			"effects": [
+				{
+					"name": "Bardic Regalia AC",
+					"changes": [
+						{
+							"key": "system.attributes.ac.formula",
+							"mode": "OVERRIDE",
+							"value": "14 + @abilities.dex.mod"
+						}
+					],
+					"transfer": true
+				}
+			],
+			"activities": [
+				{
+					"type": "attack",
+					"range.units": "ft",
+					"range.value": "60",
+					"attack": {
+						"ability": "cha",
+						"type": {
+							"value": "melee",
+							"classification": "spell"
+						}
+					},
+					"damage.parts": [
+						{
+							"bonus": "@abilities.cha.mod",
+							"types": [
+								"force"
+							],
+							"number": 1,
+							"denomination": 10
+						}
+					]
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor"
+		},
+		{
+			"name": "A Tailored Experience",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "sr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Bard",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Arcane Tailor"
+		},
+		{
+			"name": "Quick Play",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "sr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Bard",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Cartomancer"
+		},
+		{
+			"name": "Dragon Fire Inspiration",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action",
+						"value": 1
+					},
+					"target": {
+						"affects": {
+							"count": "@abilities.con.mod",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Bardic Inspiration|Bard|XPHB|1"
+								}
+							}
+						]
+					}
+				}
+			],
+			"className": "Bard",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song"
+		},
+		{
+			"name": "Dragonic Mantle",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"className": "Bard",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song"
+		},
+		{
 			"name": "One with the Waves",
 			"level": 18,
 			"source": "AltorasCharacterCreationOptions",
@@ -13862,6 +14043,28 @@
 			"subclassShortName": "Sea Sorcery"
 		},
 		{
+			"name": "Dragon Song",
+			"level": 14,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Bard",
+			"effects": [
+				{
+					"name": "Fly Speed",
+					"changes": [
+						{
+							"key": "system.attributes.movement.fly",
+							"mode": "UPGRADE",
+							"value": "@attributes.movement.walk"
+						}
+					],
+					"transfer": true
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Dragon Song"
+		},
+		{
 			"name": "Watery Defense",
 			"level": 6,
 			"source": "AltorasCharacterCreationOptions",
@@ -13890,7 +14093,6 @@
 			"className": "Barbarian",
 			"system": {
 				"uses": {
-					"spent": 1,
 					"max": "abilities.con.mod",
 					"recovery": [
 						{
@@ -14258,6 +14460,18 @@
 				"recharge": "restShort",
 				"uses.max": 1
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Ranger",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
@@ -14271,6 +14485,18 @@
 				"recharge": "restShort",
 				"uses.max": 1
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Ranger",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
@@ -14284,6 +14510,18 @@
 				"recharge": "restShort",
 				"uses.max": 1
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Ranger",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
@@ -14297,6 +14535,18 @@
 				"recharge": "restLong",
 				"uses.max": "@abilities.dex.mod"
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Ranger",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
@@ -14327,19 +14577,6 @@
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Riffraff"
-		},
-		{
-			"name": "Fleeting Insight",
-			"level": 3,
-			"source": "AltorasCharacterCreationOptions",
-			"system": {
-				"recharge": "restLong",
-				"uses.max": "@abilities.cha.mod"
-			},
-			"className": "Warlock",
-			"classSource": "XPHB",
-			"subclassSource": "AltorasCharacterCreationOptions",
-			"subclassShortName": "Consort"
 		}
 	]
 }
