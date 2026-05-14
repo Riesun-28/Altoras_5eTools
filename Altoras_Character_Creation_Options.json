@@ -14929,7 +14929,7 @@
 						}
 					},
 					"activation": {
-						"type": "action",
+						"type": "action"
 					},
 					"target": {
 						"affects": {
