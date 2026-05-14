@@ -2392,8 +2392,7 @@
 							"mode": "ADD",
 							"value": "acid"
 						}
-					],
-					"transfer": true
+					]
 				}
 			]
 		},
@@ -2887,8 +2886,7 @@
 							"mode": "ADD",
 							"value": "poison"
 						}
-					],
-					"transfer": true
+					]
 				}
 			]
 		},
@@ -3424,8 +3422,7 @@
 							"mode": "override",
 							"value": "@attributes.movement.walk"
 						}
-					],
-					"transfer": true
+					]
 				}
 			]
 		},
@@ -9924,12 +9921,12 @@
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You always have the {@spell Hex|XPHB} and {@spell Find Familiar|XPHB} spells prepared. You can cast each of these spells without expending a spell slot. Once you do so, you can't cast it again in this way until you finish a {@variantrule Long Rest|XPHB}.",
+				"You always have the {@spell Hex|XPHB} and {@spell Find Familiar|XPHB} spells prepared.",
 				{
 					"type": "entries",
 					"name": "Empowered Familiar",
 					"entries": [
-						"When you cast {@spell Find Familiar|XPHB}, the animal form can be any Beast that has a {@variantrule Challenge Rating|XPHB} up to 1. Additionally, the familiar's {@variantrule Hit Points|XPHB|Hit Point} maximum is increased by an amount equal to 3 times your Wizard level. Finally, your familiar's Intelligence score becomes 10 (if it was lower than that) and can communicate using languages you know with others."
+						"The casting time for {@spell Find Familiar|XPHB} is 1 minute instead of 1 hour. When you cast it, the animal form can be any Beast that has a {@variantrule Challenge Rating|XPHB} up to 1. Additionally, the familiar's {@variantrule Hit Points|XPHB|Hit Point} maximum is increased by an amount equal to 3 times your Wizard level. Finally, your familiar's Intelligence score becomes 10 (if it was lower than that) and can communicate using languages you know with others."
 					]
 				},
 				{
@@ -11088,7 +11085,7 @@
 			"level": 13,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"With a look, your foes falter. When a creature you can see makes a {@variantrule D20 Test|XPHB} while within 30 feet of you, you can immediately take a {@variantrule Reaction|XPHB} to impose {@variantrule Disadvantage|XPHB} on that roll. The creature must be able to see you in order to be a target.",
+				"When a creature you can see makes a {@variantrule D20 Test|XPHB} while within 30 feet of you, you can immediately take a {@variantrule Reaction|XPHB} to impose {@variantrule Disadvantage|XPHB} on that roll. The creature must be able to see you in order to be a target.",
 				"You can use this feature a number of times equal to your Charisma modifier, and regain all expended uses after you finish a {@variantrule Long Rest|XPHB}."
 			],
 			"className": "Rogue",
@@ -11102,8 +11099,8 @@
 			"level": 17,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"With a word, you can bend them to your will. As an action, you can attempt to coerce a creature within 30 feet of you into doing your bidding. You issue any course of action or activity to be completed, and the target must make a Wisdom saving throw with a DC equal to 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Charisma modifier. The target must be able to hear and understand you.",
-				"On a failed save, the target pursues the coercion to the best of its ability for {@dice 1d4} days or until you or your allies deal damage to it. If the suggested activity can be completed in a shorter time, the coercion ends for the target upon completing it.",
+				"As an action, you attempt to coerce a creature within 30 feet of you that can hear and understand you. Describe a course of activity, described in no more than 25 words.",
+				"The target must succeed on a Wisdom saving throw (DC 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + your Charisma modifier) or have the {@condition Frightened|XPHB} condition for {@dice 1d4} days or until you or your allies deal damage to the target. The {@condition Frightened|XPHB} target pursues the coercion to the best of its ability. The activity can continue for the entire duration, but if the activity can be completed in a shorter time, the effect ends for the target upon completing it.",
 				"Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
 			],
 			"className": "Rogue",
@@ -11504,7 +11501,7 @@
 			"level": 3,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"As a Magic action, you can expend one use of your Channel Divinity and choose a number of creatures up to or equal to your Charisma modifier, which can include you. Those chosen creatures gain {@variantrule Temporary Hit Points|XPHB} equal to two times your Paladin level."
+				"As a Magic action, you can expend one use of your Channel Divinity and choose a number of creatures up to your Charisma modifier that are within 60 feet of you. Those chosen creatures gain {@variantrule Temporary Hit Points|XPHB} equal to two times your Paladin level."
 			],
 			"consumes": {
 				"name": "Channel Divinity"
@@ -13587,8 +13584,7 @@
 							"mode": "ADD",
 							"value": 1
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"raceName": "Requiem",
@@ -13843,8 +13839,7 @@
 							"mode": "OVERRIDE",
 							"value": "14 + @abilities.dex.mod"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"activities": [
@@ -13966,15 +13961,29 @@
 			"subclassShortName": "Dragon Song"
 		},
 		{
-			"name": "Dragonic Mantle",
+			"name": "Draconic Mantle",
 			"level": 6,
 			"source": "AltorasCharacterCreationOptions",
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "bonus action",
-						"value": 1
+						"type": "bonus"
+					},
+					"save": {
+						"ability": [
+							"spellcasting"
+						],
+						"dc": {
+							"calculation": "wis"
+						}
+					},
+					"target": {
+						"template": {
+							"size": "60",
+							"units": "ft",
+							"type": "radius"
+						}
 					},
 					"consumption": {
 						"targets": [
@@ -13994,6 +14003,27 @@
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Dragon Song"
+		},
+		{
+			"name": "Soul of the Sea",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"className": "Sorcerer",
+			"effects": [
+				{
+					"name": "Swim Speed",
+					"changes": [
+						{
+							"key": "system.attributes.movement.swim",
+							"mode": "UPGRADE",
+							"value": "@attributes.movement.walk"
+						}
+					]
+				}
+			],
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Sea Sorcery"
 		},
 		{
 			"name": "One with the Waves",
@@ -14034,8 +14064,7 @@
 							"mode": "ADD",
 							"value": "restrained"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"classSource": "XPHB",
@@ -14056,8 +14085,7 @@
 							"mode": "UPGRADE",
 							"value": "@attributes.movement.walk"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"classSource": "XPHB",
@@ -14078,8 +14106,7 @@
 							"mode": "ADD",
 							"value": "cold"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"classSource": "XPHB",
@@ -14239,8 +14266,7 @@
 							"mode": "ADD",
 							"value": "(max(1,@abilities.int.mod))"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"classSource": "XPHB",
@@ -14301,7 +14327,6 @@
 							"enabled": true,
 							"formula": "2 * @classes.druid.levels"
 						}
-
 					},
 					"activation": {
 						"type": "bonus action"
@@ -14380,8 +14405,7 @@
 							"mode": "ADD",
 							"value": "poisoned"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"classSource": "XPHB",
@@ -14774,17 +14798,67 @@
 			"subclassShortName": "Primal"
 		},
 		{
-			"name": "Scent Specialist",
-			"level": 3,
+			"name": "Resourceful",
+			"level": 13,
 			"source": "AltorasCharacterCreationOptions",
 			"system": {
-				"recharge": "restLong",
-				"uses.max": "2 * @abilities.dex.mod"
+				"recharge": "lr",
+				"uses.max": "1"
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Rogue",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Perfumer"
+		},
+		{
+			"name": "Frightful Coercion",
+			"level": 17,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Rogue",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Riffraff"
 		},
 		{
 			"name": "Intimidating Presence",
@@ -14798,6 +14872,419 @@
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
 			"subclassShortName": "Riffraff"
+		},
+		{
+			"name": "Rapid Response",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 10
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Channel Divinity"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis"
+		},
+		{
+			"name": "Divine Bulwark",
+			"level": 3,
+			"source": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "heal",
+					"healing": {
+						"types": [
+							"temphp"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "2 * @classes.paladin.levels"
+						}
+					},
+					"activation": {
+						"type": "action",
+					},
+					"target": {
+						"affects": {
+							"count": "@abilities.cha.mod",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Channel Divinity"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis"
+		},
+		{
+			"name": "Aegis Form",
+			"level": 20,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Paladin",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Aegis"
+		},
+		{
+			"name": "Unstable Form",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "sr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort"
+		},
+		{
+			"name": "Unleashed Form",
+			"level": 14,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Consort"
+		},
+		{
+			"name": "Sonata",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "sr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody"
+		},
+		{
+			"name": "Grand Finale",
+			"level": 14,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"spell": {
+						"uuid": [
+							"@spell[power word pain|xge]",
+							"@spell[power word stun|xphb]",
+							"@spell[power word kill|xphb]"
+						]
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Melody"
+		},
+		{
+			"name": "Dragonsight",
+			"level": 10,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"name": "Dragonsight",
+					"changes": [
+						{
+							"key": "system.attributes.senses.ranges.truesight",
+							"mode": "OVERRIDE",
+							"value": "120"
+						}
+					]
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm"
+		},
+		{
+			"name": "Frightful Presence",
+			"level": 6,
+			"source": "AltorasCharacterCreationOptions",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "reaction"
+					},
+					"save": {
+						"ability": [
+							"spellcasting"
+						],
+						"dc": {
+							"calculation": "wis"
+						}
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm"
+		}
+		{
+			"name": "Aspect of the Wyrm",
+			"level": 14,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "lr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"save": {
+						"ability": [
+							"spellcasting"
+						],
+						"dc": {
+							"calculation": "wis"
+						}
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"units": "minutes",
+						"value": 1
+					}
+				}
+			],
+			"className": "Warlock",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Greatwyrm"
+		},
+		{
+			"name": "Crimson Wrath",
+			"level": 14,
+			"source": "AltorasCharacterCreationOptions",
+			"system": {
+				"recharge": "sr",
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "When you deal damage with a spell"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"className": "Wizard",
+			"classSource": "XPHB",
+			"subclassSource": "AltorasCharacterCreationOptions",
+			"subclassShortName": "Blood Magic"
 		}
 	]
 }
