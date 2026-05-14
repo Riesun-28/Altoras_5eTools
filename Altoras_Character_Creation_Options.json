@@ -14618,7 +14618,7 @@
 				{
 					"save": {
 						"dc": {
-							"calculation": "wis"
+							"calculation": "spellcasting"
 						},
 						"ability": [
 							"dex"
@@ -14674,7 +14674,7 @@
 				{
 					"save": {
 						"dc": {
-							"calculation": "wis"
+							"calculation": "spellcasting"
 						},
 						"ability": [
 							"con"
@@ -14868,6 +14868,18 @@
 				"recharge": "restLong",
 				"uses.max": "@abilities.cha.mod"
 			},
+			"activities": [
+				{
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
 			"className": "Rogue",
 			"classSource": "XPHB",
 			"subclassSource": "AltorasCharacterCreationOptions",
