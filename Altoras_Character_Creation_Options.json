@@ -2967,6 +2967,45 @@
 			]
 		},
 		{
+			"name": "Savage Slows",
+			"source": "AltorasCharacterCreationOptions",
+			"page": 66,
+			"category": "G",
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"prerequisite": [
+				{
+					"level": 4,
+					"ability": [
+						{
+							"dex": 13,
+							"str": 13
+						}
+					]
+				}
+			],
+			"entries": [
+				"You gain the following benefits.",
+				{
+					"type": "entries",
+					"name": "Expose Wounds",
+					"entries": [
+						"When you apply the Slow mastery to a creature, they must succeed on a Constitution saving throw (DC 8 + your {@variantrule Proficiency|XPHB|Proficiency Bonus} + the ability modifier used to make the attack) or gain the Bleeding condition. At the end of a Bleeding creature's turn, they take {@damage 1d4} damage. That damage increases by {@damage 1d4} if a Bleeding creature moved 5 or more feet during that turn, plus another {@damage 1d4} for each turn it's had the condition after the first. A Bleeding creature can spend it's action and take {@damage 1d4} damage to end the condition on itself.",
+						"Constructs, Undead, Oozes, or creatures who otherwise don't have blood are immune to the Bleeding condition."
+					]
+				}
+			]
+		},
+		{
 			"name": "Primal Mutation",
 			"page": 64,
 			"source": "AltorasCharacterCreationOptions",
@@ -13316,7 +13355,7 @@
 			"header": 2,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 14 + your Dexterity modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
+				"You craft your own Bardic Regalia. The Regalia counts as magical Light Armor and provides an AC of 14 + your Charisma modifier. You can use the Regalia as an Arcane Focus for your Bard spells, and you can change its appearance at will, but it always has the appearance and material of cloth.",
 				"As a Magic action, you can extend a part of your Regalia to strike your enemies. Make a melee spell attack at a target you can see within 60 feet of you. On a hit, it takes {@damage 1d10} Force damage plus your Charisma modifier.",
 				"This damage increases by {@dice 1d10} when you reach Bard levels 5 ({@dice 2d10}), 11 ({@dice 3d10}), and 17 ({@dice 4d10})."
 			],
@@ -13837,7 +13876,7 @@
 						{
 							"key": "system.attributes.ac.formula",
 							"mode": "OVERRIDE",
-							"value": "14 + @abilities.dex.mod"
+							"value": "14 + @abilities.cha.mod"
 						}
 					]
 				}
