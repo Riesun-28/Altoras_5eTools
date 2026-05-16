@@ -6157,7 +6157,13 @@
 			],
 			"duration": [
 				{
-					"type": "instant"
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"upTo": true,
+						"amount": 1
+					},
+					"concentration": true
 				}
 			],
 			"miscTags": [
