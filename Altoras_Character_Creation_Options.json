@@ -8342,7 +8342,7 @@
 				"Frightful Presence|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|6",
 				"Dragonsight|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|10",
 				"Prismatic Warding|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|10",
-				"Aspect of the Wyrm|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|14"
+				"Dragon-Rended Transformation|Warlock|XPHB|Greatwyrm|AltorasCharacterCreationOptions|14"
 			]
 		},
 		{
@@ -10326,7 +10326,8 @@
 			"level": 10,
 			"source": "AltorasCharacterCreationOptions",
 			"entries": [
-				"When you are targeted by an attack roll, you can immediately take a {@variantrule Reaction|XPHB} to call upon the Frightful Presence of your patron and force the attacker to make a Wisdom saving throw against your Warlock spell save DC. On a failed save, the target is {@condition Frightened|XPHB} until the start of its next turn. On a success, the target is immune to this feature for 24 hours."
+				"For but moments, your draconic patron allows you to borrow its powers of perception. As a Magic action, you gain {@sense Truesight|XPHB} with a range of 120 feet for 1 hour. This enhanced sight ends early if you dismiss it (no action required), or die.",
+		"Once you use this feature, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, unless you expend a Pact Magic spell slot (no action required) to restore your use of it."
 			],
 			"className": "Warlock",
 			"classSource": "XPHB",
@@ -10352,7 +10353,7 @@
 			"subclassShortName": "Greatwyrm"
 		},
 		{
-			"name": "Aspect of the Wyrm",
+			"name": "Dragon-Rended Transformation",
 			"page": 56,
 			"level": 14,
 			"source": "AltorasCharacterCreationOptions",
@@ -15273,7 +15274,7 @@
 			"subclassShortName": "Greatwyrm"
 		},
 		{
-			"name": "Aspect of the Wyrm",
+			"name": "Dragon-Rended Transformation",
 			"level": 14,
 			"source": "AltorasCharacterCreationOptions",
 			"system": {
